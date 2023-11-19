@@ -2902,11 +2902,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lamab\\source\\repos\\MarketingSurplus\\MarketingSurplus\\MarketingSurplus.csproj",
+      "projectUniqueName": "C:\\Users\\lamab\\source\\repos\\MarketingSurplusApi\\MarketingSurplus\\MarketingSurplus.csproj",
       "projectName": "MarketingSurplus",
-      "projectPath": "C:\\Users\\lamab\\source\\repos\\MarketingSurplus\\MarketingSurplus\\MarketingSurplus.csproj",
+      "projectPath": "C:\\Users\\lamab\\source\\repos\\MarketingSurplusApi\\MarketingSurplus\\MarketingSurplus.csproj",
       "packagesPath": "C:\\Users\\lamab\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lamab\\source\\repos\\MarketingSurplus\\MarketingSurplus\\obj\\",
+      "outputPath": "C:\\Users\\lamab\\source\\repos\\MarketingSurplusApi\\MarketingSurplus\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

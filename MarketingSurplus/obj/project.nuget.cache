@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YHn2k2AGvu/X9z4/LJYG3a9OubrJ6UQL2UWy4SNhSiG5W/s0iebLrR0EPnpQ+SH3yalIhNVtq0qG8VoIfcYPKg==",
+  "dgSpecHash": "6FHWWZsUeYbCZI/N7xn+h8Utkdtdwrr1NkU1OcP22u/K2+81m3mLI3fKUP5P1Dyb8dmNGzttUbJPNwMHDOHsfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lamab\\source\\repos\\MarketingSurplus\\MarketingSurplus\\MarketingSurplus.csproj",
+  "projectFilePath": "C:\\Users\\lamab\\source\\repos\\MarketingSurplusApi\\MarketingSurplus\\MarketingSurplus.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lamab\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\lamab\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
