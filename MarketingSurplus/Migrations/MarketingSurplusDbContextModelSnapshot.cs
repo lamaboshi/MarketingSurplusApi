@@ -22,6 +22,69 @@ namespace MarketingSurplus.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("MarketingSurplus.Models.Bill", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderStatusId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderProductId");
+
+                    b.HasIndex("OrderStatusId");
+
+                    b.ToTable("Bills");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 10,
+                            Note = "  Welcom to you",
+                            OrderProductId = 4,
+                            OrderStatusId = 1
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Note = " Welcom to you",
+                            OrderProductId = 2,
+                            OrderStatusId = 1
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Note = " Welcom to you",
+                            OrderProductId = 2,
+                            OrderStatusId = 2
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Note = " Welcom to you",
+                            OrderProductId = 1,
+                            OrderStatusId = 1
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Note = " Welcom to you",
+                            OrderProductId = 3,
+                            OrderStatusId = 1
+                        });
+                });
+
             modelBuilder.Entity("MarketingSurplus.Models.Charity", b =>
                 {
                     b.Property<int>("Id")
@@ -31,12 +94,22 @@ namespace MarketingSurplus.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AssociationLicense")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Goals")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -50,9 +123,78 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("QRCode")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("TargetGroup")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Charities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "Al Hamadanieh",
+                            AssociationLicense = "2435",
+                            Email = "Al-Ihsan@test.com",
+                            Goals = "childern",
+                            Name = "Al-Ihsan",
+                            Password = "Al-Ihsan789",
+                            Phone = "0215789147",
+                            TargetGroup = "Rich Pepole"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "Al mohafaza",
+                            AssociationLicense = "2435",
+                            Email = "Hand-By-Hand@test.com",
+                            Goals = "Old Pepole",
+                            Name = "Hand By Hand",
+                            Password = "Hand-By-Hand456",
+                            Phone = "0215117894",
+                            TargetGroup = "Rich Pepole"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Address = "Mohamad Fares Street",
+                            AssociationLicense = "2435",
+                            Email = "Al-Noor@test.com",
+                            Goals = "childern",
+                            Name = "Al-Noor",
+                            Password = "Al-Noor123",
+                            Phone = "021524895 ",
+                            TargetGroup = "Rich Pepole"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Address = "Al Azizeh",
+                            AssociationLicense = "2435",
+                            Email = "George@test.com",
+                            Goals = "childern",
+                            Name = "George",
+                            Password = "George147",
+                            Phone = "0215115827",
+                            TargetGroup = "Rich Pepole"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Address = "Al Marterni",
+                            AssociationLicense = "2435",
+                            Email = "Namaa@test.com",
+                            Goals = "childern",
+                            Name = "Namaa",
+                            Password = "Namaa369",
+                            Phone = "02151174369",
+                            TargetGroup = "Rich Pepole"
+                        });
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.Company", b =>
@@ -64,18 +206,23 @@ namespace MarketingSurplus.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CompanyTypeId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("LicenseNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -90,11 +237,378 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TelePhone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CompanyTypeId");
 
                     b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "From Streat",
+                            CompanyTypeId = 1,
+                            Description = "As in 1955, when Ultra Medica started its ascent in the world of pharmaceutical industry in Syria (Sednaya) founded with emphasis activities and enthusiasm for the manufacturing and developing of life science industry",
+                            Email = "UltraMedica@test.com",
+                            LicenseNumber = "242523",
+                            Name = "Ultra Medica",
+                            Password = "12123",
+                            Phone = "0921423432",
+                            TelePhone = "4232543"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "From Streat",
+                            CompanyTypeId = 1,
+                            Description = "Newpharma is een online apotheek, een uitbreiding van een echte apotheek, gevestigd in België. We spreken ook van internet apotheek of e-apotheek.",
+                            Email = "newpharma@test.com",
+                            Name = "New pharma",
+                            Password = "12123",
+                            Phone = "0921423432",
+                            TelePhone = "4232543"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Address = "From Streat",
+                            CompanyTypeId = 1,
+                            Description = "Asia Pharmacy is an Electrical and Electronic Manufacturing company located in 1035 S Federal Blvd Ste B, Denver, Colorado, United States.",
+                            Email = "MAYBELLINE@test.com",
+                            Name = "Asia pharmacy",
+                            Password = "34345",
+                            Phone = "0921423432",
+                            TelePhone = "4232543"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Address = "From Streat",
+                            CompanyTypeId = 1,
+                            Description = "Our pharmacist and trained assistants are available for advice on all medicines and minor ailments. We can also give you advice on how to live a healthier life and can direct you to a range of other resources if needed.",
+                            Email = "LOREAL@test.com",
+                            LicenseNumber = "242523",
+                            Name = "Medico ",
+                            Password = "23234",
+                            Phone = "0921423432",
+                            TelePhone = "4232543"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Address = "From Streat",
+                            CompanyTypeId = 1,
+                            Description = "APOTHEKE ADHOC Webinar: Praxisrelevantes Wissen für das gesamte Apothekenteam zu brandaktuellen Fachthemen rund um Indikation, Beratung, Rezeptur und vieles mehr.",
+                            Email = "SEPHORA@test.com",
+                            LicenseNumber = "242523",
+                            Name = "Mediathek",
+                            Password = "45456",
+                            Phone = "0921423432",
+                            TelePhone = "4232543"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Address = "From Streat",
+                            CompanyTypeId = 2,
+                            Description = "Asics sponsors a variety of sports associations",
+                            Email = "Asics@test.com",
+                            LicenseNumber = "242523",
+                            Name = "ASIC",
+                            Password = "111222",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Address = "From Streat",
+                            CompanyTypeId = 2,
+                            Description = "Manufacturer of sports shoes and apparel. It was the largest sportswear manufacturer in Europe and the second largest after Nike in the world. Adidas products are traditionally distinguished by a three-line brand, which remains an element of the company's latest products",
+                            Email = "ADDIDAS@test.com",
+                            LicenseNumber = "242523",
+                            Name = "ADDIDAS",
+                            Password = "111222",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Address = "From Streat",
+                            CompanyTypeId = 2,
+                            Description = "The world’s largest athletic apparel company, Nike is best known for its footwear, apparel, and equipment. One of the most valuable brands among sport businesses,The company sponsors top athletes and sports teams around the world.",
+                            Email = "NIKE@test.com",
+                            LicenseNumber = "242523",
+                            Name = "NIKE",
+                            Password = "78789",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Address = "From Streat",
+                            CompanyTypeId = 2,
+                            Description = "Puma, is a German multinational corporation that designs and manufactures athletic and casual footwear, apparel and accessories, which is headquartered in Herzogenaurach, Bavaria, Germany. Puma is the third largest sportswear manufacturer in the world",
+                            Email = "PUMA@test.com",
+                            LicenseNumber = "242523",
+                            Name = "PUMA",
+                            Password = "67678",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Address = "Reebok International Limited (/ˈriːbɒk/) is an American fitness footwear and clothing manufacturer that is a part of Authentic Brands Group.",
+                            CompanyTypeId = 2,
+                            Description = "Asics sponsors a variety of sports associations",
+                            Email = "REEBOK@test.com",
+                            LicenseNumber = "242523",
+                            Name = "REEBOK",
+                            Password = "8989",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Address = "From Streat",
+                            CompanyTypeId = 3,
+                            Description = "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.",
+                            Email = "ZARA@test.com",
+                            LicenseNumber = "242523",
+                            Name = "ZARA",
+                            Password = "0909",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Address = "From Streat",
+                            CompanyTypeId = 3,
+                            Description = "Max Fashion is an Indian fashion brand under the banner of the Landmark Group in Dubai",
+                            Email = "MAX@test.com",
+                            LicenseNumber = "242523",
+                            Name = "MAX",
+                            Password = "111222",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Address = "From Streat",
+                            CompanyTypeId = 3,
+                            Description = "It is an Italian luxury fashion house specializing in ready-to-wear and haute couture, headquartered in Milan, Italy. Expanded to design raincoats, windbreakers, knitwear, leather goods, shoes, perfume, and accessories",
+                            Email = "MONCLER@test.com",
+                            LicenseNumber = "242523",
+                            Name = "MONCLER",
+                            Password = "6789",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Address = "From Streat",
+                            CompanyTypeId = 3,
+                            Description = "Lacoste S.A. is a French company. It sells clothing, footwear, sportswear, eyewear, leather goods, perfume, towels and watches",
+                            Email = "LACOSTE@test.com",
+                            LicenseNumber = "242523",
+                            Name = "LACOSTE",
+                            Password = "111222",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Address = "From Streat",
+                            CompanyTypeId = 3,
+                            Description = "It is one of the most famous fashion companies in the world. The group enjoys a unified identity consisting of colours, authentic fashion and quality at democratic prices",
+                            Email = "BENETTON@test.com",
+                            LicenseNumber = "242523",
+                            Name = "BENETTON",
+                            Password = "9463",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Address = "Louisville, KentuckyFrom Streat",
+                            CompanyTypeId = 4,
+                            Description = "Kentucky Fried Chicken or KFC is a chain of fast food restaurants that specializes primarily in fried chicken.  It is the second largest chain of fast food restaurants in the world in terms of sales after McDonald's. Kentucky Fried Chicken has nearly twenty thousand branches spread over 123 countries and territories around the world.",
+                            Email = "KFC@test.com",
+                            LicenseNumber = "242523",
+                            Name = "KFC",
+                            Password = "5252",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Address = "From Streat",
+                            CompanyTypeId = 4,
+                            Description = "MCDONALD'S is the world's largest restaurant chain by revenue,McDonald's is best known for its hamburgers, cheeseburgers and french fries, although their menus include other items like chicken, fish, fruit, and salads",
+                            Email = "MCDONALDS@test.com",
+                            LicenseNumber = "242523",
+                            Name = "MCDONALDS",
+                            Password = "99999",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Address = "From Streat",
+                            CompanyTypeId = 4,
+                            Description = "Nestlé is a multinational company specializing in the production of canned foods, founded in Vevey, Switzerland.",
+                            Email = "NESTLE@test.com",
+                            Name = "NESTLE",
+                            Password = "111222",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Address = "From Streat",
+                            CompanyTypeId = 4,
+                            Description = "STARBUCKS is a specialty coffee retailer. It roasts, markets, and retails specialty coffee. The company, through its stores, offers several blends of coffee, handcrafted beverages, merchandise, and food items",
+                            Email = "STARBUCKS@test.com",
+                            LicenseNumber = "242523",
+                            Name = "STARBUCKS",
+                            Password = "123122",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Address = "From Streat",
+                            CompanyTypeId = 4,
+                            Description = "Pizza Hut is an American multinational restaurant chain and international franchise founded in 1958 in Wichita, Kansas by Dan and Frank Carney. They serve their signature pan pizza and other dishes including pasta, breadsticks and desserts.",
+                            Email = "PIZZAHUT@test.com",
+                            LicenseNumber = "242523",
+                            Name = "PIZZA HUT",
+                            Password = "34345",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Address = "Suwon, South Korea",
+                            CompanyTypeId = 5,
+                            Description = " Samsung Electronics is the world's largest electronics and information technology company.  Samsung Electronics is part of the Samsung Group, which is the largest conglomerate in South Korea and the global market leader with more than 60 products including semiconductors such as DRAM and flash memory, digital display devices such as liquid crystal TVs  LCD and plasma, consumer electronics such as DVD players, mobile phones, digital cameras and laser printers, household appliances such as refrigerators, microwaves and dishwashers.",
+                            Email = "SAMSUNG@test.com",
+                            LicenseNumber = "242523",
+                            Name = "SAMSUNG",
+                            Password = "111222",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Address = "Cupertino, California, United States",
+                            CompanyTypeId = 5,
+                            Description = "The Apple Corporation is an American multinational technology company specializing in consumer electronics, software and online services.  It is one of the top five American IT companies",
+                            Email = "APPLE@test.com",
+                            LicenseNumber = "242523",
+                            Name = "APPLE",
+                            Password = "77666",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Address = "South Korea",
+                            CompanyTypeId = 5,
+                            Description = "The Korean LG Group this company is the second largest holding company, producing electronics, chemicals and telecommunications products.  from 80 countries",
+                            Email = "LG@test.com",
+                            LicenseNumber = "242523",
+                            Name = "LG",
+                            Password = "989887",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Address = " Los Gatos, California",
+                            CompanyTypeId = 6,
+                            Description = "Netflix is   an American entertainment company that specializes in providing live broadcasting, video-on-demand, and mail-delivery of CDs. Netflix has expanded into the production of films and television shows, and online video distribution",
+                            Email = "NETFLIX@test.com",
+                            LicenseNumber = "242523",
+                            Name = "NETFLIX",
+                            Password = "34567",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Address = "From Streat",
+                            CompanyTypeId = 6,
+                            Description = "Shahid is the first Arab platform to provide \"Video on Demand\" service in the Middle East, and it has been re-launched by the \"MBC\" media group.  It is worth noting that Shahid,the leading subscription video-on-demand platform, is considered the leading Arab broadcasting platform in the world and the home of original Arabic productions with world-class specifications.along with a live broadcast of a group of the most watched Arab TV channels",
+                            Email = "SHAHID@test.com",
+                            LicenseNumber = "242523",
+                            Name = "SHAHID",
+                            Password = "888877",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Address = "From Streat",
+                            CompanyTypeId = 7,
+                            Description = "DIOR Products Clothing, cosmetics, fashion accessories, jewelry, perfumes, watches",
+                            Email = "DIOR@test.com",
+                            LicenseNumber = "242523",
+                            Name = "DIOR",
+                            Password = "777776",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Address = "From Streat",
+                            CompanyTypeId = 7,
+                            Description = "Chanel Its products cover clothes, fragrances, handbags and watches",
+                            Email = "CHANNEL@test.com",
+                            LicenseNumber = "242523",
+                            Name = "CHANNEL",
+                            Password = "333333",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Address = "From Streat",
+                            CompanyTypeId = 7,
+                            Description = "Gucci offers a range of different luxury  Shoes, ready-to-wear apparel, watches, and jewelry are the other main , however they also sell other products such as perfume and home decor",
+                            Email = "Gucci@test.com",
+                            LicenseNumber = "242523",
+                            Name = "GUCCI",
+                            Password = "8888882",
+                            Phone = "0921423432",
+                            TelePhone = "223554"
+                        });
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.CompanyProduct", b =>
@@ -111,6 +625,9 @@ namespace MarketingSurplus.Migrations
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Favor")
+                        .HasColumnType("bit");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -121,6 +638,40 @@ namespace MarketingSurplus.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("CompanyProducts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 4,
+                            CompanyId = 16,
+                            Favor = false,
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = 2,
+                            CompanyId = 17,
+                            Favor = false,
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Amount = 10,
+                            CompanyId = 1,
+                            Favor = false,
+                            ProductId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Amount = 2,
+                            CompanyId = 18,
+                            Favor = false,
+                            ProductId = 2
+                        });
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.CompanyType", b =>
@@ -131,6 +682,10 @@ namespace MarketingSurplus.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("TypeName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -138,62 +693,50 @@ namespace MarketingSurplus.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CompanyTypes");
-                });
 
-            modelBuilder.Entity("MarketingSurplus.Models.CompayProductOrder", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CompanyProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TotalPrice")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CompanyProductId");
-
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("CompayProductOrders");
-                });
-
-            modelBuilder.Entity("MarketingSurplus.Models.CompayProductOrderOffer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CompayProductOrderId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Note")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OfferId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CompayProductOrderId");
-
-                    b.HasIndex("OfferId");
-
-                    b.ToTable("CompayProductOrderOffers");
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "All About Medicines",
+                            TypeName = "Medicines"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "All About sports",
+                            TypeName = "Sports"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "All About Clothes",
+                            TypeName = "Clothes"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "All About Food",
+                            TypeName = "Food"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "All About electronics",
+                            TypeName = "Electronics"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "All About Movies & Series",
+                            TypeName = "Platforms"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "All About Perfumes",
+                            TypeName = "Perfumes"
+                        });
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.Donation", b =>
@@ -225,9 +768,43 @@ namespace MarketingSurplus.Migrations
                     b.HasIndex("OrderTypeId");
 
                     b.ToTable("Donations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CharityId = 1,
+                            CompanyProductId = 2,
+                            OrderTypeId = 3,
+                            PricePay = 20000f
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CharityId = 2,
+                            CompanyProductId = 1,
+                            OrderTypeId = 2,
+                            PricePay = 18000f
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CharityId = 4,
+                            CompanyProductId = 3,
+                            OrderTypeId = 2,
+                            PricePay = 11000f
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CharityId = 2,
+                            CompanyProductId = 3,
+                            OrderTypeId = 3,
+                            PricePay = 10000f
+                        });
                 });
 
-            modelBuilder.Entity("MarketingSurplus.Models.Offer", b =>
+            modelBuilder.Entity("MarketingSurplus.Models.Evalution", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -235,12 +812,45 @@ namespace MarketingSurplus.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Amount")
+                    b.Property<int>("RateId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SubscriptionId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Offers");
+                    b.HasIndex("RateId");
+
+                    b.HasIndex("SubscriptionId");
+
+                    b.ToTable("Evalution");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 30,
+                            RateId = 4,
+                            SubscriptionId = 1
+                        },
+                        new
+                        {
+                            Id = 31,
+                            RateId = 5,
+                            SubscriptionId = 1
+                        },
+                        new
+                        {
+                            Id = 32,
+                            RateId = 2,
+                            SubscriptionId = 2
+                        },
+                        new
+                        {
+                            Id = 33,
+                            RateId = 3,
+                            SubscriptionId = 3
+                        });
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.Order", b =>
@@ -251,7 +861,7 @@ namespace MarketingSurplus.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Amount")
+                    b.Property<int?>("Amount")
                         .HasColumnType("int");
 
                     b.Property<string>("Descripation")
@@ -268,7 +878,7 @@ namespace MarketingSurplus.Migrations
                     b.Property<int>("PayMethodId")
                         .HasColumnType("int");
 
-                    b.Property<float>("Price")
+                    b.Property<float?>("Price")
                         .HasColumnType("real");
 
                     b.Property<int>("UserId")
@@ -281,6 +891,174 @@ namespace MarketingSurplus.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Orders");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 10,
+                            Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ",
+                            IsDelivery = true,
+                            Name = "Order 1",
+                            PayMethodId = 1,
+                            Price = 20000f,
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = 5,
+                            Descripation = "The order was placed at 2:50 and will expire after a quarter of an hour from this time",
+                            IsDelivery = false,
+                            Name = "Order 2",
+                            PayMethodId = 1,
+                            Price = 18520f,
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Amount = 6,
+                            Descripation = "The order was placed at 4:40 and will expire after a quarter of an hour from this time",
+                            IsDelivery = true,
+                            Name = "Order 3",
+                            PayMethodId = 2,
+                            Price = 75312f,
+                            UserId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Amount = 4,
+                            Descripation = "The order was placed at 3:20 and will expire after a quarter of an hour from this time",
+                            IsDelivery = true,
+                            Name = "Order 4",
+                            PayMethodId = 2,
+                            Price = 12457f,
+                            UserId = 3
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Amount = 2,
+                            Descripation = "The order was placed at 1:15 and will expire after a quarter of an hour from this time",
+                            IsDelivery = false,
+                            Name = "Order 5",
+                            PayMethodId = 3,
+                            Price = 45632f,
+                            UserId = 2
+                        });
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.OrderProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CompanyProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalPrice")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyProductId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderProducts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 5,
+                            CompanyProductId = 4,
+                            OrderId = 3,
+                            TotalPrice = 11000
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = 4,
+                            CompanyProductId = 3,
+                            OrderId = 5,
+                            TotalPrice = 120000
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Amount = 9,
+                            CompanyProductId = 1,
+                            OrderId = 1,
+                            TotalPrice = 480000
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Amount = 100,
+                            CompanyProductId = 2,
+                            OrderId = 4,
+                            TotalPrice = 500000
+                        });
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.OrderStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderStatuses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DateTime = new DateTime(2024, 6, 8, 20, 58, 29, 974, DateTimeKind.Local).AddTicks(3659),
+                            status = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DateTime = new DateTime(2024, 6, 8, 20, 58, 29, 974, DateTimeKind.Local).AddTicks(3687),
+                            status = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DateTime = new DateTime(2024, 6, 8, 20, 58, 29, 974, DateTimeKind.Local).AddTicks(3704),
+                            status = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DateTime = new DateTime(2024, 6, 8, 20, 58, 29, 974, DateTimeKind.Local).AddTicks(3719),
+                            status = 4
+                        });
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.OrderType", b =>
@@ -298,6 +1076,23 @@ namespace MarketingSurplus.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OrderTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Normal"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Donation"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Charity Organization"
+                        });
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.PayMethod", b =>
@@ -315,6 +1110,23 @@ namespace MarketingSurplus.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PayMethods");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Cash Pay"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "PayPal"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Credit Card"
+                        });
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.Product", b =>
@@ -324,6 +1136,9 @@ namespace MarketingSurplus.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Descripation")
                         .IsRequired()
@@ -339,12 +1154,50 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<float>("OldPrice")
+                        .HasColumnType("real");
+
                     b.Property<float>("Price")
                         .HasColumnType("real");
 
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Each wrapped bag contains one kilo of good quality Egyptian rice",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Rice",
+                            OldPrice = 0f,
+                            Price = 15000f
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "The weight of each raw chicken ranges between 1.7 kg and 2.2 kg. The meat is halal.",
+                            Expiration = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Broasted Chicken",
+                            OldPrice = 0f,
+                            Price = 21000f
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Each paracetamol tablet contains 500 mg of acetamol, which reduces fever and relieves pain.",
+                            Expiration = new DateTime(2025, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Paracetamol",
+                            OldPrice = 0f,
+                            Price = 50000f
+                        });
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.Rate", b =>
@@ -365,50 +1218,35 @@ namespace MarketingSurplus.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Rates");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 2,
+                            Description = "Middle",
+                            RateNumber = 3
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Good",
+                            RateNumber = 4
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Very Good",
+                            RateNumber = 5
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Super",
+                            RateNumber = 7
+                        });
                 });
 
-            modelBuilder.Entity("MarketingSurplus.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PayPal")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("QRCode")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("MarketingSurplus.Models.UserCompany", b =>
+            modelBuilder.Entity("MarketingSurplus.Models.Subscription", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -428,10 +1266,30 @@ namespace MarketingSurplus.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserCompanies");
+                    b.ToTable("Subscriptions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CompanyId = 1,
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CompanyId = 2,
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CompanyId = 2,
+                            UserId = 3
+                        });
                 });
 
-            modelBuilder.Entity("MarketingSurplus.Models.UserCompanyRate", b =>
+            modelBuilder.Entity("MarketingSurplus.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -439,25 +1297,105 @@ namespace MarketingSurplus.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("RateId")
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserCompanyId")
-                        .HasColumnType("int");
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PayPal")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("QRCode")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RateId");
+                    b.ToTable("Users");
 
-                    b.HasIndex("UserCompanyId");
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Age = 20,
+                            Email = "lama@test.com",
+                            Name = "Lama Boshi",
+                            Password = "121",
+                            PayPal = "Lb1267",
+                            Phone = "0964654765",
+                            UserName = "Lamaz"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Age = 20,
+                            Email = "Hamzeh@test.com",
+                            Name = "Hamze Badinjky",
+                            Password = "141",
+                            PayPal = "Lb1267",
+                            Phone = "0964654765",
+                            UserName = "hamzehS"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Age = 20,
+                            Email = "Adam@test.com",
+                            Name = "Adam Syria",
+                            Password = "161",
+                            PayPal = "Lb1267",
+                            Phone = "0964654765",
+                            UserName = "Adom"
+                        });
+                });
 
-                    b.ToTable("UserCompanyRates");
+            modelBuilder.Entity("MarketingSurplus.Models.Bill", b =>
+                {
+                    b.HasOne("MarketingSurplus.Models.OrderProduct", "OrderProduct")
+                        .WithMany("Bills")
+                        .HasForeignKey("OrderProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MarketingSurplus.Models.OrderStatus", "OrderStatus")
+                        .WithMany("Bills")
+                        .HasForeignKey("OrderStatusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("OrderProduct");
+
+                    b.Navigation("OrderStatus");
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.Company", b =>
                 {
                     b.HasOne("MarketingSurplus.Models.CompanyType", "CompanyType")
-                        .WithMany("Companies")
+                        .WithMany()
                         .HasForeignKey("CompanyTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -468,13 +1406,13 @@ namespace MarketingSurplus.Migrations
             modelBuilder.Entity("MarketingSurplus.Models.CompanyProduct", b =>
                 {
                     b.HasOne("MarketingSurplus.Models.Company", "Company")
-                        .WithMany("CompanyProducts")
+                        .WithMany()
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("MarketingSurplus.Models.Product", "Product")
-                        .WithMany("CompanyProducts")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -484,48 +1422,10 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("MarketingSurplus.Models.CompayProductOrder", b =>
-                {
-                    b.HasOne("MarketingSurplus.Models.CompanyProduct", "CompanyProduct")
-                        .WithMany("CompayProductOrders")
-                        .HasForeignKey("CompanyProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MarketingSurplus.Models.Order", "Order")
-                        .WithMany("CompayProductOrders")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CompanyProduct");
-
-                    b.Navigation("Order");
-                });
-
-            modelBuilder.Entity("MarketingSurplus.Models.CompayProductOrderOffer", b =>
-                {
-                    b.HasOne("MarketingSurplus.Models.CompayProductOrder", "CompayProductOrder")
-                        .WithMany("CompayProductOrderOffers")
-                        .HasForeignKey("CompayProductOrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MarketingSurplus.Models.Offer", "Offer")
-                        .WithMany("CompayProductOrderOffers")
-                        .HasForeignKey("OfferId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CompayProductOrder");
-
-                    b.Navigation("Offer");
-                });
-
             modelBuilder.Entity("MarketingSurplus.Models.Donation", b =>
                 {
                     b.HasOne("MarketingSurplus.Models.Charity", "Charity")
-                        .WithMany("Donations")
+                        .WithMany()
                         .HasForeignKey("CharityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -549,6 +1449,25 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("OrderType");
                 });
 
+            modelBuilder.Entity("MarketingSurplus.Models.Evalution", b =>
+                {
+                    b.HasOne("MarketingSurplus.Models.Rate", "Rate")
+                        .WithMany("Evalutions")
+                        .HasForeignKey("RateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MarketingSurplus.Models.Subscription", "Subscription")
+                        .WithMany("Evalutions")
+                        .HasForeignKey("SubscriptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Rate");
+
+                    b.Navigation("Subscription");
+                });
+
             modelBuilder.Entity("MarketingSurplus.Models.Order", b =>
                 {
                     b.HasOne("MarketingSurplus.Models.PayMethod", "PayMethod")
@@ -568,16 +1487,35 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MarketingSurplus.Models.UserCompany", b =>
+            modelBuilder.Entity("MarketingSurplus.Models.OrderProduct", b =>
+                {
+                    b.HasOne("MarketingSurplus.Models.CompanyProduct", "CompanyProduct")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("CompanyProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MarketingSurplus.Models.Order", "Order")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CompanyProduct");
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.Subscription", b =>
                 {
                     b.HasOne("MarketingSurplus.Models.Company", "Company")
-                        .WithMany("UserCompanies")
+                        .WithMany()
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("MarketingSurplus.Models.User", "User")
-                        .WithMany("UserCompanies")
+                        .WithMany("Subscriptions")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -587,62 +1525,26 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MarketingSurplus.Models.UserCompanyRate", b =>
-                {
-                    b.HasOne("MarketingSurplus.Models.Rate", "Rate")
-                        .WithMany("CompanyRates")
-                        .HasForeignKey("RateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MarketingSurplus.Models.UserCompany", "UserCompany")
-                        .WithMany("UserCompanyRates")
-                        .HasForeignKey("UserCompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Rate");
-
-                    b.Navigation("UserCompany");
-                });
-
-            modelBuilder.Entity("MarketingSurplus.Models.Charity", b =>
-                {
-                    b.Navigation("Donations");
-                });
-
-            modelBuilder.Entity("MarketingSurplus.Models.Company", b =>
-                {
-                    b.Navigation("CompanyProducts");
-
-                    b.Navigation("UserCompanies");
-                });
-
             modelBuilder.Entity("MarketingSurplus.Models.CompanyProduct", b =>
                 {
-                    b.Navigation("CompayProductOrders");
-
                     b.Navigation("Donations");
-                });
 
-            modelBuilder.Entity("MarketingSurplus.Models.CompanyType", b =>
-                {
-                    b.Navigation("Companies");
-                });
-
-            modelBuilder.Entity("MarketingSurplus.Models.CompayProductOrder", b =>
-                {
-                    b.Navigation("CompayProductOrderOffers");
-                });
-
-            modelBuilder.Entity("MarketingSurplus.Models.Offer", b =>
-                {
-                    b.Navigation("CompayProductOrderOffers");
+                    b.Navigation("OrderProducts");
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.Order", b =>
                 {
-                    b.Navigation("CompayProductOrders");
+                    b.Navigation("OrderProducts");
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.OrderProduct", b =>
+                {
+                    b.Navigation("Bills");
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.OrderStatus", b =>
+                {
+                    b.Navigation("Bills");
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.OrderType", b =>
@@ -655,26 +1557,21 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("MarketingSurplus.Models.Product", b =>
-                {
-                    b.Navigation("CompanyProducts");
-                });
-
             modelBuilder.Entity("MarketingSurplus.Models.Rate", b =>
                 {
-                    b.Navigation("CompanyRates");
+                    b.Navigation("Evalutions");
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.Subscription", b =>
+                {
+                    b.Navigation("Evalutions");
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.User", b =>
                 {
                     b.Navigation("Orders");
 
-                    b.Navigation("UserCompanies");
-                });
-
-            modelBuilder.Entity("MarketingSurplus.Models.UserCompany", b =>
-                {
-                    b.Navigation("UserCompanyRates");
+                    b.Navigation("Subscriptions");
                 });
 #pragma warning restore 612, 618
         }

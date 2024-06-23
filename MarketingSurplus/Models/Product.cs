@@ -5,9 +5,11 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public string Descripation { get; set; }
+        public DateTime DateTime { get; set; }
         public float Price { get; set; }
+        public float OldPrice { get; set; }
         public DateTime Expiration { get; set; }
         public bool IsExpiration { get; set; }
-        public ICollection<CompanyProduct> CompanyProducts { get; set; }
+        public ICollection<CompanyProduct>? CompanyProducts { get; set; }
     }
 }
