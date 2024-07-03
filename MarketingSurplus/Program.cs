@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using MarketingSurplus.Helper;
 using Microsoft.ML;
+using Microsoft.AspNetCore.HttpOverrides;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +40,10 @@ builder.Services.AddTransient<ISubscription, SubscriptionRepo>();
 //builder.Services.AddScoped<RestaurantRatingService>(); 
 
 var app = builder.Build();
+//builder.Services.Configure<ForwardedHeadersOptions>(options =>
+//{
+//    options.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
+//});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -45,11 +51,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+//app.UseForwardedHeaders(new ForwardedHeadersOptions
+//{
+//    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+//});
 
-app.UseHttpsRedirection();
 app.UseCors(builder =>
     builder
-        .WithOrigins("https://localhost:7245")
+        .WithOrigins("http://37.60.251.74:5000")
         .AllowAnyHeader()
         .AllowAnyMethod()
         .SetIsOriginAllowed(_ => true)
@@ -57,5 +66,4 @@ app.UseCors(builder =>
 app.UseAuthorization();
 
 app.MapControllers();
-
 app.Run();

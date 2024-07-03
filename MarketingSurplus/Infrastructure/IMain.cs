@@ -8,10 +8,11 @@ namespace MarketingSurplus.Infrastructure
         List<CompnyProductDto> GetAllPosts(int userId);
         List<CompnyProductDto> GetSubscriptionPosts(int id);
         List<CompanyProduct> GetAllCompanyProduct(int companyId);
-        int SaveOrder(SaveOrderRequestDto request);
+        int SaveOrder(Order order);
+        void SaveOrderProduct(OrderProduct orderProduct);
         void UpdateStutasOrder(int idOrder, int Stutas);
         void AddCompanyProduct(SaveCompanyProduct saveCompany);
-
-        List<OrderDto> GetOrderDetails(int idOrder);
+        List<User> GetAllCompanyUsers(int companyId);
+        List<OrderProduct> GetOrderDetails(int userId);
     }
 }

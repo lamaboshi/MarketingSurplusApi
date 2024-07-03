@@ -81,8 +81,14 @@ namespace MarketingSurplus.Data
             }
         }
 
-
-
-
+        public void AcceptUser(int idUser, bool accept)
+        {
+            if (accept)
+            {
+                var user = _db.Users.Where(q => q.Id == idUser).FirstOrDefault();
+                user.isAccept = true;
+                _db.SaveChanges();
+            }
+        }
     }
 }

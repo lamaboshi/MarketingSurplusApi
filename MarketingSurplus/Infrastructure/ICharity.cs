@@ -10,6 +10,7 @@ namespace MarketingSurplus.Infrastructure
         public void Update(Charity charity);
         public void Delete(int id);
         public bool IsExisting(string email);
+        public void AcceptUser(int idUser, bool accept);
         public void ChangePassword(int Id, string password);
     }
 }

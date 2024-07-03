@@ -24,11 +24,11 @@ namespace MarketingSurplus.Controllers
             else return Ok(new List<object>());
 
         }
-        [HttpGet("{idOrder}")]
+        [HttpGet("{userId}")]
         [ActionName("GetOrderDetails")]
-        public IActionResult GetOrderDetails(int idOrder)
+        public IActionResult GetOrderDetails(int userId)
         {
-            var data = db.GetOrderDetails(idOrder);
+            var data = db.GetOrderDetails(userId);
             if (data != null) return Ok(data);
             else return Ok(new List<object>());
 
@@ -51,14 +51,35 @@ namespace MarketingSurplus.Controllers
             else return Ok(new List<object>());
 
         }
+        [HttpGet("{companyId}")]
+        [ActionName("GetAllCompanyUsers")]
+        public IActionResult GetAllCompanyUsers(int companyId)
+        {
+            var data = db.GetAllCompanyUsers(companyId);
+            if (data != null) return Ok(data);
+            else return Ok(new List<object>());
+
+        }
         [HttpPost]
         [ActionName("SaveOrder")]
-        public IActionResult SaveOrder([FromBody] SaveOrderRequestDto request)
+        public IActionResult SaveOrder([FromBody] Order order)
         {
-            if (request != null)
+            if (order != null)
             {
-               var result= db.SaveOrder(request);
+               var result= db.SaveOrder(order);
                 return Ok(result);
+            }
+            else return Ok(new List<object>());
+
+        }
+        [HttpPost]
+        [ActionName("SaveOrderProduct")]
+        public IActionResult SaveOrderProduct([FromBody] OrderProduct orderProduct)
+        {
+            if (orderProduct != null)
+            {
+                 db.SaveOrderProduct(orderProduct);
+                return Ok();
             }
             else return Ok(new List<object>());
 

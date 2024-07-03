@@ -35,14 +35,14 @@ namespace MarketingSurplus.Models
             modelBuilder.Entity<CompanyType>()
                 .Ignore(c => c.Companies);
 
-            //seeds for company beauty
-            modelBuilder.Entity<Company>().HasData(new Company { Id = 1, CompanyTypeId=1, Name = "Ultra Medica", Description = "As in 1955, when Ultra Medica started its ascent in the world of pharmaceutical industry in Syria (Sednaya) founded with emphasis activities and enthusiasm for the manufacturing and developing of life science industry", Address = "From Streat", Email = "UltraMedica@test.com", Phone = "0921423432", TelePhone = "4232543", Password = "12123", LicenseNumber = "242523" });
+          
+            modelBuilder.Entity<Company>().HasData(new Company { Id = 1, CompanyTypeId = 1, Name = "Ultra Medica", Description = "As in 1955, when Ultra Medica started its ascent in the world of pharmaceutical industry in Syria (Sednaya) founded with emphasis activities and enthusiasm for the manufacturing and developing of life science industry", Address = "From Streat", Email = "UltraMedica@test.com", Phone = "0921423432", TelePhone = "4232543", Password = "12123", LicenseNumber = "242523" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 2, CompanyTypeId = 1, Name = "New pharma", Description = "Newpharma is een online apotheek, een uitbreiding van een echte apotheek, gevestigd in België. We spreken ook van internet apotheek of e-apotheek.", Address = "From Streat", Email = "newpharma@test.com", Phone = "0921423432", TelePhone = "4232543", Password = "12123" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 3, CompanyTypeId = 1, Name = "Asia pharmacy", Description = "Asia Pharmacy is an Electrical and Electronic Manufacturing company located in 1035 S Federal Blvd Ste B, Denver, Colorado, United States.", Address = "From Streat", Email = "MAYBELLINE@test.com", Phone = "0921423432", TelePhone = "4232543", Password = "34345" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 4, CompanyTypeId = 1, Name = "Medico ", Description = "Our pharmacist and trained assistants are available for advice on all medicines and minor ailments. We can also give you advice on how to live a healthier life and can direct you to a range of other resources if needed.", Address = "From Streat", Email = "LOREAL@test.com", Phone = "0921423432", TelePhone = "4232543", Password = "23234", LicenseNumber = "242523" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 5, CompanyTypeId = 1, Name = "Mediathek", Description = "APOTHEKE ADHOC Webinar: Praxisrelevantes Wissen für das gesamte Apothekenteam zu brandaktuellen Fachthemen rund um Indikation, Beratung, Rezeptur und vieles mehr.", Address = "From Streat", Email = "SEPHORA@test.com", Phone = "0921423432", TelePhone = "4232543", Password = "45456", LicenseNumber = "242523" });
 
-            modelBuilder.Entity<Company>().HasData(new Company { Id = 6, CompanyTypeId=2, Name = "ASIC", Description = "Asics sponsors a variety of sports associations", Address = "From Streat", Email = "Asics@test.com", Phone = "0921423432", TelePhone = "223554", Password = "111222", LicenseNumber = "242523" });
+            modelBuilder.Entity<Company>().HasData(new Company { Id = 6, CompanyTypeId = 2, Name = "ASIC", Description = "Asics sponsors a variety of sports associations", Address = "From Streat", Email = "Asics@test.com", Phone = "0921423432", TelePhone = "223554", Password = "111222", LicenseNumber = "242523" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 7, CompanyTypeId = 2, Name = "ADDIDAS", Description = "Manufacturer of sports shoes and apparel. It was the largest sportswear manufacturer in Europe and the second largest after Nike in the world. Adidas products are traditionally distinguished by a three-line brand, which remains an element of the company's latest products", Address = "From Streat", Email = "ADDIDAS@test.com", Phone = "0921423432", TelePhone = "223554", Password = "111222", LicenseNumber = "242523" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 8, CompanyTypeId = 2, Name = "NIKE", Description = "The world’s largest athletic apparel company, Nike is best known for its footwear, apparel, and equipment. One of the most valuable brands among sport businesses,The company sponsors top athletes and sports teams around the world.", Address = "From Streat", Email = "NIKE@test.com", Phone = "0921423432", TelePhone = "223554", Password = "78789", LicenseNumber = "242523" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 9, CompanyTypeId = 2, Name = "PUMA", Description = "Puma, is a German multinational corporation that designs and manufactures athletic and casual footwear, apparel and accessories, which is headquartered in Herzogenaurach, Bavaria, Germany. Puma is the third largest sportswear manufacturer in the world", Address = "From Streat", Email = "PUMA@test.com", Phone = "0921423432", TelePhone = "223554", Password = "67678", LicenseNumber = "242523" });
@@ -64,16 +64,16 @@ namespace MarketingSurplus.Models
             modelBuilder.Entity<Company>().HasData(new Company { Id = 22, CompanyTypeId = 5, Name = "APPLE", Description = "The Apple Corporation is an American multinational technology company specializing in consumer electronics, software and online services.  It is one of the top five American IT companies", Address = "Cupertino, California, United States", Email = "APPLE@test.com", Phone = "0921423432", TelePhone = "223554", Password = "77666", LicenseNumber = "242523" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 23, CompanyTypeId = 5, Name = "LG", Description = "The Korean LG Group this company is the second largest holding company, producing electronics, chemicals and telecommunications products.  from 80 countries", Address = "South Korea", Email = "LG@test.com", Phone = "0921423432", TelePhone = "223554", Password = "989887", LicenseNumber = "242523" });
 
-            modelBuilder.Entity<Company>().HasData(new Company { Id = 24, CompanyTypeId = 6, Name = "NETFLIX", Description = "Netflix is   an American entertainment company that specializes in providing live broadcasting, video-on-demand, and mail-delivery of CDs. Netflix has expanded into the production of films and television shows, and online video distribution", LicenseNumber = "242523" , Address = " Los Gatos, California", Email = "NETFLIX@test.com", Phone = "0921423432", TelePhone = "223554", Password = "34567" });
-            modelBuilder.Entity<Company>().HasData(new Company { Id = 25, CompanyTypeId = 6, Name = "SHAHID", Description = "Shahid is the first Arab platform to provide \"Video on Demand\" service in the Middle East, and it has been re-launched by the \"MBC\" media group.  It is worth noting that Shahid,the leading subscription video-on-demand platform, is considered the leading Arab broadcasting platform in the world and the home of original Arabic productions with world-class specifications.along with a live broadcast of a group of the most watched Arab TV channels", Address = "From Streat",LicenseNumber = "242523",  Email = "SHAHID@test.com", Phone = "0921423432", TelePhone = "223554", Password = "888877" });
+            modelBuilder.Entity<Company>().HasData(new Company { Id = 24, CompanyTypeId = 6, Name = "NETFLIX", Description = "Netflix is   an American entertainment company that specializes in providing live broadcasting, video-on-demand, and mail-delivery of CDs. Netflix has expanded into the production of films and television shows, and online video distribution", LicenseNumber = "242523", Address = " Los Gatos, California", Email = "NETFLIX@test.com", Phone = "0921423432", TelePhone = "223554", Password = "34567" });
+            modelBuilder.Entity<Company>().HasData(new Company { Id = 25, CompanyTypeId = 6, Name = "SHAHID", Description = "Shahid is the first Arab platform to provide \"Video on Demand\" service in the Middle East, and it has been re-launched by the \"MBC\" media group.  It is worth noting that Shahid,the leading subscription video-on-demand platform, is considered the leading Arab broadcasting platform in the world and the home of original Arabic productions with world-class specifications.along with a live broadcast of a group of the most watched Arab TV channels", Address = "From Streat", LicenseNumber = "242523", Email = "SHAHID@test.com", Phone = "0921423432", TelePhone = "223554", Password = "888877" });
 
             modelBuilder.Entity<Company>().HasData(new Company { Id = 26, CompanyTypeId = 7, Name = "DIOR", Description = "DIOR Products Clothing, cosmetics, fashion accessories, jewelry, perfumes, watches", Address = "From Streat", Email = "DIOR@test.com", Phone = "0921423432", TelePhone = "223554", Password = "777776", LicenseNumber = "242523" });
-            modelBuilder.Entity<Company>().HasData(new Company { Id = 27, CompanyTypeId = 7, Name = "CHANNEL", Description = "Chanel Its products cover clothes, fragrances, handbags and watches", Address = "From Streat", Email = "CHANNEL@test.com", Phone = "0921423432", TelePhone = "223554", Password = "333333",LicenseNumber="242523" });
-            modelBuilder.Entity<Company>().HasData(new Company { Id = 28, CompanyTypeId = 7, Name = "GUCCI", Description = "Gucci offers a range of different luxury  Shoes, ready-to-wear apparel, watches, and jewelry are the other main , however they also sell other products such as perfume and home decor", LicenseNumber = "242523",Address = "From Streat", Email = "Gucci@test.com", Phone = "0921423432", TelePhone = "223554", Password = "8888882" });
+            modelBuilder.Entity<Company>().HasData(new Company { Id = 27, CompanyTypeId = 7, Name = "CHANNEL", Description = "Chanel Its products cover clothes, fragrances, handbags and watches", Address = "From Streat", Email = "CHANNEL@test.com", Phone = "0921423432", TelePhone = "223554", Password = "333333", LicenseNumber = "242523" });
+            modelBuilder.Entity<Company>().HasData(new Company { Id = 28, CompanyTypeId = 7, Name = "GUCCI", Description = "Gucci offers a range of different luxury  Shoes, ready-to-wear apparel, watches, and jewelry are the other main , however they also sell other products such as perfume and home decor", LicenseNumber = "242523", Address = "From Streat", Email = "Gucci@test.com", Phone = "0921423432", TelePhone = "223554", Password = "8888882" });
 
- 
-            modelBuilder.Entity<User>().HasData(new User { Id = 1, Email = "lama@test.com", Name = "Lama Boshi", UserName = "Lamaz", Phone = "0964654765", Age = 20, Password = "121", PayPal = "Lb1267" });
-            modelBuilder.Entity<User>().HasData(new User { Id =2, Email = "Hamzeh@test.com", Name = "Hamze Badinjky", UserName = "hamzehS", Phone = "0964654765", Age = 20, Password = "141", PayPal = "Lb1267" });
+
+            modelBuilder.Entity<User>().HasData(new User { Id = 1, Email = "lama@test.com", Name = "Lama Boshi", UserName = "Lamaz", Phone = "0964654765", Age = 20, Password = "121", PayPal = "Lb1267",isAccept=true });
+            modelBuilder.Entity<User>().HasData(new User { Id = 2, Email = "Hamzeh@test.com", Name = "Hamze Badinjky", UserName = "hamzehS", Phone = "0964654765", Age = 20, Password = "141", PayPal = "Lb1267" });
             modelBuilder.Entity<User>().HasData(new User { Id = 3, Email = "Adam@test.com", Name = "Adam Syria", UserName = "Adom", Phone = "0964654765", Age = 20, Password = "161", PayPal = "Lb1267" });
 
 
@@ -88,7 +88,7 @@ namespace MarketingSurplus.Models
 
 
             modelBuilder.Entity<Subscription>().HasData(new Subscription { Id = 1, CompanyId = 1, UserId = 1, });
-            modelBuilder.Entity<Subscription>().HasData(new Subscription { Id =2, CompanyId =2, UserId = 1, });
+            modelBuilder.Entity<Subscription>().HasData(new Subscription { Id = 2, CompanyId = 2, UserId = 1, });
             modelBuilder.Entity<Subscription>().HasData(new Subscription { Id = 3, CompanyId = 2, UserId = 3, });
 
             modelBuilder.Entity<OrderType>().HasData(new OrderType { Id = 1, Name = "Normal", });
@@ -100,28 +100,28 @@ namespace MarketingSurplus.Models
             modelBuilder.Entity<PayMethod>().HasData(new PayMethod { Id = 3, Name = "Credit Card", });
 
 
-            
-            modelBuilder.Entity<Charity>().HasData(new Charity { Id = 1, Name = "Al-Ihsan", Phone = "0215789147", Address = "Al Hamadanieh", Email = "Al-Ihsan@test.com", Password = "Al-Ihsan789",Goals="childern", TargetGroup = "Rich Pepole",AssociationLicense="2435" });
-            modelBuilder.Entity<Charity>().HasData(new Charity { Id = 2, Name = "Hand By Hand", Phone = "0215117894", Address = "Al mohafaza", Email = "Hand-By-Hand@test.com", Password = "Hand-By-Hand456",Goals="Old Pepole",TargetGroup= "Rich Pepole", AssociationLicense = "2435" });
-            modelBuilder.Entity<Charity>().HasData(new Charity { Id = 3, Name = "Al-Noor", Phone = "021524895 ", Address = "Mohamad Fares Street", Email = "Al-Noor@test.com", Password = "Al-Noor123", Goals = "childern", TargetGroup= "Rich Pepole", AssociationLicense = "2435" });
+
+            modelBuilder.Entity<Charity>().HasData(new Charity { Id = 1, Name = "Al-Ihsan", Phone = "0215789147", Address = "Al Hamadanieh", Email = "Al-Ihsan@test.com", Password = "Al-Ihsan789", Goals = "childern", TargetGroup = "Rich Pepole", AssociationLicense = "2435" });
+            modelBuilder.Entity<Charity>().HasData(new Charity { Id = 2, Name = "Hand By Hand", Phone = "0215117894", Address = "Al mohafaza", Email = "Hand-By-Hand@test.com", Password = "Hand-By-Hand456", Goals = "Old Pepole", TargetGroup = "Rich Pepole", AssociationLicense = "2435" });
+            modelBuilder.Entity<Charity>().HasData(new Charity { Id = 3, Name = "Al-Noor", Phone = "021524895 ", Address = "Mohamad Fares Street", Email = "Al-Noor@test.com", Password = "Al-Noor123", Goals = "childern", TargetGroup = "Rich Pepole", AssociationLicense = "2435" });
             modelBuilder.Entity<Charity>().HasData(new Charity { Id = 4, Name = "George", Phone = "0215115827", Address = "Al Azizeh", Email = "George@test.com", Password = "George147", Goals = "childern", TargetGroup = "Rich Pepole", AssociationLicense = "2435" });
             modelBuilder.Entity<Charity>().HasData(new Charity { Id = 5, Name = "Namaa", Phone = "02151174369", Address = "Al Marterni", Email = "Namaa@test.com", Password = "Namaa369", Goals = "childern", TargetGroup = "Rich Pepole", AssociationLicense = "2435" });
 
-            modelBuilder.Entity<Product>().HasData(new Product { Id = 1, Name = "Rice", Descripation = "Each wrapped bag contains one kilo of good quality Egyptian rice", Price = 15000, Expiration = new DateTime(2025, 2, 2), IsExpiration = false, });
-            modelBuilder.Entity<Product>().HasData(new Product { Id = 2, Name = "Broasted Chicken", Descripation = "The weight of each raw chicken ranges between 1.7 kg and 2.2 kg. The meat is halal.", Price = 21000, Expiration = new DateTime(2024, 2, 5) , IsExpiration = false, });
-            modelBuilder.Entity<Product>().HasData(new Product { Id = 3, Name = "Paracetamol", Descripation = "Each paracetamol tablet contains 500 mg of acetamol, which reduces fever and relieves pain.", Price = 50000, Expiration = new DateTime(2025, 8, 8) , IsExpiration = false, });
+            modelBuilder.Entity<Product>().HasData(new Product { Id = 1, Name = "Rice", Descripation = "Each wrapped bag contains one kilo of good quality Egyptian rice", OldPrice=20000,NewPrice = 15000, Expiration = new DateTime(2025, 2, 2), IsExpiration = false, });
+            modelBuilder.Entity<Product>().HasData(new Product { Id = 2, Name = "Broasted Chicken", Descripation = "The weight of each raw chicken ranges between 1.7 kg and 2.2 kg. The meat is halal.", OldPrice=30000,NewPrice = 21000, Expiration = new DateTime(2024, 2, 5), IsExpiration = false, });
+            modelBuilder.Entity<Product>().HasData(new Product { Id = 3, Name = "Paracetamol", Descripation = "Each paracetamol tablet contains 500 mg of acetamol, which reduces fever and relieves pain.", OldPrice=70000,NewPrice = 50000, Expiration = new DateTime(2025, 8, 8), IsExpiration = false, });
 
-            modelBuilder.Entity<CompanyProduct>().HasData(new CompanyProduct { Id = 1, Amount =4, CompanyId = 16, ProductId = 1 });
-            modelBuilder.Entity<CompanyProduct>().HasData(new CompanyProduct { Id = 2, Amount = 2, CompanyId = 17, ProductId =1});
+            modelBuilder.Entity<CompanyProduct>().HasData(new CompanyProduct { Id = 1, Amount = 4, CompanyId = 16, ProductId = 1 });
+            modelBuilder.Entity<CompanyProduct>().HasData(new CompanyProduct { Id = 2, Amount = 2, CompanyId = 17, ProductId = 1 });
             modelBuilder.Entity<CompanyProduct>().HasData(new CompanyProduct { Id = 3, Amount = 10, CompanyId = 1, ProductId = 3 });
-            modelBuilder.Entity<CompanyProduct>().HasData(new CompanyProduct { Id = 4, Amount = 2, CompanyId = 18, ProductId = 2});
+            modelBuilder.Entity<CompanyProduct>().HasData(new CompanyProduct { Id = 4, Amount = 2, CompanyId = 18, ProductId = 2 });
 
-            modelBuilder.Entity<Donation>().HasData(new Donation { Id = 1, CharityId =1, OrderTypeId = 3, CompanyProductId = 2, PricePay = 20000, });
+            modelBuilder.Entity<Donation>().HasData(new Donation { Id = 1, CharityId = 1, OrderTypeId = 3, CompanyProductId = 2, PricePay = 20000, });
             modelBuilder.Entity<Donation>().HasData(new Donation { Id = 2, CharityId = 2, OrderTypeId = 2, CompanyProductId = 1, PricePay = 18000, });
             modelBuilder.Entity<Donation>().HasData(new Donation { Id = 3, CharityId = 4, OrderTypeId = 2, CompanyProductId = 3, PricePay = 11000, });
             modelBuilder.Entity<Donation>().HasData(new Donation { Id = 4, CharityId = 2, OrderTypeId = 3, CompanyProductId = 3, PricePay = 10000, });
 
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 1, Name = "Order 1", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Amount = 10, Price =20000, IsDelivery = true, PayMethodId = 1, UserId = 1, });
+            modelBuilder.Entity<Order>().HasData(new Order { Id = 1, Name = "Order 1", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Amount = 10, Price = 20000, IsDelivery = true, PayMethodId = 1, UserId = 1, });
             modelBuilder.Entity<Order>().HasData(new Order { Id = 2, Name = "Order 2", Descripation = "The order was placed at 2:50 and will expire after a quarter of an hour from this time", Amount = 5, Price = 18520, IsDelivery = false, PayMethodId = 1, UserId = 2, });
             modelBuilder.Entity<Order>().HasData(new Order { Id = 3, Name = "Order 3", Descripation = "The order was placed at 4:40 and will expire after a quarter of an hour from this time", Amount = 6, Price = 75312, IsDelivery = true, PayMethodId = 2, UserId = 3, });
             modelBuilder.Entity<Order>().HasData(new Order { Id = 4, Name = "Order 4", Descripation = "The order was placed at 3:20 and will expire after a quarter of an hour from this time", Amount = 4, Price = 12457, IsDelivery = true, PayMethodId = 2, UserId = 3, });
@@ -134,16 +134,16 @@ namespace MarketingSurplus.Models
             modelBuilder.Entity<OrderProduct>().HasData(new OrderProduct { Id = 4, CompanyProductId = 2, OrderId = 4, Amount = 100, TotalPrice = 500000, });
 
 
-            modelBuilder.Entity<OrderStatus>().HasData(new OrderStatus { Id = 1, status = 1, DateTime=DateTime.Now });
+            modelBuilder.Entity<OrderStatus>().HasData(new OrderStatus { Id = 1, status = 1, DateTime = DateTime.Now });
             modelBuilder.Entity<OrderStatus>().HasData(new OrderStatus { Id = 2, status = 2, DateTime = DateTime.Now });
             modelBuilder.Entity<OrderStatus>().HasData(new OrderStatus { Id = 3, status = 3, DateTime = DateTime.Now });
             modelBuilder.Entity<OrderStatus>().HasData(new OrderStatus { Id = 4, status = 4, DateTime = DateTime.Now });
 
-            modelBuilder.Entity<Bill>().HasData(new Bill { Id = 10, OrderProductId = 4,  Note = "  Welcom to you",OrderStatusId=1 });
-            modelBuilder.Entity<Bill>().HasData(new Bill { Id = 21, OrderProductId = 2,  Note = " Welcom to you", OrderStatusId = 1 });
-            modelBuilder.Entity<Bill>().HasData(new Bill { Id = 22, OrderProductId = 2,  Note = " Welcom to you", OrderStatusId = 2 });
-            modelBuilder.Entity<Bill>().HasData(new Bill { Id = 23, OrderProductId = 1,  Note = " Welcom to you", OrderStatusId = 1 });
-            modelBuilder.Entity<Bill>().HasData(new Bill { Id = 24, OrderProductId = 3,  Note = " Welcom to you", OrderStatusId = 1 });
+            modelBuilder.Entity<Bill>().HasData(new Bill { Id = 10, OrderProductId = 4, Note = "  Welcom to you", OrderStatusId = 1 });
+            modelBuilder.Entity<Bill>().HasData(new Bill { Id = 21, OrderProductId = 2, Note = " Welcom to you", OrderStatusId = 1 });
+            modelBuilder.Entity<Bill>().HasData(new Bill { Id = 22, OrderProductId = 2, Note = " Welcom to you", OrderStatusId = 2 });
+            modelBuilder.Entity<Bill>().HasData(new Bill { Id = 23, OrderProductId = 1, Note = " Welcom to you", OrderStatusId = 1 });
+            modelBuilder.Entity<Bill>().HasData(new Bill { Id = 24, OrderProductId = 3, Note = " Welcom to you", OrderStatusId = 1 });
 
             modelBuilder.Entity<Rate>().HasData(new Rate { Id = 2, RateNumber = 3, Description = "Middle", });
             modelBuilder.Entity<Rate>().HasData(new Rate { Id = 3, RateNumber = 4, Description = "Good", });
@@ -154,6 +154,9 @@ namespace MarketingSurplus.Models
             modelBuilder.Entity<Evalution>().HasData(new Evalution { Id = 31, SubscriptionId = 1, RateId = 5, });
             modelBuilder.Entity<Evalution>().HasData(new Evalution { Id = 32, SubscriptionId = 2, RateId = 2, });
             modelBuilder.Entity<Evalution>().HasData(new Evalution { Id = 33, SubscriptionId = 3, RateId = 3, });
+
+
+
         }
     }
 }

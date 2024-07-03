@@ -6,6 +6,8 @@ namespace MarketingSurplus.Infrastructure
     {
         public User GetUser(int id);
         public List<User> GetUsers();
+
+        public void AcceptUser(int idUser,bool accept);
         public void Save(User user);
         public void Update(User user);
         public void Delete(int id);

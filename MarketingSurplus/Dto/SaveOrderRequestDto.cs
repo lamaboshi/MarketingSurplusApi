@@ -6,6 +6,8 @@ namespace MarketingSurplus.Dto
     {
         public int UserId { get; set; }
         public Order Order { get; set; }
-        public List<int> Ids { get; set; }
+        public List<OrderProduct> OrderProducts { get; set; }
+
+
     }
 }

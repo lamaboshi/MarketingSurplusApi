@@ -48,7 +48,7 @@ namespace MarketingSurplus.Data
                 var item = _db.OrderProducts.Where(e => e.OrderId == order.Id).ToList();
                 foreach(var product in item)
                 {
-                    var isExit = _db.Bills.Any(t => t.OrderProductId == product.Id && t.OrderStatusId == 4);
+                    var isExit = _db.Bills.Any(t => t.OrderProductId == product.Id );
                     if (isExit)
                     {
                         allOrder.Add(order);

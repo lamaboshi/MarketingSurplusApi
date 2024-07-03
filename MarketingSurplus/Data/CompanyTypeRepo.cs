@@ -60,5 +60,14 @@ namespace MarketingSurplus.Data
             else return null;
         }
 
+        public void AcceptCompany(int idUser, bool accept)
+        {
+            if (accept)
+            {
+                var company = _db.CompanyTypes.Where(q => q.Id == idUser).FirstOrDefault();
+                company.isAccept = true;
+                _db.SaveChanges();
+            }
+        }
     }
 }

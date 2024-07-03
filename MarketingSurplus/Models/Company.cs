@@ -12,7 +12,7 @@
         public string? LicenseNumber { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-
+        public bool isAccept { get; set; }
         public int CompanyTypeId { get; set; }
         public CompanyType? CompanyType { get; set; }
         public ICollection<CompanyProduct>? CompanyProducts { get; set; }

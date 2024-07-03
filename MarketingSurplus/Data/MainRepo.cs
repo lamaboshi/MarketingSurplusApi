@@ -30,12 +30,22 @@ namespace MarketingSurplus.Data
                 if (item.Product.Expiration < DateTime.Now)
                 {
                     var pro = _db.Products.Where(q => q.Id == item.Id).SingleOrDefault();
-                    pro.IsExpiration = true;
-                    _db.SaveChanges();
+                    if (pro != null)
+                    {
+                        pro.IsExpiration = true;
+                        _db.SaveChanges();
+                    }
+
                 }
 
             }
             data = _db.CompanyProducts.Where(q => q.CompanyId == companyId).Include(q => q.Product).ToList();
+            return data;
+        }
+
+        public List<User> GetAllCompanyUsers(int companyId)
+        {
+            var data = _db.Subscriptions.Where(r => r.CompanyId == companyId).Include(q=>q.User).Select(w=>w.User).ToList();
             return data;
         }
 
@@ -77,21 +87,29 @@ namespace MarketingSurplus.Data
             return products;
         }
 
-        public List<OrderDto> GetOrderDetails(int idOrder)
+        public List<OrderProduct> GetOrderDetails(int userId)
         {
-            var details =new  List<OrderDto>();
-            var order = _db.Orders.Where(q => q.Id == idOrder).FirstOrDefault();
-            var orderPro = _db.OrderProducts.Where(q => q.OrderId == idOrder).ToList();
-            if(orderPro != null)
+
+            var allOrder = new List<OrderProduct>();
+            var data = _db.Orders.Where(q => q.UserId == userId).ToList();
+            foreach (var order in data)
             {
-                foreach (var item in orderPro)
+
+                var allProduct = _db.OrderProducts.Where(e => e.OrderId == order.Id).ToList();
+                if (allProduct.Count!=0)
                 {
-                    var pro = _db.CompanyProducts.Where(e => e.Id == item.CompanyProductId).Include(t=>t.Product).Include(r=>r.Company).FirstOrDefault();
-                    var bills = _db.Bills.Where(q => q.OrderProductId == item.Id).ToList();
-                    details.Add(new OrderDto { OrderProduct=item,Bills=bills, Order= order ,Company= pro.Company,Product=pro.Product});
+                    foreach (var product in allProduct)
+                    {
+                        var pro = _db.CompanyProducts.Where(e => e.Id == product.CompanyProductId).Include(t => t.Product).Include(r => r.Company).FirstOrDefault();
+                        var bills = _db.Bills.Where(q => q.OrderProductId == product.Id).ToList();
+                        allOrder.Add(product);
+                    }
                 }
+         
             }
-            return details;
+
+            return allOrder;
+
         }
 
         public List<CompnyProductDto> GetSubscriptionPosts(int id)
@@ -128,19 +146,22 @@ namespace MarketingSurplus.Data
             return products;
         }
    
-        public int SaveOrder(SaveOrderRequestDto request)
+
+
+        public int SaveOrder(Order order)
         {
-            request.Order.UserId = request.UserId;
-             var result=_db.Orders.Add(request.Order);
+            var result = _db.Orders.Add(order);
             _db.SaveChanges();
-            foreach (var item in request.Ids)
-            {
-                 var stutas=   _db.OrderProducts.Add(new OrderProduct { CompanyProductId = item, OrderId = result.Entity.Id });
-                _db.SaveChanges();
-                _db.Bills.Add(new Bill { OrderProductId = stutas.Entity.Id, OrderStatusId = 1 });
-                _db.SaveChanges();
-            }
             return result.Entity.Id;
+        }
+
+        public void SaveOrderProduct(OrderProduct orderProduct)
+        {
+ 
+            var stutas = _db.OrderProducts.Add(orderProduct);
+            _db.SaveChanges();
+            _db.Bills.Add(new Bill { OrderProductId = stutas.Entity.Id, OrderStatusId = 1 });
+            _db.SaveChanges();
         }
 
         public void UpdateStutasOrder(int  idOrder, int Stutas)

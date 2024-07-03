@@ -12,6 +12,7 @@
         public string? Address { get; set; }
         public string AssociationLicense { get; set; }
         public string TargetGroup { get; set; }
+        public bool isAccept { get; set; }
         public string Goals { get; set; }
     }
 }

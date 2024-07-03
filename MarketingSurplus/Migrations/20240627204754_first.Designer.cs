@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MarketingSurplus.Migrations
 {
     [DbContext(typeof(MarketingSurplusDbContext))]
-    [Migration("20240608175830_first")]
+    [Migration("20240627204754_first")]
     partial class first
     {
         /// <inheritdoc />
@@ -133,6 +133,9 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("isAccept")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("Charities");
@@ -148,7 +151,8 @@ namespace MarketingSurplus.Migrations
                             Name = "Al-Ihsan",
                             Password = "Al-Ihsan789",
                             Phone = "0215789147",
-                            TargetGroup = "Rich Pepole"
+                            TargetGroup = "Rich Pepole",
+                            isAccept = false
                         },
                         new
                         {
@@ -160,7 +164,8 @@ namespace MarketingSurplus.Migrations
                             Name = "Hand By Hand",
                             Password = "Hand-By-Hand456",
                             Phone = "0215117894",
-                            TargetGroup = "Rich Pepole"
+                            TargetGroup = "Rich Pepole",
+                            isAccept = false
                         },
                         new
                         {
@@ -172,7 +177,8 @@ namespace MarketingSurplus.Migrations
                             Name = "Al-Noor",
                             Password = "Al-Noor123",
                             Phone = "021524895 ",
-                            TargetGroup = "Rich Pepole"
+                            TargetGroup = "Rich Pepole",
+                            isAccept = false
                         },
                         new
                         {
@@ -184,7 +190,8 @@ namespace MarketingSurplus.Migrations
                             Name = "George",
                             Password = "George147",
                             Phone = "0215115827",
-                            TargetGroup = "Rich Pepole"
+                            TargetGroup = "Rich Pepole",
+                            isAccept = false
                         },
                         new
                         {
@@ -196,7 +203,8 @@ namespace MarketingSurplus.Migrations
                             Name = "Namaa",
                             Password = "Namaa369",
                             Phone = "02151174369",
-                            TargetGroup = "Rich Pepole"
+                            TargetGroup = "Rich Pepole",
+                            isAccept = false
                         });
                 });
 
@@ -244,6 +252,9 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("isAccept")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CompanyTypeId");
@@ -262,7 +273,8 @@ namespace MarketingSurplus.Migrations
                             Name = "Ultra Medica",
                             Password = "12123",
                             Phone = "0921423432",
-                            TelePhone = "4232543"
+                            TelePhone = "4232543",
+                            isAccept = false
                         },
                         new
                         {
@@ -274,7 +286,8 @@ namespace MarketingSurplus.Migrations
                             Name = "New pharma",
                             Password = "12123",
                             Phone = "0921423432",
-                            TelePhone = "4232543"
+                            TelePhone = "4232543",
+                            isAccept = false
                         },
                         new
                         {
@@ -286,7 +299,8 @@ namespace MarketingSurplus.Migrations
                             Name = "Asia pharmacy",
                             Password = "34345",
                             Phone = "0921423432",
-                            TelePhone = "4232543"
+                            TelePhone = "4232543",
+                            isAccept = false
                         },
                         new
                         {
@@ -299,7 +313,8 @@ namespace MarketingSurplus.Migrations
                             Name = "Medico ",
                             Password = "23234",
                             Phone = "0921423432",
-                            TelePhone = "4232543"
+                            TelePhone = "4232543",
+                            isAccept = false
                         },
                         new
                         {
@@ -312,7 +327,8 @@ namespace MarketingSurplus.Migrations
                             Name = "Mediathek",
                             Password = "45456",
                             Phone = "0921423432",
-                            TelePhone = "4232543"
+                            TelePhone = "4232543",
+                            isAccept = false
                         },
                         new
                         {
@@ -325,7 +341,8 @@ namespace MarketingSurplus.Migrations
                             Name = "ASIC",
                             Password = "111222",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -338,7 +355,8 @@ namespace MarketingSurplus.Migrations
                             Name = "ADDIDAS",
                             Password = "111222",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -351,7 +369,8 @@ namespace MarketingSurplus.Migrations
                             Name = "NIKE",
                             Password = "78789",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -364,7 +383,8 @@ namespace MarketingSurplus.Migrations
                             Name = "PUMA",
                             Password = "67678",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -377,7 +397,8 @@ namespace MarketingSurplus.Migrations
                             Name = "REEBOK",
                             Password = "8989",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -390,7 +411,8 @@ namespace MarketingSurplus.Migrations
                             Name = "ZARA",
                             Password = "0909",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -403,7 +425,8 @@ namespace MarketingSurplus.Migrations
                             Name = "MAX",
                             Password = "111222",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -416,7 +439,8 @@ namespace MarketingSurplus.Migrations
                             Name = "MONCLER",
                             Password = "6789",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -429,7 +453,8 @@ namespace MarketingSurplus.Migrations
                             Name = "LACOSTE",
                             Password = "111222",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -442,7 +467,8 @@ namespace MarketingSurplus.Migrations
                             Name = "BENETTON",
                             Password = "9463",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -455,7 +481,8 @@ namespace MarketingSurplus.Migrations
                             Name = "KFC",
                             Password = "5252",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -468,7 +495,8 @@ namespace MarketingSurplus.Migrations
                             Name = "MCDONALDS",
                             Password = "99999",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -480,7 +508,8 @@ namespace MarketingSurplus.Migrations
                             Name = "NESTLE",
                             Password = "111222",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -493,7 +522,8 @@ namespace MarketingSurplus.Migrations
                             Name = "STARBUCKS",
                             Password = "123122",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -506,7 +536,8 @@ namespace MarketingSurplus.Migrations
                             Name = "PIZZA HUT",
                             Password = "34345",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -519,7 +550,8 @@ namespace MarketingSurplus.Migrations
                             Name = "SAMSUNG",
                             Password = "111222",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -532,7 +564,8 @@ namespace MarketingSurplus.Migrations
                             Name = "APPLE",
                             Password = "77666",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -545,7 +578,8 @@ namespace MarketingSurplus.Migrations
                             Name = "LG",
                             Password = "989887",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -558,7 +592,8 @@ namespace MarketingSurplus.Migrations
                             Name = "NETFLIX",
                             Password = "34567",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -571,7 +606,8 @@ namespace MarketingSurplus.Migrations
                             Name = "SHAHID",
                             Password = "888877",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -584,7 +620,8 @@ namespace MarketingSurplus.Migrations
                             Name = "DIOR",
                             Password = "777776",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -597,7 +634,8 @@ namespace MarketingSurplus.Migrations
                             Name = "CHANNEL",
                             Password = "333333",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         },
                         new
                         {
@@ -610,7 +648,8 @@ namespace MarketingSurplus.Migrations
                             Name = "GUCCI",
                             Password = "8888882",
                             Phone = "0921423432",
-                            TelePhone = "223554"
+                            TelePhone = "223554",
+                            isAccept = false
                         });
                 });
 
@@ -693,6 +732,9 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("isAccept")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("CompanyTypes");
@@ -702,43 +744,50 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 1,
                             Description = "All About Medicines",
-                            TypeName = "Medicines"
+                            TypeName = "Medicines",
+                            isAccept = false
                         },
                         new
                         {
                             Id = 2,
                             Description = "All About sports",
-                            TypeName = "Sports"
+                            TypeName = "Sports",
+                            isAccept = false
                         },
                         new
                         {
                             Id = 3,
                             Description = "All About Clothes",
-                            TypeName = "Clothes"
+                            TypeName = "Clothes",
+                            isAccept = false
                         },
                         new
                         {
                             Id = 4,
                             Description = "All About Food",
-                            TypeName = "Food"
+                            TypeName = "Food",
+                            isAccept = false
                         },
                         new
                         {
                             Id = 5,
                             Description = "All About electronics",
-                            TypeName = "Electronics"
+                            TypeName = "Electronics",
+                            isAccept = false
                         },
                         new
                         {
                             Id = 6,
                             Description = "All About Movies & Series",
-                            TypeName = "Platforms"
+                            TypeName = "Platforms",
+                            isAccept = false
                         },
                         new
                         {
                             Id = 7,
                             Description = "All About Perfumes",
-                            TypeName = "Perfumes"
+                            TypeName = "Perfumes",
+                            isAccept = false
                         });
                 });
 
@@ -1041,25 +1090,25 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 6, 8, 20, 58, 29, 974, DateTimeKind.Local).AddTicks(3659),
+                            DateTime = new DateTime(2024, 6, 27, 23, 47, 54, 86, DateTimeKind.Local).AddTicks(2171),
                             status = 1
                         },
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 6, 8, 20, 58, 29, 974, DateTimeKind.Local).AddTicks(3687),
+                            DateTime = new DateTime(2024, 6, 27, 23, 47, 54, 86, DateTimeKind.Local).AddTicks(2199),
                             status = 2
                         },
                         new
                         {
                             Id = 3,
-                            DateTime = new DateTime(2024, 6, 8, 20, 58, 29, 974, DateTimeKind.Local).AddTicks(3704),
+                            DateTime = new DateTime(2024, 6, 27, 23, 47, 54, 86, DateTimeKind.Local).AddTicks(2215),
                             status = 3
                         },
                         new
                         {
                             Id = 4,
-                            DateTime = new DateTime(2024, 6, 8, 20, 58, 29, 974, DateTimeKind.Local).AddTicks(3719),
+                            DateTime = new DateTime(2024, 6, 27, 23, 47, 54, 86, DateTimeKind.Local).AddTicks(2230),
                             status = 4
                         });
                 });
@@ -1157,10 +1206,10 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("OldPrice")
+                    b.Property<float>("NewPrice")
                         .HasColumnType("real");
 
-                    b.Property<float>("Price")
+                    b.Property<float>("OldPrice")
                         .HasColumnType("real");
 
                     b.HasKey("Id");
@@ -1176,8 +1225,8 @@ namespace MarketingSurplus.Migrations
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
                             Name = "Rice",
-                            OldPrice = 0f,
-                            Price = 15000f
+                            NewPrice = 15000f,
+                            OldPrice = 20000f
                         },
                         new
                         {
@@ -1187,8 +1236,8 @@ namespace MarketingSurplus.Migrations
                             Expiration = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
                             Name = "Broasted Chicken",
-                            OldPrice = 0f,
-                            Price = 21000f
+                            NewPrice = 21000f,
+                            OldPrice = 30000f
                         },
                         new
                         {
@@ -1198,8 +1247,8 @@ namespace MarketingSurplus.Migrations
                             Expiration = new DateTime(2025, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
                             Name = "Paracetamol",
-                            OldPrice = 0f,
-                            Price = 50000f
+                            NewPrice = 50000f,
+                            OldPrice = 70000f
                         });
                 });
 
@@ -1336,6 +1385,9 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("isAccept")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
@@ -1350,7 +1402,8 @@ namespace MarketingSurplus.Migrations
                             Password = "121",
                             PayPal = "Lb1267",
                             Phone = "0964654765",
-                            UserName = "Lamaz"
+                            UserName = "Lamaz",
+                            isAccept = true
                         },
                         new
                         {
@@ -1361,7 +1414,8 @@ namespace MarketingSurplus.Migrations
                             Password = "141",
                             PayPal = "Lb1267",
                             Phone = "0964654765",
-                            UserName = "hamzehS"
+                            UserName = "hamzehS",
+                            isAccept = false
                         },
                         new
                         {
@@ -1372,7 +1426,8 @@ namespace MarketingSurplus.Migrations
                             Password = "161",
                             PayPal = "Lb1267",
                             Phone = "0964654765",
-                            UserName = "Adom"
+                            UserName = "Adom",
+                            isAccept = false
                         });
                 });
 

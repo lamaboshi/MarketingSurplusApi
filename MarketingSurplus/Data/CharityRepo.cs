@@ -86,5 +86,15 @@ namespace MarketingSurplus.Data
                 }
             }
         }
+
+        public void AcceptUser(int idUser, bool accept)
+        {
+            if (accept)
+            {
+                var company = _db.Charities.Where(q => q.Id == idUser).FirstOrDefault();
+                company.isAccept = true;
+                _db.SaveChanges();
+            }
+        }
     }
 }

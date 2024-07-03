@@ -7,6 +7,7 @@ namespace MarketingSurplus.Infrastructure
         public CompanyType GetCompanyType(int id);
         public IQueryable<CompanyType> GetCompanyTypes { get; }
         public void Save(CompanyType companyType);
+        public void AcceptCompany(int idUser, bool accept);
         public void Delete(int id);
         public void Update(CompanyType companyType);
         public CompanyType IsExisting(string Type, string Password);
