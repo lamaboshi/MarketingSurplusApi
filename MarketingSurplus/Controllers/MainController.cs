@@ -33,6 +33,16 @@ namespace MarketingSurplus.Controllers
             else return Ok(new List<object>());
 
         }
+
+        [HttpGet("{companyId}")]
+        [ActionName("GetOrderDetailsForCompany")]
+        public IActionResult GetOrderDetailsForCompany(int companyId)
+        {
+            var data = db.GetOrderDetailsForCompany(companyId);
+            if (data != null) return Ok(data);
+            else return Ok(new List<object>());
+
+        }
         [HttpGet("{id}")]
         [ActionName("GetSubscriptionPosts")]
         public IActionResult GetSubscriptionPosts(int id)
@@ -97,5 +107,14 @@ namespace MarketingSurplus.Controllers
             else return Ok(new List<object>());
 
         }
+
+        [HttpPost("{idOrder}")]
+        [ActionName("UpdateStutasOrder")]
+        public IActionResult UpdateStutasOrder( int idOrder,[FromBody] int Stutas)
+        {
+            db.UpdateStutasOrder(idOrder, Stutas);
+            return Ok();
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MarketingSurplus.Infrastructure;
 using MarketingSurplus.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MarketingSurplus.Data
 {
@@ -30,9 +31,10 @@ namespace MarketingSurplus.Data
                 return null;
         }
 
-        public List<Rate> GetRates()
+        public List<Evalution> GetRates(int companyId)
         {
-            var data = _db.Rates.ToList();
+            var subscriptions = _db.Subscriptions.Where(r => r.CompanyId == companyId).First();
+            var data = _db.Evalution.Where(p => p.SubscriptionId == subscriptions.Id).Include(t => t.Rate).Include(y => y.Subscription).ToList();
             return data;
         }
 

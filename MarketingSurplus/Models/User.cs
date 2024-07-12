@@ -9,6 +9,7 @@
         public string UserName { get; set; }
         public int Age { get; set; }
         public string Password { get; set; }
+        public string? OnlineImage { get; set; }
         public byte[]? Image { get; set; }
         public byte[]? QRCode { get; set; }
         public string? Address { get; set; }

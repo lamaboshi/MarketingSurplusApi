@@ -628,26 +628,7 @@ namespace MarketingSurplus.Models
                 PayPal = "Lb1267"
             });
             //product table
-            modelBuilder.Entity<Product>().HasData(new Product
-            {
-                Id = 1,
-                Name = " Newflamix",
-                Descripation = "Flamix is ​​a medicine that contains celecoxib as an active ingredient, and it is considered a non-steroidal anti-inflammatory drug",
-                OldPrice = 15000,
-                NewPrice = 13000,
-                Expiration = new DateTime(2025, 2, 2),
-                IsExpiration = false,
-            });
-            modelBuilder.Entity<Product>().HasData(new Product
-            {
-                Id = 2,
-                Name = "New Profin",
-                Descripation = "Moderate pain relief without the need for a prescription",
-                OldPrice = 9000,
-                NewPrice = 6000,
-                Expiration = new DateTime(2025, 2, 2),
-                IsExpiration = false,
-            });
+
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 Id = 3,
@@ -5470,31 +5451,31 @@ namespace MarketingSurplus.Models
             modelBuilder.Entity<Charity>().HasData(new Charity { Id = 4, Name = "George", Phone = "0215115827", Address = "Al Azizeh", Email = "George@test.com", Password = "George147", Goals = "childern", TargetGroup = "Rich Pepole", AssociationLicense = "2435" });
             modelBuilder.Entity<Charity>().HasData(new Charity { Id = 5, Name = "Namaa", Phone = "02151174369", Address = "Al Marterni", Email = "Namaa@test.com", Password = "Namaa369", Goals = "childern", TargetGroup = "Rich Pepole", AssociationLicense = "2435" });
             //Donation table
-            modelBuilder.Entity<Donation>().HasData(new Donation { Id = 1, CharityId = 1, OrderTypeId = 3, CompanyProductId = 2, PricePay = 20000, });
-            modelBuilder.Entity<Donation>().HasData(new Donation { Id = 2, CharityId = 2, OrderTypeId = 2, CompanyProductId = 1, PricePay = 18000, });
-            modelBuilder.Entity<Donation>().HasData(new Donation { Id = 3, CharityId = 4, OrderTypeId = 2, CompanyProductId = 3, PricePay = 11000, });
-            modelBuilder.Entity<Donation>().HasData(new Donation { Id = 4, CharityId = 2, OrderTypeId = 3, CompanyProductId = 3, PricePay = 10000, });
+            //modelBuilder.Entity<Donation>().HasData(new Donation { Id = 1, CharityId = 1, OrderTypeId = 3, CompanyProductId = 2, PricePay = 20000, });
+            //modelBuilder.Entity<Donation>().HasData(new Donation { Id = 2, CharityId = 2, OrderTypeId = 2, CompanyProductId = 1, PricePay = 18000, });
+            //modelBuilder.Entity<Donation>().HasData(new Donation { Id = 3, CharityId = 4, OrderTypeId = 2, CompanyProductId = 3, PricePay = 11000, });
+            //modelBuilder.Entity<Donation>().HasData(new Donation { Id = 4, CharityId = 2, OrderTypeId = 3, CompanyProductId = 3, PricePay = 10000, });
             //PayMethod table
             modelBuilder.Entity<PayMethod>().HasData(new PayMethod { Id = 1, Name = "Cash Pay", });
             modelBuilder.Entity<PayMethod>().HasData(new PayMethod { Id = 2, Name = "PayPal", });
             modelBuilder.Entity<PayMethod>().HasData(new PayMethod { Id = 3, Name = "Credit Card", });
 
             //Order table
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 1, Name = "Order 1", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 20000, IsDelivery = true, PayMethodId = 1, UserId = 1, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 2, Name = "Order 2", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 15000, IsDelivery = true, PayMethodId = 1, UserId = 6, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 3, Name = "Order 3", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 20000, IsDelivery = true, PayMethodId = 2, UserId = 8, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 4, Name = "Order 4", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 200000, IsDelivery = true, PayMethodId = 3, UserId = 3, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 5, Name = "Order 5", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 5000, IsDelivery = true, PayMethodId = 1, UserId = 2, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 6, Name = "Order 6", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 30000, IsDelivery = false, PayMethodId = 1, UserId = 5, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 7, Name = "Order 7", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 20000, IsDelivery = false, PayMethodId = 2, UserId = 7, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 8, Name = "Order 8", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 70000, IsDelivery = false, PayMethodId = 2, UserId = 9, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 9, Name = "Order 9", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 60000, IsDelivery = false, PayMethodId = 3, UserId = 10, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 10, Name = "Order 10", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 20000, IsDelivery = true, PayMethodId = 3, UserId = 8, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 11, Name = "Order 11", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 25000, IsDelivery = true, PayMethodId = 1, UserId = 15, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 12, Name = "Order 12", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 60000, IsDelivery = false, PayMethodId = 2, UserId = 14, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 13, Name = "Order 13", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 80000, IsDelivery = true, PayMethodId = 3, UserId = 13, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 14, Name = "Order 14", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 100000, IsDelivery = false, PayMethodId = 2, UserId = 12, });
-            modelBuilder.Entity<Order>().HasData(new Order { Id = 15, Name = "Order 15", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 70000, IsDelivery = true, PayMethodId = 1, UserId = 11, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 1, Name = "Order 1", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 20000, IsDelivery = true, PayMethodId = 1, UserId = 1, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 2, Name = "Order 2", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 15000, IsDelivery = true, PayMethodId = 1, UserId = 6, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 3, Name = "Order 3", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 20000, IsDelivery = true, PayMethodId = 2, UserId = 8, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 4, Name = "Order 4", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 200000, IsDelivery = true, PayMethodId = 3, UserId = 3, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 5, Name = "Order 5", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 5000, IsDelivery = true, PayMethodId = 1, UserId = 2, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 6, Name = "Order 6", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 30000, IsDelivery = false, PayMethodId = 1, UserId = 5, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 7, Name = "Order 7", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 20000, IsDelivery = false, PayMethodId = 2, UserId = 7, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 8, Name = "Order 8", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 70000, IsDelivery = false, PayMethodId = 2, UserId = 9, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 9, Name = "Order 9", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 60000, IsDelivery = false, PayMethodId = 3, UserId = 10, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 10, Name = "Order 10", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 20000, IsDelivery = true, PayMethodId = 3, UserId = 8, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 11, Name = "Order 11", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 25000, IsDelivery = true, PayMethodId = 1, UserId = 15, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 12, Name = "Order 12", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 60000, IsDelivery = false, PayMethodId = 2, UserId = 14, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 13, Name = "Order 13", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 80000, IsDelivery = true, PayMethodId = 3, UserId = 13, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 14, Name = "Order 14", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 100000, IsDelivery = false, PayMethodId = 2, UserId = 12, });
+            //modelBuilder.Entity<Order>().HasData(new Order { Id = 15, Name = "Order 15", Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ", Price = 70000, IsDelivery = true, PayMethodId = 1, UserId = 11, });
             //Subscription table
             modelBuilder.Entity<Subscription>().HasData(new Subscription { Id = 1, CompanyId = 1, UserId = 1, });
             modelBuilder.Entity<Subscription>().HasData(new Subscription { Id = 2, CompanyId = 2, UserId = 1, });

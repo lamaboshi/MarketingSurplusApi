@@ -112,6 +112,22 @@ namespace MarketingSurplus.Data
 
         }
 
+        public List<OrderProduct> GetOrderDetailsForCompany(int companyId)
+        {
+            var allOrder = new List<OrderProduct>();
+            var data = _db.CompanyProducts.Where(q => q.CompanyId==companyId).ToList();
+            foreach (var item in data)
+            {
+                var orderProduct = _db.OrderProducts.Where(p => p.CompanyProductId == item.Id).Include(t=>t.Order).Include(w=>w.Bills).ToList();
+                foreach (var element in orderProduct)
+                {
+                    allOrder.Add(element!);
+                }
+            }
+
+            return allOrder;
+        }
+
         public List<CompnyProductDto> GetSubscriptionPosts(int id)
         {
             var products = new List<CompnyProductDto>();
@@ -175,6 +191,7 @@ namespace MarketingSurplus.Data
                 {
                     var idS = _db.OrderStatuses.Where(t => t.status == Stutas).First().Id;
                     _db.Bills.Add(new Bill { OrderProductId = item.Id, OrderStatusId = idS });
+                    _db.SaveChanges();
                 }
                     
             }

@@ -10,7 +10,7 @@
         public int ProductId { get; set; }
         public Product? Product { get; set; }
         public ICollection<OrderProduct>? OrderProducts { get; set; }
-        public ICollection<Donation>? Donations { get; set; }
+        public ICollection<ProductDonation>? ProductDonations { get; set; }
         
     }
 }

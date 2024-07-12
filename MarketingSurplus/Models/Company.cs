@@ -5,6 +5,7 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public byte[]? Image { get; set; }
+        public string? OnlineImage { get; set; }
         public string Description { get; set; }
         public string TelePhone { get; set; }
         public string Phone { get; set; }
@@ -17,6 +18,7 @@
         public CompanyType? CompanyType { get; set; }
         public ICollection<CompanyProduct>? CompanyProducts { get; set; }
         public ICollection<Subscription>? Subscriptions { get; set; }
+        public ICollection<CompanyMethods>? CompanyMethods { get; set; }
 
     }
 }

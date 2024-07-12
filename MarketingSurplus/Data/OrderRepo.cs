@@ -80,7 +80,6 @@ namespace MarketingSurplus.Data
                     entity.Amount = order.Amount;
                     entity.Price = order.Price;
                     entity.IsDelivery = order.IsDelivery;
-                    entity.PayMethodId = order.PayMethodId;
                     entity.UserId = order.UserId;
                     entity.Descripation = order.Descripation;
                     _db.SaveChanges();

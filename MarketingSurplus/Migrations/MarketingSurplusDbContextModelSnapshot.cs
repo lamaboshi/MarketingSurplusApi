@@ -115,6 +115,9 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("OnlineImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -237,6 +240,9 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("OnlineImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -268,6 +274,7 @@ namespace MarketingSurplus.Migrations
                             Email = "UltraMedica@test.com",
                             LicenseNumber = "242523",
                             Name = "Ultra Medica",
+                            OnlineImage = "https://i.ibb.co/z4vNrPc/company-1.png",
                             Password = "12123",
                             Phone = "0921423432",
                             TelePhone = "4232543",
@@ -281,6 +288,7 @@ namespace MarketingSurplus.Migrations
                             Description = "Newpharma is een online apotheek, een uitbreiding van een echte apotheek, gevestigd in België. We spreken ook van internet apotheek of e-apotheek.",
                             Email = "newpharma@test.com",
                             Name = "New pharma",
+                            OnlineImage = " https://i.ibb.co/yPnHycP/company-2.png",
                             Password = "12123",
                             Phone = "0921423432",
                             TelePhone = "4232543",
@@ -294,6 +302,7 @@ namespace MarketingSurplus.Migrations
                             Description = "Asia Pharmacy is an Electrical and Electronic Manufacturing company located in 1035 S Federal Blvd Ste B, Denver, Colorado, United States.",
                             Email = "MAYBELLINE@test.com",
                             Name = "Asia pharmacy",
+                            OnlineImage = "https://i.ibb.co/7kg3CCh/cmpany-3.jpg",
                             Password = "34345",
                             Phone = "0921423432",
                             TelePhone = "4232543",
@@ -308,6 +317,7 @@ namespace MarketingSurplus.Migrations
                             Email = "LOREAL@test.com",
                             LicenseNumber = "242523",
                             Name = "Medico ",
+                            OnlineImage = "https://i.ibb.co/M2FRjdc/company-4.jpg",
                             Password = "23234",
                             Phone = "0921423432",
                             TelePhone = "4232543",
@@ -322,6 +332,7 @@ namespace MarketingSurplus.Migrations
                             Email = "SEPHORA@test.com",
                             LicenseNumber = "242523",
                             Name = "Mediathek",
+                            OnlineImage = "https://i.ibb.co/dt9zsZk/company-5.png",
                             Password = "45456",
                             Phone = "0921423432",
                             TelePhone = "4232543",
@@ -336,6 +347,7 @@ namespace MarketingSurplus.Migrations
                             Email = "Asics@test.com",
                             LicenseNumber = "242523",
                             Name = "ASIC",
+                            OnlineImage = "https://i.ibb.co/nQnQWNz/company-6.png",
                             Password = "111222",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -350,6 +362,7 @@ namespace MarketingSurplus.Migrations
                             Email = "ADDIDAS@test.com",
                             LicenseNumber = "242523",
                             Name = "ADDIDAS",
+                            OnlineImage = "https://i.ibb.co/2sSf4sB/company-7.png",
                             Password = "111222",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -364,6 +377,7 @@ namespace MarketingSurplus.Migrations
                             Email = "NIKE@test.com",
                             LicenseNumber = "242523",
                             Name = "NIKE",
+                            OnlineImage = "https://i.ibb.co/KysfgKW/company-8.png",
                             Password = "78789",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -378,6 +392,7 @@ namespace MarketingSurplus.Migrations
                             Email = "PUMA@test.com",
                             LicenseNumber = "242523",
                             Name = "PUMA",
+                            OnlineImage = " https://i.ibb.co/1KkgsCN/company-9.png",
                             Password = "67678",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -392,6 +407,7 @@ namespace MarketingSurplus.Migrations
                             Email = "REEBOK@test.com",
                             LicenseNumber = "242523",
                             Name = "REEBOK",
+                            OnlineImage = "https://i.ibb.co/BBNBr0k/company-10.png",
                             Password = "8989",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -406,6 +422,7 @@ namespace MarketingSurplus.Migrations
                             Email = "ZARA@test.com",
                             LicenseNumber = "242523",
                             Name = "ZARA",
+                            OnlineImage = "https://i.ibb.co/bvCVzX8/company-11.png",
                             Password = "0909",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -420,6 +437,7 @@ namespace MarketingSurplus.Migrations
                             Email = "MAX@test.com",
                             LicenseNumber = "242523",
                             Name = "MAX",
+                            OnlineImage = " https://i.ibb.co/bPCz1jL/company-12.jpg",
                             Password = "111222",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -434,6 +452,7 @@ namespace MarketingSurplus.Migrations
                             Email = "MONCLER@test.com",
                             LicenseNumber = "242523",
                             Name = "MONCLER",
+                            OnlineImage = " https://i.ibb.co/7Cnn1WB/company-13.jpg",
                             Password = "6789",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -448,6 +467,7 @@ namespace MarketingSurplus.Migrations
                             Email = "LACOSTE@test.com",
                             LicenseNumber = "242523",
                             Name = "LACOSTE",
+                            OnlineImage = "https://i.ibb.co/QMDQMdQ/company-14.png",
                             Password = "111222",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -462,6 +482,7 @@ namespace MarketingSurplus.Migrations
                             Email = "BENETTON@test.com",
                             LicenseNumber = "242523",
                             Name = "BENETTON",
+                            OnlineImage = " https://i.ibb.co/M278Nxy/company-15.png",
                             Password = "9463",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -476,6 +497,7 @@ namespace MarketingSurplus.Migrations
                             Email = "KFC@test.com",
                             LicenseNumber = "242523",
                             Name = "KFC",
+                            OnlineImage = "https://i.ibb.co/RD6PPc3/company-16.png",
                             Password = "5252",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -490,6 +512,7 @@ namespace MarketingSurplus.Migrations
                             Email = "MCDONALDS@test.com",
                             LicenseNumber = "242523",
                             Name = "MCDONALDS",
+                            OnlineImage = "https://i.ibb.co/pQyQ9JG/company-17.png",
                             Password = "99999",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -503,6 +526,7 @@ namespace MarketingSurplus.Migrations
                             Description = "Nestlé is a multinational company specializing in the production of canned foods, founded in Vevey, Switzerland.",
                             Email = "NESTLE@test.com",
                             Name = "NESTLE",
+                            OnlineImage = "https://i.ibb.co/BwzvsfN/company-18.png",
                             Password = "111222",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -517,6 +541,7 @@ namespace MarketingSurplus.Migrations
                             Email = "STARBUCKS@test.com",
                             LicenseNumber = "242523",
                             Name = "STARBUCKS",
+                            OnlineImage = "https://i.ibb.co/jJ1MdK5/company-19.png",
                             Password = "123122",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -531,6 +556,7 @@ namespace MarketingSurplus.Migrations
                             Email = "PIZZAHUT@test.com",
                             LicenseNumber = "242523",
                             Name = "PIZZA HUT",
+                            OnlineImage = " https://i.ibb.co/wB3sWFC/cmopany-20.png",
                             Password = "34345",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -545,6 +571,7 @@ namespace MarketingSurplus.Migrations
                             Email = "SAMSUNG@test.com",
                             LicenseNumber = "242523",
                             Name = "SAMSUNG",
+                            OnlineImage = "https://i.ibb.co/k5Dkc5H/company-21.jpg",
                             Password = "111222",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -559,6 +586,7 @@ namespace MarketingSurplus.Migrations
                             Email = "APPLE@test.com",
                             LicenseNumber = "242523",
                             Name = "APPLE",
+                            OnlineImage = "https://i.ibb.co/3CYcVn1/company-22.png",
                             Password = "77666",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -573,6 +601,7 @@ namespace MarketingSurplus.Migrations
                             Email = "LG@test.com",
                             LicenseNumber = "242523",
                             Name = "LG",
+                            OnlineImage = "https://i.ibb.co/myvmHqv/company-23.png",
                             Password = "989887",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -587,6 +616,7 @@ namespace MarketingSurplus.Migrations
                             Email = "NETFLIX@test.com",
                             LicenseNumber = "242523",
                             Name = "NETFLIX",
+                            OnlineImage = "https://i.ibb.co/bJkkkSx/company-24.png",
                             Password = "34567",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -601,6 +631,7 @@ namespace MarketingSurplus.Migrations
                             Email = "SHAHID@test.com",
                             LicenseNumber = "242523",
                             Name = "SHAHID",
+                            OnlineImage = "https://i.ibb.co/gSjfpWH/company-25.png",
                             Password = "888877",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -615,6 +646,7 @@ namespace MarketingSurplus.Migrations
                             Email = "DIOR@test.com",
                             LicenseNumber = "242523",
                             Name = "DIOR",
+                            OnlineImage = "https://i.ibb.co/qmDXbbJ/company-26.png",
                             Password = "777776",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -629,6 +661,7 @@ namespace MarketingSurplus.Migrations
                             Email = "CHANNEL@test.com",
                             LicenseNumber = "242523",
                             Name = "CHANNEL",
+                            OnlineImage = "https://i.ibb.co/tc2Wt2W/company-27.png",
                             Password = "333333",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -647,6 +680,67 @@ namespace MarketingSurplus.Migrations
                             Phone = "0921423432",
                             TelePhone = "223554",
                             isAccept = false
+                        });
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.CompanyMethods", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CompanyId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PayMethodId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.HasIndex("PayMethodId");
+
+                    b.ToTable("CompanyMethods");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CompanyId = 1,
+                            PayMethodId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CompanyId = 1,
+                            PayMethodId = 3
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CompanyId = 1,
+                            PayMethodId = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CompanyId = 2,
+                            PayMethodId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CompanyId = 2,
+                            PayMethodId = 3
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CompanyId = 3,
+                            PayMethodId = 2
                         });
                 });
 
@@ -682,34 +776,154 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 1,
-                            Amount = 4,
-                            CompanyId = 16,
+                            Amount = 2,
+                            CompanyId = 1,
                             Favor = false,
                             ProductId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Amount = 2,
-                            CompanyId = 17,
+                            Amount = 4,
+                            CompanyId = 2,
                             Favor = false,
-                            ProductId = 1
+                            ProductId = 2
                         },
                         new
                         {
                             Id = 3,
-                            Amount = 10,
-                            CompanyId = 1,
+                            Amount = 7,
+                            CompanyId = 2,
                             Favor = false,
                             ProductId = 3
                         },
                         new
                         {
                             Id = 4,
-                            Amount = 2,
-                            CompanyId = 18,
+                            Amount = 10,
+                            CompanyId = 3,
                             Favor = false,
-                            ProductId = 2
+                            ProductId = 4
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Amount = 2,
+                            CompanyId = 3,
+                            Favor = false,
+                            ProductId = 5
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Amount = 10,
+                            CompanyId = 4,
+                            Favor = false,
+                            ProductId = 6
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Amount = 9,
+                            CompanyId = 4,
+                            Favor = false,
+                            ProductId = 7
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Amount = 10,
+                            CompanyId = 6,
+                            Favor = false,
+                            ProductId = 8
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Amount = 5,
+                            CompanyId = 6,
+                            Favor = false,
+                            ProductId = 9
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Amount = 2,
+                            CompanyId = 11,
+                            Favor = false,
+                            ProductId = 10
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Amount = 5,
+                            CompanyId = 11,
+                            Favor = false,
+                            ProductId = 11
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Amount = 2,
+                            CompanyId = 16,
+                            Favor = false,
+                            ProductId = 12
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Amount = 6,
+                            CompanyId = 16,
+                            Favor = false,
+                            ProductId = 13
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Amount = 9,
+                            CompanyId = 21,
+                            Favor = false,
+                            ProductId = 12
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Amount = 12,
+                            CompanyId = 21,
+                            Favor = false,
+                            ProductId = 13
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Amount = 10,
+                            CompanyId = 24,
+                            Favor = false,
+                            ProductId = 12
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Amount = 4,
+                            CompanyId = 24,
+                            Favor = false,
+                            ProductId = 13
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Amount = 7,
+                            CompanyId = 26,
+                            Favor = false,
+                            ProductId = 12
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Amount = 10,
+                            CompanyId = 26,
+                            Favor = false,
+                            ProductId = 13
                         });
                 });
 
@@ -799,9 +1013,6 @@ namespace MarketingSurplus.Migrations
                     b.Property<int>("CharityId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CompanyProductId")
-                        .HasColumnType("int");
-
                     b.Property<int>("OrderTypeId")
                         .HasColumnType("int");
 
@@ -812,8 +1023,6 @@ namespace MarketingSurplus.Migrations
 
                     b.HasIndex("CharityId");
 
-                    b.HasIndex("CompanyProductId");
-
                     b.HasIndex("OrderTypeId");
 
                     b.ToTable("Donations");
@@ -823,7 +1032,6 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 1,
                             CharityId = 1,
-                            CompanyProductId = 2,
                             OrderTypeId = 3,
                             PricePay = 20000f
                         },
@@ -831,7 +1039,6 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 2,
                             CharityId = 2,
-                            CompanyProductId = 1,
                             OrderTypeId = 2,
                             PricePay = 18000f
                         },
@@ -839,7 +1046,6 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 3,
                             CharityId = 4,
-                            CompanyProductId = 3,
                             OrderTypeId = 2,
                             PricePay = 11000f
                         },
@@ -847,7 +1053,6 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 4,
                             CharityId = 2,
-                            CompanyProductId = 3,
                             OrderTypeId = 3,
                             PricePay = 10000f
                         });
@@ -924,9 +1129,6 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PayMethodId")
-                        .HasColumnType("int");
-
                     b.Property<float?>("Price")
                         .HasColumnType("real");
 
@@ -934,8 +1136,6 @@ namespace MarketingSurplus.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PayMethodId");
 
                     b.HasIndex("UserId");
 
@@ -949,7 +1149,6 @@ namespace MarketingSurplus.Migrations
                             Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ",
                             IsDelivery = true,
                             Name = "Order 1",
-                            PayMethodId = 1,
                             Price = 20000f,
                             UserId = 1
                         },
@@ -960,7 +1159,6 @@ namespace MarketingSurplus.Migrations
                             Descripation = "The order was placed at 2:50 and will expire after a quarter of an hour from this time",
                             IsDelivery = false,
                             Name = "Order 2",
-                            PayMethodId = 1,
                             Price = 18520f,
                             UserId = 2
                         },
@@ -971,7 +1169,6 @@ namespace MarketingSurplus.Migrations
                             Descripation = "The order was placed at 4:40 and will expire after a quarter of an hour from this time",
                             IsDelivery = true,
                             Name = "Order 3",
-                            PayMethodId = 2,
                             Price = 75312f,
                             UserId = 3
                         },
@@ -982,7 +1179,6 @@ namespace MarketingSurplus.Migrations
                             Descripation = "The order was placed at 3:20 and will expire after a quarter of an hour from this time",
                             IsDelivery = true,
                             Name = "Order 4",
-                            PayMethodId = 2,
                             Price = 12457f,
                             UserId = 3
                         },
@@ -993,7 +1189,6 @@ namespace MarketingSurplus.Migrations
                             Descripation = "The order was placed at 1:15 and will expire after a quarter of an hour from this time",
                             IsDelivery = false,
                             Name = "Order 5",
-                            PayMethodId = 3,
                             Price = 45632f,
                             UserId = 2
                         });
@@ -1087,25 +1282,25 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 6, 27, 23, 47, 54, 86, DateTimeKind.Local).AddTicks(2171),
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(2973),
                             status = 1
                         },
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 6, 27, 23, 47, 54, 86, DateTimeKind.Local).AddTicks(2199),
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(2992),
                             status = 2
                         },
                         new
                         {
                             Id = 3,
-                            DateTime = new DateTime(2024, 6, 27, 23, 47, 54, 86, DateTimeKind.Local).AddTicks(2215),
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(3006),
                             status = 3
                         },
                         new
                         {
                             Id = 4,
-                            DateTime = new DateTime(2024, 6, 27, 23, 47, 54, 86, DateTimeKind.Local).AddTicks(2230),
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(3021),
                             status = 4
                         });
                 });
@@ -1121,6 +1316,9 @@ namespace MarketingSurplus.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<float?>("Percentage")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 
@@ -1196,6 +1394,9 @@ namespace MarketingSurplus.Migrations
                     b.Property<DateTime>("Expiration")
                         .HasColumnType("datetime2");
 
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<bool>("IsExpiration")
                         .HasColumnType("bit");
 
@@ -1209,6 +1410,9 @@ namespace MarketingSurplus.Migrations
                     b.Property<float>("OldPrice")
                         .HasColumnType("real");
 
+                    b.Property<string>("OnlineImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Products");
@@ -1218,34 +1422,228 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 1,
                             DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Descripation = "Each wrapped bag contains one kilo of good quality Egyptian rice",
+                            Descripation = "Moderate pain relief without the need for a prescription",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Rice",
-                            NewPrice = 15000f,
-                            OldPrice = 20000f
+                            Name = "New Profin",
+                            NewPrice = 6000f,
+                            OldPrice = 9000f,
+                            OnlineImage = "https://i.ibb.co/yykJXSj/product-1.jpg"
                         },
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Descripation = "The weight of each raw chicken ranges between 1.7 kg and 2.2 kg. The meat is halal.",
-                            Expiration = new DateTime(2024, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1624),
+                            Descripation = "It is used to treat mild to moderate pain",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Broasted Chicken",
-                            NewPrice = 21000f,
-                            OldPrice = 30000f
+                            Name = " Asealol",
+                            NewPrice = 13000f,
+                            OldPrice = 10000f,
+                            OnlineImage = "https://i.ibb.co/wJ2513B/product-3.jpg"
                         },
                         new
                         {
                             Id = 3,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Descripation = "Each paracetamol tablet contains 500 mg of acetamol, which reduces fever and relieves pain.",
-                            Expiration = new DateTime(2025, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1657),
+                            Descripation = "Antipsychotic, treatment for schizophrenia",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Paracetamol",
-                            NewPrice = 50000f,
-                            OldPrice = 70000f
+                            Name = "Asiacillin",
+                            NewPrice = 19000f,
+                            OldPrice = 20000f,
+                            OnlineImage = "https://i.ibb.co/sJgJYPz/product-4.jpg"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1673),
+                            Descripation = "Helps relieve dry eyes",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Carbogel",
+                            NewPrice = 5000f,
+                            OldPrice = 2000f,
+                            OnlineImage = "https://i.ibb.co/c1Zw6N9/product-5.jpg"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1687),
+                            Descripation = "Alleviating the symptoms of acute sinusitis",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Levo Act",
+                            NewPrice = 17000f,
+                            OldPrice = 20000f,
+                            OnlineImage = "https://i.ibb.co/2t7JpVH/product-6.jpg"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1703),
+                            Descripation = "It helps eliminate fluids and lower blood pressure.",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Sodamide",
+                            NewPrice = 25000f,
+                            OldPrice = 22000f,
+                            OnlineImage = "https://i.ibb.co/x3d2tJ3/product-7.jpg"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1717),
+                            Descripation = "antibiotic",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Exozide",
+                            NewPrice = 17500f,
+                            OldPrice = 20000f,
+                            OnlineImage = "https://i.ibb.co/0hDnmyG/product-8.jpg"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1732),
+                            Descripation = "Antidepressant",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Anfranil",
+                            NewPrice = 25000f,
+                            OldPrice = 23000f,
+                            OnlineImage = "https://i.ibb.co/12vr9Nc/product-9.jpg"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1746),
+                            Descripation = "Aminosic alcohol antibiotic",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Apramycin",
+                            NewPrice = 26000f,
+                            OldPrice = 30000f,
+                            OnlineImage = "https://i.ibb.co/nc5vZFN/product-10.jpg"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1762),
+                            Descripation = " Pain reliever, antipyretic, antiemetic, and widely used antibiotic",
+                            Expiration = new DateTime(2025, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Evax Max",
+                            NewPrice = 12000f,
+                            OldPrice = 15000f,
+                            OnlineImage = " https://i.ibb.co/d5KT1tH/product-11.jpg"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1776),
+                            Descripation = " Pain reliever, antipyretic, antiemetic, and widely used antibiotic",
+                            Expiration = new DateTime(2025, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Evax flu",
+                            NewPrice = 12000f,
+                            OldPrice = 13000f,
+                            OnlineImage = "https://i.ibb.co/BBTyDxN/product-12.jpg"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1791),
+                            Descripation = "Free Size",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Bloues",
+                            NewPrice = 130000f,
+                            OldPrice = 150000f,
+                            OnlineImage = "https://i.ibb.co/VV3vvk9/product-13.jpg"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1804),
+                            Descripation = "Free Size",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " pants",
+                            NewPrice = 135000f,
+                            OldPrice = 155000f,
+                            OnlineImage = "https://i.ibb.co/Pj8mQy1/product-14.jpg"
+                        });
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.ProductDonation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CompanyProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DonationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalPrice")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyProductId");
+
+                    b.HasIndex("DonationId");
+
+                    b.ToTable("ProductDonations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 1,
+                            CompanyProductId = 1,
+                            DonationId = 1,
+                            TotalPrice = 60000
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = 1,
+                            CompanyProductId = 2,
+                            DonationId = 1,
+                            TotalPrice = 70000
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Amount = 1,
+                            CompanyProductId = 2,
+                            DonationId = 2,
+                            TotalPrice = 70000
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Amount = 1,
+                            CompanyProductId = 3,
+                            DonationId = 3,
+                            TotalPrice = 70000
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Amount = 1,
+                            CompanyProductId = 1,
+                            DonationId = 3,
+                            TotalPrice = 70000
                         });
                 });
 
@@ -1363,6 +1761,9 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("OnlineImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1458,6 +1859,25 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("CompanyType");
                 });
 
+            modelBuilder.Entity("MarketingSurplus.Models.CompanyMethods", b =>
+                {
+                    b.HasOne("MarketingSurplus.Models.Company", "Company")
+                        .WithMany("CompanyMethods")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MarketingSurplus.Models.PayMethod", "PayMethod")
+                        .WithMany("CompanyMethods")
+                        .HasForeignKey("PayMethodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+
+                    b.Navigation("PayMethod");
+                });
+
             modelBuilder.Entity("MarketingSurplus.Models.CompanyProduct", b =>
                 {
                     b.HasOne("MarketingSurplus.Models.Company", "Company")
@@ -1480,14 +1900,8 @@ namespace MarketingSurplus.Migrations
             modelBuilder.Entity("MarketingSurplus.Models.Donation", b =>
                 {
                     b.HasOne("MarketingSurplus.Models.Charity", "Charity")
-                        .WithMany()
-                        .HasForeignKey("CharityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MarketingSurplus.Models.CompanyProduct", "CompanyProduct")
                         .WithMany("Donations")
-                        .HasForeignKey("CompanyProductId")
+                        .HasForeignKey("CharityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1498,8 +1912,6 @@ namespace MarketingSurplus.Migrations
                         .IsRequired();
 
                     b.Navigation("Charity");
-
-                    b.Navigation("CompanyProduct");
 
                     b.Navigation("OrderType");
                 });
@@ -1525,19 +1937,11 @@ namespace MarketingSurplus.Migrations
 
             modelBuilder.Entity("MarketingSurplus.Models.Order", b =>
                 {
-                    b.HasOne("MarketingSurplus.Models.PayMethod", "PayMethod")
-                        .WithMany("Orders")
-                        .HasForeignKey("PayMethodId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("MarketingSurplus.Models.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("PayMethod");
 
                     b.Navigation("User");
                 });
@@ -1561,6 +1965,25 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("Order");
                 });
 
+            modelBuilder.Entity("MarketingSurplus.Models.ProductDonation", b =>
+                {
+                    b.HasOne("MarketingSurplus.Models.CompanyProduct", "CompanyProduct")
+                        .WithMany("ProductDonations")
+                        .HasForeignKey("CompanyProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MarketingSurplus.Models.Donation", "Donation")
+                        .WithMany("ProductDonations")
+                        .HasForeignKey("DonationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CompanyProduct");
+
+                    b.Navigation("Donation");
+                });
+
             modelBuilder.Entity("MarketingSurplus.Models.Subscription", b =>
                 {
                     b.HasOne("MarketingSurplus.Models.Company", "Company")
@@ -1580,11 +2003,26 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MarketingSurplus.Models.CompanyProduct", b =>
+            modelBuilder.Entity("MarketingSurplus.Models.Charity", b =>
                 {
                     b.Navigation("Donations");
+                });
 
+            modelBuilder.Entity("MarketingSurplus.Models.Company", b =>
+                {
+                    b.Navigation("CompanyMethods");
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.CompanyProduct", b =>
+                {
                     b.Navigation("OrderProducts");
+
+                    b.Navigation("ProductDonations");
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.Donation", b =>
+                {
+                    b.Navigation("ProductDonations");
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.Order", b =>
@@ -1609,7 +2047,7 @@ namespace MarketingSurplus.Migrations
 
             modelBuilder.Entity("MarketingSurplus.Models.PayMethod", b =>
                 {
-                    b.Navigation("Orders");
+                    b.Navigation("CompanyMethods");
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.Rate", b =>

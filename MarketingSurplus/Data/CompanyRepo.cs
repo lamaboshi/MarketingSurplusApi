@@ -55,6 +55,7 @@ namespace MarketingSurplus.Data
                     companyEntity.Image = company.Image;
                     companyEntity.LicenseNumber = company.LicenseNumber;
                     companyEntity.Description = company.Description;
+                    companyEntity.CompanyTypeId = company.CompanyTypeId;
                     _db.SaveChanges();
                 }
             }

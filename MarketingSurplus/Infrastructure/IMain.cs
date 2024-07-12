@@ -14,5 +14,7 @@ namespace MarketingSurplus.Infrastructure
         void AddCompanyProduct(SaveCompanyProduct saveCompany);
         List<User> GetAllCompanyUsers(int companyId);
         List<OrderProduct> GetOrderDetails(int userId);
+        List<OrderProduct> GetOrderDetailsForCompany(int companyId);
+        
     }
 }

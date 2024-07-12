@@ -14,10 +14,11 @@ namespace MarketingSurplus.Controllers
     {
         db = _db;
     }
-    [HttpGet]
-    public IActionResult GetRates()
+        [HttpGet("{companyId}")]
+        [ActionName("GetRates")]
+        public IActionResult GetRates(int companyId)
     {
-        var data = db.GetRates();
+        var data = db.GetRates(companyId);
         return Ok(data);
     }
     [HttpGet("{id}")]
