@@ -1,5 +1,6 @@
 ﻿using MarketingSurplus.Infrastructure;
 using MarketingSurplus.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MarketingSurplus.Data
 {
@@ -13,46 +14,53 @@ namespace MarketingSurplus.Data
 
         public void Delete(int id)
         {
-            var type = _db.PayMethods.FirstOrDefault(p => p.Id == id);
+            var type = _db.CompanyMethods.FirstOrDefault(p => p.Id == id);
             if (type != null)
             {
-                _db.PayMethods.Remove(type);
+                _db.CompanyMethods.Remove(type);
                 _db.SaveChanges();
             }
         }
 
-        public PayMethod GetPayMethod(int id)
+        public List<CompanyMethods> GetAllPayMethod()
         {
-            var type = _db.PayMethods.First(p => p.Id == id);
+            var data = _db.CompanyMethods.Include(r => r.Company).Include(r => r.PayMethod).ToList();
+            return data;
+        }
+
+        public CompanyMethods GetPayMethod(int id)
+        {
+            var type = _db.CompanyMethods.First(p => p.Id == id);
             if (type != null)
                 return type;
             else
                 return null;
         }
 
-        public List<PayMethod> GetPayMethods()
+        public List<CompanyMethods> GetPayMethods(int companyId)
         {
-             var data=_db.PayMethods.ToList();
+             var data=_db.CompanyMethods.Where(p=>p.CompanyId==companyId).Include(r=>r.PayMethod).ToList();
             return data;
         }
 
-        public void Save(PayMethod payMethod)
+        public void Save(PayMethod payMethod, int companyId)
         {
             if (payMethod.Id == 0)
             {
-                _db.PayMethods.Add(payMethod);
+              var result=  _db.PayMethods.Add(payMethod);
+                _db.SaveChanges();
+                _db.CompanyMethods.Add(new CompanyMethods { CompanyId = companyId, PayMethodId = result.Entity.Id });
                 _db.SaveChanges();
             }
         }
 
-        public void Update(PayMethod payMethod)
+        public void Update(CompanyMethods payMethod)
         {
             var type = _db.PayMethods.First(p => p.Id == payMethod.Id);
             if (type != null)
             {
 
-                type.Name = payMethod.Name;
-                _db.SaveChanges();
+    
             }
         }
     }

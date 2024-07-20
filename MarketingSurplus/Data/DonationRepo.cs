@@ -21,8 +21,15 @@ namespace MarketingSurplus.Data
 
         public List<Donation> GetAllDonationForCompany(int companyId)
         {
+            var dos =new List<Donation>();
             var data = _db.ProductDonations.Include(p => p.CompanyProduct).Where(r => r.CompanyProduct.CompanyId == companyId).Select(k=>k.Donation).ToList();
-            return data;
+            foreach (var item in data)
+            {
+                var result = _db.Donations.Where(t => t.Id == item.Id).Include(y => y.Charity).Include(r => r.OrderType).FirstOrDefault();
+                dos.Add(result);
+            }
+
+            return dos;
         }
 
         public List<ProductDonation> GetAllOrder(int charityId)

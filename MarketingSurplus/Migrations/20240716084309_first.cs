@@ -428,11 +428,11 @@ namespace MarketingSurplus.Migrations
                 columns: new[] { "Id", "Address", "AssociationLicense", "Email", "Goals", "Image", "Name", "OnlineImage", "Password", "Phone", "QRCode", "TargetGroup", "isAccept" },
                 values: new object[,]
                 {
-                    { 1, "Al Hamadanieh", "2435", "Al-Ihsan@test.com", "childern", null, "Al-Ihsan", null, "Al-Ihsan789", "0215789147", null, "Rich Pepole", false },
-                    { 2, "Al mohafaza", "2435", "Hand-By-Hand@test.com", "Old Pepole", null, "Hand By Hand", null, "Hand-By-Hand456", "0215117894", null, "Rich Pepole", false },
-                    { 3, "Mohamad Fares Street", "2435", "Al-Noor@test.com", "childern", null, "Al-Noor", null, "Al-Noor123", "021524895 ", null, "Rich Pepole", false },
-                    { 4, "Al Azizeh", "2435", "George@test.com", "childern", null, "George", null, "George147", "0215115827", null, "Rich Pepole", false },
-                    { 5, "Al Marterni", "2435", "Namaa@test.com", "childern", null, "Namaa", null, "Namaa369", "02151174369", null, "Rich Pepole", false }
+                    { 1, "Al Hamadanieh", "2435", "Al-Ihsan@test.com", "childern", null, "Al-Ihsan", "https://i.ibb.co/Z6GHm9w/banner.png", "Al-Ihsan789", "0215789147", null, "Rich Pepole", false },
+                    { 2, "Al mohafaza", "2435", "Hand-By-Hand@test.com", "Old Pepole", null, "Hand By Hand", "https://i.ibb.co/CH67mMZ/9ba9d0086cff0ceb5155420e01fda24e.jpg", "Hand-By-Hand456", "0215117894", null, "Rich Pepole", false },
+                    { 3, "Mohamad Fares Street", "2435", "Al-Noor@test.com", "childern", null, "Al-Noor", "https://i.ibb.co/7GY0Qvs/al-nour.jpg", "Al-Noor123", "021524895 ", null, "Rich Pepole", false },
+                    { 4, "Al Azizeh", "2435", "George@test.com", "childern", null, "George", "https://i.ibb.co/HpFwRsc/259490784-888270292057739-1584770156068076983-n-300x378.png", "George147", "0215115827", null, "Rich Pepole", false },
+                    { 5, "Al Marterni", "2435", "Namaa@test.com", "childern", null, "Namaa", "https://i.ibb.co/rwW5L3G/namma.jpg", "Namaa369", "02151174369", null, "Rich Pepole", false }
                 });
 
             migrationBuilder.InsertData(
@@ -445,8 +445,7 @@ namespace MarketingSurplus.Migrations
                     { 3, "All About Clothes", "Clothes", false },
                     { 4, "All About Food", "Food", false },
                     { 5, "All About electronics", "Electronics", false },
-                    { 6, "All About Movies & Series", "Platforms", false },
-                    { 7, "All About Perfumes", "Perfumes", false }
+                    { 6, "All About Perfumes", "Perfumes", false }
                 });
 
             migrationBuilder.InsertData(
@@ -454,10 +453,10 @@ namespace MarketingSurplus.Migrations
                 columns: new[] { "Id", "DateTime", "Note", "status" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(2973), null, 1 },
-                    { 2, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(2992), null, 2 },
-                    { 3, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(3006), null, 3 },
-                    { 4, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(3021), null, 4 }
+                    { 1, new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9372), null, 1 },
+                    { 2, new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9406), null, 2 },
+                    { 3, new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9422), null, 3 },
+                    { 4, new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9437), null, 4 }
                 });
 
             migrationBuilder.InsertData(
@@ -485,19 +484,42 @@ namespace MarketingSurplus.Migrations
                 columns: new[] { "Id", "DateTime", "Descripation", "Expiration", "Image", "IsExpiration", "Name", "NewPrice", "OldPrice", "OnlineImage" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Moderate pain relief without the need for a prescription", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "New Profin", 6000f, 9000f, "https://i.ibb.co/yykJXSj/product-1.jpg" },
-                    { 2, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1624), "It is used to treat mild to moderate pain", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Asealol", 13000f, 10000f, "https://i.ibb.co/wJ2513B/product-3.jpg" },
-                    { 3, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1657), "Antipsychotic, treatment for schizophrenia", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Asiacillin", 19000f, 20000f, "https://i.ibb.co/sJgJYPz/product-4.jpg" },
-                    { 4, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1673), "Helps relieve dry eyes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Carbogel", 5000f, 2000f, "https://i.ibb.co/c1Zw6N9/product-5.jpg" },
-                    { 5, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1687), "Alleviating the symptoms of acute sinusitis", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Levo Act", 17000f, 20000f, "https://i.ibb.co/2t7JpVH/product-6.jpg" },
-                    { 6, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1703), "It helps eliminate fluids and lower blood pressure.", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Sodamide", 25000f, 22000f, "https://i.ibb.co/x3d2tJ3/product-7.jpg" },
-                    { 7, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1717), "antibiotic", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Exozide", 17500f, 20000f, "https://i.ibb.co/0hDnmyG/product-8.jpg" },
-                    { 8, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1732), "Antidepressant", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Anfranil", 25000f, 23000f, "https://i.ibb.co/12vr9Nc/product-9.jpg" },
-                    { 9, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1746), "Aminosic alcohol antibiotic", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Apramycin", 26000f, 30000f, "https://i.ibb.co/nc5vZFN/product-10.jpg" },
-                    { 10, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1762), " Pain reliever, antipyretic, antiemetic, and widely used antibiotic", new DateTime(2025, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Evax Max", 12000f, 15000f, " https://i.ibb.co/d5KT1tH/product-11.jpg" },
-                    { 11, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1776), " Pain reliever, antipyretic, antiemetic, and widely used antibiotic", new DateTime(2025, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Evax flu", 12000f, 13000f, "https://i.ibb.co/BBTyDxN/product-12.jpg" },
-                    { 12, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1791), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Bloues", 130000f, 150000f, "https://i.ibb.co/VV3vvk9/product-13.jpg" },
-                    { 13, new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1804), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " pants", 135000f, 155000f, "https://i.ibb.co/Pj8mQy1/product-14.jpg" }
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Flamix is ​​a medicine that contains celecoxib as an active ingredient, and it is considered a non-steroidal anti-infl ammatory drug", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Newflamix", 13000f, 15000f, "https://i.ibb.co/xjS4yyL/Flamix2040020mg20film20tablete203-D.jpg" },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Moderate pain relief without the need for a prescription", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "New Profin", 6000f, 9000f, "https://i.ibb.co/yykJXSj/product-1.jpg" },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Clomiphene is used to treat some cases of infertility in women", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newclomiphene", 13000f, 15000f, "https://i.ibb.co/kHFv6Yd/clomiphene-swiss-remedies.jpg" },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Broad spectrum antibiotics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newthyromax", 25000f, 30000f, "https://i.ibb.co/crzLHnW/thyromaxx-50-kaps-za-normalnu-funkciju-titnja-e-bi-5fb8d11c86db5.jpg" },
+                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "To treat depression", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newsertraline", 30000f, 33000f, "https://i.ibb.co/Fw53mry/0ceba66d9685fed081df064b3a30469b.webp" },
+                    { 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Anti-hyperglycemic", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newmetformin", 8500f, 10000f, "https://i.ibb.co/9qMw6yK/Njm9e5-KQez-GBFw-YRja-Tkb-C-1200-80.jpg" },
+                    { 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Size 33", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Spedrin", 13000f, 15000f, "https://i.ibb.co/my2mYtr/Hff44c1c4dc104fc19a29e4f1d8fe5b96p-jpg-720x720q50.webp" },
+                    { 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Sportswear", 13000f, 15000f, "https://i.ibb.co/7tjQZK6/https-hypebeast-com-image-2016-06-hm-sports-performance-collection-0.jpg" },
+                    { 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Sportswear", 13000f, 15000f, "https://i.ibb.co/Pr32t0X/2022-1-1.jpg" },
+                    { 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Comfortable cotton", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Shorts", 50000f, 75000f, "https://i.ibb.co/F4zR55N/bdd3cef4-0e9b-4be4-b11a-1f45aaaee12d-thumbnail-770x770.png" },
+                    { 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Dress", 130000f, 150000f, "https://i.ibb.co/bdghtwQ/sefamerve-gri-tesettur-elbise-bwst8238-01-3316251535974586797-1-752x1152.jpg" },
+                    { 12, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "for sea", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Sport hat", 50000f, 75000f, "https://i.ibb.co/cyVGNs4/1.jpg" },
+                    { 13, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Bloues", 130000f, 150000f, "https://i.ibb.co/wK9h3yd/1hoxd-AGYSt-Sp9-BCyq-XWP2vc-LRky-Pz-Bz-N5n-Ga-J5ad.jpg" },
+                    { 14, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " pants", 135000f, 155000f, "https://i.ibb.co/Gnsr6w5/w1020-q80.jpg" },
+                    { 15, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "mam jeans", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " jeans", 135000f, 155000f, "https://i.ibb.co/xYNdXJ2/4b1d26be-d7dc-4056-bc63-39e30c160b7d.jpg" },
+                    { 16, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Dress", 130000f, 150000f, "https://i.ibb.co/YdBdM5m/16226197718.jpg" },
+                    { 17, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Size 37", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Qandara", 13000f, 15000f, "https://i.ibb.co/w7C1nJ2/31-AJD92clx-L-AC-SY780.jpg" },
+                    { 18, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Color off white", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Wedding Suit", 13000f, 15000f, "" },
+                    { 19, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Broasted", 200000f, 250000f, "https://i.ibb.co/HPdCsJk/image.jpg" },
+                    { 20, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Shawrama", 175000f, 200000f, "https://i.ibb.co/RvpbMr3/8a13a1a95c8f094fe07b6e8c218fb6c2.jpg" },
+                    { 21, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Grilled Chicken", 20000f, 25000f, "https://i.ibb.co/f1k26g7/png-transparent-roast-chicken-barbecue-chicken-roasting-chicken-meat-roast-chicken-food-animals-baki.png" },
+                    { 22, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Nugget", 50000f, 75000f, "https://i.ibb.co/BgtCXnq/Nuggets.gif" },
+                    { 23, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " pizza ", 200000f, 250000f, "https://i.ibb.co/YQXBmKb/66951-7.jpg" },
+                    { 24, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " salmey pizza", 175000f, 200000f, "https://i.ibb.co/qrfSxXs/Q2-HGj-Nd-Babm7-S2n-FA.jpg" },
+                    { 25, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Smart washing machine", 50000f, 75000f, "https://i.ibb.co/Bcg2rCQ/ae-ar-WF1702-WEU-XSG-001-Front-624-624-PNG.png" },
+                    { 26, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Camera", 130000f, 150000f, "https://i.ibb.co/W3Wvh7k/2d257668b46d3cd5be228192fd02876f-fmt-pjpeg-res-Mode-bisharp-wid-354.jpg" },
+                    { 27, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Mobile", 175000f, 20000f, "https://i.ibb.co/BVY7rPz/eg-galaxy-s24-s928-sm-s928bztcmea-thumb-539296161-344-344-PNG.png" },
+                    { 28, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " smart watch", 130000f, 150000f, "https://i.ibb.co/VqCwH1C/61tp47u-ZRl-L-AC-UF1000-1000-QL80.jpg" },
+                    { 29, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "tap", 25000f, 30000f, "https://i.ibb.co/YhFVJvr/716o8-NCsj-DL-AC-UF894-1000-QL80.jpg" },
+                    { 30, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "refrigerator", 230000f, 255000f, "https://i.ibb.co/0qv7MX7/toshiba-refrigerator-no-frost-11-feet-silver-gr-ef31-s.jpg" },
+                    { 31, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), " Floral Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Chanel No.5", 130000f, 150000f, "https://i.ibb.co/cCZZdrz/coco-mademoiselle-eau-de-parfum-intense-spray-3-4fl-oz-packshot-default-116660-9539148283934.png" },
+                    { 32, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Oriental perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Tommy Hilfiger for Men ", 175000f, 20000f, "https://i.ibb.co/QKvKKCw/91-D0-TXi2or-L.jpg" },
+                    { 33, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Woody Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Giorgio Armani", 130000f, 150000f, "https://i.ibb.co/k38SvS0/517wv-Qgc-H0-L-AC-UF1000-1000-QL80.jpg" },
+                    { 34, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Citrus Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Dolce & Gabbana Light Blue", 25000f, 30000f, "https://i.ibb.co/8P2b254/miswag-Yf-M4c-AYMy-G4-U.jpg" },
+                    { 35, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Amber Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Bvlgari Black", 230000f, 255000f, "https://i.ibb.co/X2Jhj99/Espcuc-FNv-Rg-Mn-Zucl-JFIeyq-LZ3adeu-D6-NPq-UTr44.png" },
+                    { 36, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Citrus Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " 212", 25000f, 30000f, "https://i.ibb.co/fCbqJ6Q/sg-Ai-Uj-PU5-RORz-Cf-PAj-QVd-K9spq-QL92cj-Q4-S5-ODmo.jpg" }
                 });
 
             migrationBuilder.InsertData(
@@ -528,32 +550,16 @@ namespace MarketingSurplus.Migrations
                 {
                     { 1, "From Streat", 1, "As in 1955, when Ultra Medica started its ascent in the world of pharmaceutical industry in Syria (Sednaya) founded with emphasis activities and enthusiasm for the manufacturing and developing of life science industry", "UltraMedica@test.com", null, "242523", "Ultra Medica", "https://i.ibb.co/z4vNrPc/company-1.png", "12123", "0921423432", "4232543", false },
                     { 2, "From Streat", 1, "Newpharma is een online apotheek, een uitbreiding van een echte apotheek, gevestigd in België. We spreken ook van internet apotheek of e-apotheek.", "newpharma@test.com", null, null, "New pharma", " https://i.ibb.co/yPnHycP/company-2.png", "12123", "0921423432", "4232543", false },
-                    { 3, "From Streat", 1, "Asia Pharmacy is an Electrical and Electronic Manufacturing company located in 1035 S Federal Blvd Ste B, Denver, Colorado, United States.", "MAYBELLINE@test.com", null, null, "Asia pharmacy", "https://i.ibb.co/7kg3CCh/cmpany-3.jpg", "34345", "0921423432", "4232543", false },
-                    { 4, "From Streat", 1, "Our pharmacist and trained assistants are available for advice on all medicines and minor ailments. We can also give you advice on how to live a healthier life and can direct you to a range of other resources if needed.", "LOREAL@test.com", null, "242523", "Medico ", "https://i.ibb.co/M2FRjdc/company-4.jpg", "23234", "0921423432", "4232543", false },
-                    { 5, "From Streat", 1, "APOTHEKE ADHOC Webinar: Praxisrelevantes Wissen für das gesamte Apothekenteam zu brandaktuellen Fachthemen rund um Indikation, Beratung, Rezeptur und vieles mehr.", "SEPHORA@test.com", null, "242523", "Mediathek", "https://i.ibb.co/dt9zsZk/company-5.png", "45456", "0921423432", "4232543", false },
-                    { 6, "From Streat", 2, "Asics sponsors a variety of sports associations", "Asics@test.com", null, "242523", "ASIC", "https://i.ibb.co/nQnQWNz/company-6.png", "111222", "0921423432", "223554", false },
-                    { 7, "From Streat", 2, "Manufacturer of sports shoes and apparel. It was the largest sportswear manufacturer in Europe and the second largest after Nike in the world. Adidas products are traditionally distinguished by a three-line brand, which remains an element of the company's latest products", "ADDIDAS@test.com", null, "242523", "ADDIDAS", "https://i.ibb.co/2sSf4sB/company-7.png", "111222", "0921423432", "223554", false },
-                    { 8, "From Streat", 2, "The world’s largest athletic apparel company, Nike is best known for its footwear, apparel, and equipment. One of the most valuable brands among sport businesses,The company sponsors top athletes and sports teams around the world.", "NIKE@test.com", null, "242523", "NIKE", "https://i.ibb.co/KysfgKW/company-8.png", "78789", "0921423432", "223554", false },
-                    { 9, "From Streat", 2, "Puma, is a German multinational corporation that designs and manufactures athletic and casual footwear, apparel and accessories, which is headquartered in Herzogenaurach, Bavaria, Germany. Puma is the third largest sportswear manufacturer in the world", "PUMA@test.com", null, "242523", "PUMA", " https://i.ibb.co/1KkgsCN/company-9.png", "67678", "0921423432", "223554", false },
-                    { 10, "Reebok International Limited (/ˈriːbɒk/) is an American fitness footwear and clothing manufacturer that is a part of Authentic Brands Group.", 2, "Asics sponsors a variety of sports associations", "REEBOK@test.com", null, "242523", "REEBOK", "https://i.ibb.co/BBNBr0k/company-10.png", "8989", "0921423432", "223554", false },
-                    { 11, "From Streat", 3, "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.", "ZARA@test.com", null, "242523", "ZARA", "https://i.ibb.co/bvCVzX8/company-11.png", "0909", "0921423432", "223554", false },
-                    { 12, "From Streat", 3, "Max Fashion is an Indian fashion brand under the banner of the Landmark Group in Dubai", "MAX@test.com", null, "242523", "MAX", " https://i.ibb.co/bPCz1jL/company-12.jpg", "111222", "0921423432", "223554", false },
-                    { 13, "From Streat", 3, "It is an Italian luxury fashion house specializing in ready-to-wear and haute couture, headquartered in Milan, Italy. Expanded to design raincoats, windbreakers, knitwear, leather goods, shoes, perfume, and accessories", "MONCLER@test.com", null, "242523", "MONCLER", " https://i.ibb.co/7Cnn1WB/company-13.jpg", "6789", "0921423432", "223554", false },
-                    { 14, "From Streat", 3, "Lacoste S.A. is a French company. It sells clothing, footwear, sportswear, eyewear, leather goods, perfume, towels and watches", "LACOSTE@test.com", null, "242523", "LACOSTE", "https://i.ibb.co/QMDQMdQ/company-14.png", "111222", "0921423432", "223554", false },
-                    { 15, "From Streat", 3, "It is one of the most famous fashion companies in the world. The group enjoys a unified identity consisting of colours, authentic fashion and quality at democratic prices", "BENETTON@test.com", null, "242523", "BENETTON", " https://i.ibb.co/M278Nxy/company-15.png", "9463", "0921423432", "223554", false },
-                    { 16, "Louisville, KentuckyFrom Streat", 4, "Kentucky Fried Chicken or KFC is a chain of fast food restaurants that specializes primarily in fried chicken.  It is the second largest chain of fast food restaurants in the world in terms of sales after McDonald's. Kentucky Fried Chicken has nearly twenty thousand branches spread over 123 countries and territories around the world.", "KFC@test.com", null, "242523", "KFC", "https://i.ibb.co/RD6PPc3/company-16.png", "5252", "0921423432", "223554", false },
-                    { 17, "From Streat", 4, "MCDONALD'S is the world's largest restaurant chain by revenue,McDonald's is best known for its hamburgers, cheeseburgers and french fries, although their menus include other items like chicken, fish, fruit, and salads", "MCDONALDS@test.com", null, "242523", "MCDONALDS", "https://i.ibb.co/pQyQ9JG/company-17.png", "99999", "0921423432", "223554", false },
-                    { 18, "From Streat", 4, "Nestlé is a multinational company specializing in the production of canned foods, founded in Vevey, Switzerland.", "NESTLE@test.com", null, null, "NESTLE", "https://i.ibb.co/BwzvsfN/company-18.png", "111222", "0921423432", "223554", false },
-                    { 19, "From Streat", 4, "STARBUCKS is a specialty coffee retailer. It roasts, markets, and retails specialty coffee. The company, through its stores, offers several blends of coffee, handcrafted beverages, merchandise, and food items", "STARBUCKS@test.com", null, "242523", "STARBUCKS", "https://i.ibb.co/jJ1MdK5/company-19.png", "123122", "0921423432", "223554", false },
-                    { 20, "From Streat", 4, "Pizza Hut is an American multinational restaurant chain and international franchise founded in 1958 in Wichita, Kansas by Dan and Frank Carney. They serve their signature pan pizza and other dishes including pasta, breadsticks and desserts.", "PIZZAHUT@test.com", null, "242523", "PIZZA HUT", " https://i.ibb.co/wB3sWFC/cmopany-20.png", "34345", "0921423432", "223554", false },
-                    { 21, "Suwon, South Korea", 5, " Samsung Electronics is the world's largest electronics and information technology company.  Samsung Electronics is part of the Samsung Group, which is the largest conglomerate in South Korea and the global market leader with more than 60 products including semiconductors such as DRAM and flash memory, digital display devices such as liquid crystal TVs  LCD and plasma, consumer electronics such as DVD players, mobile phones, digital cameras and laser printers, household appliances such as refrigerators, microwaves and dishwashers.", "SAMSUNG@test.com", null, "242523", "SAMSUNG", "https://i.ibb.co/k5Dkc5H/company-21.jpg", "111222", "0921423432", "223554", false },
-                    { 22, "Cupertino, California, United States", 5, "The Apple Corporation is an American multinational technology company specializing in consumer electronics, software and online services.  It is one of the top five American IT companies", "APPLE@test.com", null, "242523", "APPLE", "https://i.ibb.co/3CYcVn1/company-22.png", "77666", "0921423432", "223554", false },
-                    { 23, "South Korea", 5, "The Korean LG Group this company is the second largest holding company, producing electronics, chemicals and telecommunications products.  from 80 countries", "LG@test.com", null, "242523", "LG", "https://i.ibb.co/myvmHqv/company-23.png", "989887", "0921423432", "223554", false },
-                    { 24, " Los Gatos, California", 6, "Netflix is   an American entertainment company that specializes in providing live broadcasting, video-on-demand, and mail-delivery of CDs. Netflix has expanded into the production of films and television shows, and online video distribution", "NETFLIX@test.com", null, "242523", "NETFLIX", "https://i.ibb.co/bJkkkSx/company-24.png", "34567", "0921423432", "223554", false },
-                    { 25, "From Streat", 6, "Shahid is the first Arab platform to provide \"Video on Demand\" service in the Middle East, and it has been re-launched by the \"MBC\" media group.  It is worth noting that Shahid,the leading subscription video-on-demand platform, is considered the leading Arab broadcasting platform in the world and the home of original Arabic productions with world-class specifications.along with a live broadcast of a group of the most watched Arab TV channels", "SHAHID@test.com", null, "242523", "SHAHID", "https://i.ibb.co/gSjfpWH/company-25.png", "888877", "0921423432", "223554", false },
-                    { 26, "From Streat", 7, "DIOR Products Clothing, cosmetics, fashion accessories, jewelry, perfumes, watches", "DIOR@test.com", null, "242523", "DIOR", "https://i.ibb.co/qmDXbbJ/company-26.png", "777776", "0921423432", "223554", false },
-                    { 27, "From Streat", 7, "Chanel Its products cover clothes, fragrances, handbags and watches", "CHANNEL@test.com", null, "242523", "CHANNEL", "https://i.ibb.co/tc2Wt2W/company-27.png", "333333", "0921423432", "223554", false },
-                    { 28, "From Streat", 7, "Gucci offers a range of different luxury  Shoes, ready-to-wear apparel, watches, and jewelry are the other main , however they also sell other products such as perfume and home decor", "Gucci@test.com", null, "242523", "GUCCI", null, "8888882", "0921423432", "223554", false }
+                    { 3, "From Streat", 2, "Max Fashion is an Indian fashion brand under the banner of the Landmark Group in Dubai", "MAX@test.com", null, "242523", "MAX", "https://i.ibb.co/9ptGtb1/max-fashion-india-logo.jpg", "111222", "0921423432", "223554", false },
+                    { 4, "From Streat", 2, "It is an Italian luxury fashion house specializing in ready-to-wear and haute couture, headquartered in Milan, Italy. Expanded to design raincoats, windbreakers, knitwear, leather goods, shoes, perfume, and accessories", "MONCLER@test.com", null, "242523", "MONCLER", "https://i.ibb.co/0fmgNQL/download.png", "6789", "0921423432", "223554", false },
+                    { 5, "From Streat", 3, "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.", "ZARA@test.com", null, "242523", "ZARA", "https://i.ibb.co/KXYZN1b/Zara-Logo-svg.png", "0909", "0921423432", "223554", false },
+                    { 6, "From Streat", 3, "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.", "ZARA@test.com", null, "242523", "LC", "https://i.ibb.co/KXYZN1b/Zara-Logo-svg.png", "0909", "0921423432", "223554", false },
+                    { 7, "Louisville, KentuckyFrom Streat", 4, "Kentucky Fried Chicken or KFC is a chain of fast food restaurants that specializes primarily in fried chicken.  It is the second largest chain of fast food restaurants in the world in terms of sales after McDonald's. Kentucky Fried Chicken has nearly twenty thousand branches spread over 123 countries and territories around the world.", "KFC@test.com", null, "242523", "KFC", "https://i.ibb.co/30ggCjY/download-2.png", "5252", "0921423432", "223554", false },
+                    { 8, "From Streat", 4, "Pizza Hut is an American multinational restaurant chain and international franchise founded in 1958 in Wichita, Kansas by Dan and Frank Carney. They serve their signature pan pizza and other dishes including pasta, breadsticks and desserts.", "PIZZAHUT@test.com", null, "242523", "PIZZA HUT", "https://i.ibb.co/wB3sWFC/cmopany-20.png", "34345", "0921423432", "223554", false },
+                    { 9, "Suwon, South Korea", 5, " Samsung Electronics is the world's largest electronics and information technology company.  Samsung Electronics is part of the Samsung Group, which is the largest conglomerate in South Korea and the global market leader with more than 60 products including semiconductors such as DRAM and flash memory, digital display devices such as liquid crystal TVs  LCD and plasma, consumer electronics such as DVD players, mobile phones, digital cameras and laser printers, household appliances such as refrigerators, microwaves and dishwashers.", "SAMSUNG@test.com", null, "242523", "SAMSUNG", "https://i.ibb.co/fNGbPdT/Samsung.png", "111222", "0921423432", "223554", false },
+                    { 10, "Cupertino, California, United States", 5, "The Apple Corporation is an American multinational technology company specializing in consumer electronics, software and online services.  It is one of the top five American IT companies", "APPLE@test.com", null, "242523", "APPLE", "https://i.ibb.co/pzcm1C3/Apple.png", "77666", "0921423432", "223554", false },
+                    { 11, "USA", 6, "", "Prada@test.com", null, "242004", "Prada", "https://i.ibb.co/NyNdVrN/prada.png", "88810", "002875432", "242004", false },
+                    { 12, "Germany", 6, "", "Calvin_Klein@test.com", null, "203010", "Calvin Klein", "https://i.ibb.co/4pN0wbw/Calvin-Klein-Logo.png", "87000", "002100572", "203010", false }
                 });
 
             migrationBuilder.InsertData(
@@ -585,11 +591,21 @@ namespace MarketingSurplus.Migrations
                 values: new object[,]
                 {
                     { 1, 1, 1 },
-                    { 2, 1, 3 },
-                    { 3, 1, 2 },
-                    { 4, 2, 1 },
-                    { 5, 2, 3 },
-                    { 6, 3, 2 }
+                    { 2, 2, 3 },
+                    { 3, 3, 2 },
+                    { 4, 4, 1 },
+                    { 5, 5, 3 },
+                    { 6, 6, 2 },
+                    { 7, 7, 2 },
+                    { 8, 9, 1 },
+                    { 9, 9, 1 },
+                    { 10, 10, 2 },
+                    { 11, 11, 3 },
+                    { 12, 12, 2 },
+                    { 13, 7, 1 },
+                    { 14, 9, 3 },
+                    { 15, 11, 3 },
+                    { 16, 4, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -597,25 +613,42 @@ namespace MarketingSurplus.Migrations
                 columns: new[] { "Id", "Amount", "CompanyId", "Favor", "ProductId" },
                 values: new object[,]
                 {
-                    { 1, 2, 1, false, 1 },
-                    { 2, 4, 2, false, 2 },
-                    { 3, 7, 2, false, 3 },
-                    { 4, 10, 3, false, 4 },
-                    { 5, 2, 3, false, 5 },
-                    { 6, 10, 4, false, 6 },
-                    { 7, 9, 4, false, 7 },
-                    { 8, 10, 6, false, 8 },
-                    { 9, 5, 6, false, 9 },
-                    { 10, 2, 11, false, 10 },
-                    { 11, 5, 11, false, 11 },
-                    { 12, 2, 16, false, 12 },
-                    { 13, 6, 16, false, 13 },
-                    { 14, 9, 21, false, 12 },
-                    { 15, 12, 21, false, 13 },
-                    { 16, 10, 24, false, 12 },
-                    { 17, 4, 24, false, 13 },
-                    { 18, 7, 26, false, 12 },
-                    { 19, 10, 26, false, 13 }
+                    { 1, 10, 1, false, 1 },
+                    { 2, 10, 1, false, 2 },
+                    { 3, 10, 1, false, 3 },
+                    { 4, 10, 2, false, 4 },
+                    { 5, 10, 2, false, 5 },
+                    { 6, 10, 2, false, 6 },
+                    { 7, 10, 3, false, 7 },
+                    { 8, 10, 3, false, 8 },
+                    { 9, 10, 3, false, 9 },
+                    { 10, 10, 4, false, 10 },
+                    { 11, 10, 4, false, 11 },
+                    { 12, 10, 4, false, 12 },
+                    { 13, 10, 5, false, 13 },
+                    { 14, 10, 5, false, 14 },
+                    { 15, 10, 5, false, 15 },
+                    { 16, 10, 6, false, 16 },
+                    { 17, 10, 6, false, 17 },
+                    { 18, 10, 6, false, 18 },
+                    { 19, 10, 7, false, 19 },
+                    { 20, 10, 7, false, 20 },
+                    { 21, 10, 7, false, 21 },
+                    { 22, 10, 8, false, 22 },
+                    { 23, 10, 8, false, 23 },
+                    { 24, 10, 8, false, 24 },
+                    { 25, 10, 9, false, 25 },
+                    { 26, 10, 9, false, 26 },
+                    { 27, 10, 9, false, 27 },
+                    { 28, 10, 10, false, 28 },
+                    { 29, 10, 10, false, 29 },
+                    { 30, 10, 10, false, 30 },
+                    { 31, 10, 11, false, 31 },
+                    { 32, 11, 11, false, 32 },
+                    { 33, 10, 11, false, 33 },
+                    { 34, 10, 12, false, 34 },
+                    { 35, 10, 12, false, 35 },
+                    { 36, 10, 12, false, 36 }
                 });
 
             migrationBuilder.InsertData(
@@ -656,10 +689,20 @@ namespace MarketingSurplus.Migrations
                 values: new object[,]
                 {
                     { 1, 1, 1, 1, 60000 },
-                    { 2, 1, 2, 1, 70000 },
-                    { 3, 1, 2, 2, 70000 },
-                    { 4, 1, 3, 3, 70000 },
-                    { 5, 1, 1, 3, 70000 }
+                    { 2, 3, 2, 2, 70000 },
+                    { 3, 2, 7, 3, 70000 },
+                    { 4, 3, 5, 4, 70000 },
+                    { 5, 3, 11, 1, 90000 },
+                    { 6, 4, 15, 2, 70000 },
+                    { 7, 9, 17, 3, 679000 },
+                    { 8, 8, 20, 3, 98700 },
+                    { 9, 1, 29, 3, 7000 },
+                    { 10, 4, 33, 4, 70000 },
+                    { 11, 1, 31, 2, 101000 },
+                    { 12, 1, 34, 2, 70000 },
+                    { 13, 2, 22, 3, 97000 },
+                    { 14, 3, 26, 1, 120000 },
+                    { 15, 1, 19, 1, 70000 }
                 });
 
             migrationBuilder.InsertData(

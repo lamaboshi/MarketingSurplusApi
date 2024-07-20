@@ -15,6 +15,29 @@ namespace MarketingSurplus.Controllers
         {
             db = _db;
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            db.DeleteProduct(id);
+            return Ok();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put([FromBody] Product product)
+        {
+            if (product == null || product.Id == 0)
+            {
+                // return BadRequest();
+                return Ok(new List<object>());
+            }
+            else
+            {
+                db.UpdateProduct(product);
+                return Ok();
+            }
+        }
+
         [HttpGet("{userId}")]
         [ActionName("GetAllPosts")]
         public IActionResult GetAllPosts(int userId)

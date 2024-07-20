@@ -15,6 +15,9 @@ namespace MarketingSurplus.Infrastructure
         List<User> GetAllCompanyUsers(int companyId);
         List<OrderProduct> GetOrderDetails(int userId);
         List<OrderProduct> GetOrderDetailsForCompany(int companyId);
-        
+
+        public void UpdateProduct(Product product);
+        public void DeleteProduct(int id);
+
     }
 }

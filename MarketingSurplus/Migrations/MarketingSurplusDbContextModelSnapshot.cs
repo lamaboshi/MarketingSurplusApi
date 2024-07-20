@@ -149,6 +149,7 @@ namespace MarketingSurplus.Migrations
                             Email = "Al-Ihsan@test.com",
                             Goals = "childern",
                             Name = "Al-Ihsan",
+                            OnlineImage = "https://i.ibb.co/Z6GHm9w/banner.png",
                             Password = "Al-Ihsan789",
                             Phone = "0215789147",
                             TargetGroup = "Rich Pepole",
@@ -162,6 +163,7 @@ namespace MarketingSurplus.Migrations
                             Email = "Hand-By-Hand@test.com",
                             Goals = "Old Pepole",
                             Name = "Hand By Hand",
+                            OnlineImage = "https://i.ibb.co/CH67mMZ/9ba9d0086cff0ceb5155420e01fda24e.jpg",
                             Password = "Hand-By-Hand456",
                             Phone = "0215117894",
                             TargetGroup = "Rich Pepole",
@@ -175,6 +177,7 @@ namespace MarketingSurplus.Migrations
                             Email = "Al-Noor@test.com",
                             Goals = "childern",
                             Name = "Al-Noor",
+                            OnlineImage = "https://i.ibb.co/7GY0Qvs/al-nour.jpg",
                             Password = "Al-Noor123",
                             Phone = "021524895 ",
                             TargetGroup = "Rich Pepole",
@@ -188,6 +191,7 @@ namespace MarketingSurplus.Migrations
                             Email = "George@test.com",
                             Goals = "childern",
                             Name = "George",
+                            OnlineImage = "https://i.ibb.co/HpFwRsc/259490784-888270292057739-1584770156068076983-n-300x378.png",
                             Password = "George147",
                             Phone = "0215115827",
                             TargetGroup = "Rich Pepole",
@@ -201,6 +205,7 @@ namespace MarketingSurplus.Migrations
                             Email = "Namaa@test.com",
                             Goals = "childern",
                             Name = "Namaa",
+                            OnlineImage = "https://i.ibb.co/rwW5L3G/namma.jpg",
                             Password = "Namaa369",
                             Phone = "02151174369",
                             TargetGroup = "Rich Pepole",
@@ -298,56 +303,12 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 3,
                             Address = "From Streat",
-                            CompanyTypeId = 1,
-                            Description = "Asia Pharmacy is an Electrical and Electronic Manufacturing company located in 1035 S Federal Blvd Ste B, Denver, Colorado, United States.",
-                            Email = "MAYBELLINE@test.com",
-                            Name = "Asia pharmacy",
-                            OnlineImage = "https://i.ibb.co/7kg3CCh/cmpany-3.jpg",
-                            Password = "34345",
-                            Phone = "0921423432",
-                            TelePhone = "4232543",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Address = "From Streat",
-                            CompanyTypeId = 1,
-                            Description = "Our pharmacist and trained assistants are available for advice on all medicines and minor ailments. We can also give you advice on how to live a healthier life and can direct you to a range of other resources if needed.",
-                            Email = "LOREAL@test.com",
-                            LicenseNumber = "242523",
-                            Name = "Medico ",
-                            OnlineImage = "https://i.ibb.co/M2FRjdc/company-4.jpg",
-                            Password = "23234",
-                            Phone = "0921423432",
-                            TelePhone = "4232543",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Address = "From Streat",
-                            CompanyTypeId = 1,
-                            Description = "APOTHEKE ADHOC Webinar: Praxisrelevantes Wissen für das gesamte Apothekenteam zu brandaktuellen Fachthemen rund um Indikation, Beratung, Rezeptur und vieles mehr.",
-                            Email = "SEPHORA@test.com",
-                            LicenseNumber = "242523",
-                            Name = "Mediathek",
-                            OnlineImage = "https://i.ibb.co/dt9zsZk/company-5.png",
-                            Password = "45456",
-                            Phone = "0921423432",
-                            TelePhone = "4232543",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Address = "From Streat",
                             CompanyTypeId = 2,
-                            Description = "Asics sponsors a variety of sports associations",
-                            Email = "Asics@test.com",
+                            Description = "Max Fashion is an Indian fashion brand under the banner of the Landmark Group in Dubai",
+                            Email = "MAX@test.com",
                             LicenseNumber = "242523",
-                            Name = "ASIC",
-                            OnlineImage = "https://i.ibb.co/nQnQWNz/company-6.png",
+                            Name = "MAX",
+                            OnlineImage = "https://i.ibb.co/9ptGtb1/max-fashion-india-logo.jpg",
                             Password = "111222",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -355,15 +316,60 @@ namespace MarketingSurplus.Migrations
                         },
                         new
                         {
-                            Id = 7,
+                            Id = 4,
                             Address = "From Streat",
                             CompanyTypeId = 2,
-                            Description = "Manufacturer of sports shoes and apparel. It was the largest sportswear manufacturer in Europe and the second largest after Nike in the world. Adidas products are traditionally distinguished by a three-line brand, which remains an element of the company's latest products",
-                            Email = "ADDIDAS@test.com",
+                            Description = "It is an Italian luxury fashion house specializing in ready-to-wear and haute couture, headquartered in Milan, Italy. Expanded to design raincoats, windbreakers, knitwear, leather goods, shoes, perfume, and accessories",
+                            Email = "MONCLER@test.com",
                             LicenseNumber = "242523",
-                            Name = "ADDIDAS",
-                            OnlineImage = "https://i.ibb.co/2sSf4sB/company-7.png",
-                            Password = "111222",
+                            Name = "MONCLER",
+                            OnlineImage = "https://i.ibb.co/0fmgNQL/download.png",
+                            Password = "6789",
+                            Phone = "0921423432",
+                            TelePhone = "223554",
+                            isAccept = false
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Address = "From Streat",
+                            CompanyTypeId = 3,
+                            Description = "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.",
+                            Email = "ZARA@test.com",
+                            LicenseNumber = "242523",
+                            Name = "ZARA",
+                            OnlineImage = "https://i.ibb.co/KXYZN1b/Zara-Logo-svg.png",
+                            Password = "0909",
+                            Phone = "0921423432",
+                            TelePhone = "223554",
+                            isAccept = false
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Address = "From Streat",
+                            CompanyTypeId = 3,
+                            Description = "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.",
+                            Email = "ZARA@test.com",
+                            LicenseNumber = "242523",
+                            Name = "LC",
+                            OnlineImage = "https://i.ibb.co/KXYZN1b/Zara-Logo-svg.png",
+                            Password = "0909",
+                            Phone = "0921423432",
+                            TelePhone = "223554",
+                            isAccept = false
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Address = "Louisville, KentuckyFrom Streat",
+                            CompanyTypeId = 4,
+                            Description = "Kentucky Fried Chicken or KFC is a chain of fast food restaurants that specializes primarily in fried chicken.  It is the second largest chain of fast food restaurants in the world in terms of sales after McDonald's. Kentucky Fried Chicken has nearly twenty thousand branches spread over 123 countries and territories around the world.",
+                            Email = "KFC@test.com",
+                            LicenseNumber = "242523",
+                            Name = "KFC",
+                            OnlineImage = "https://i.ibb.co/30ggCjY/download-2.png",
+                            Password = "5252",
                             Phone = "0921423432",
                             TelePhone = "223554",
                             isAccept = false
@@ -372,191 +378,12 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 8,
                             Address = "From Streat",
-                            CompanyTypeId = 2,
-                            Description = "The world’s largest athletic apparel company, Nike is best known for its footwear, apparel, and equipment. One of the most valuable brands among sport businesses,The company sponsors top athletes and sports teams around the world.",
-                            Email = "NIKE@test.com",
-                            LicenseNumber = "242523",
-                            Name = "NIKE",
-                            OnlineImage = "https://i.ibb.co/KysfgKW/company-8.png",
-                            Password = "78789",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Address = "From Streat",
-                            CompanyTypeId = 2,
-                            Description = "Puma, is a German multinational corporation that designs and manufactures athletic and casual footwear, apparel and accessories, which is headquartered in Herzogenaurach, Bavaria, Germany. Puma is the third largest sportswear manufacturer in the world",
-                            Email = "PUMA@test.com",
-                            LicenseNumber = "242523",
-                            Name = "PUMA",
-                            OnlineImage = " https://i.ibb.co/1KkgsCN/company-9.png",
-                            Password = "67678",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Address = "Reebok International Limited (/ˈriːbɒk/) is an American fitness footwear and clothing manufacturer that is a part of Authentic Brands Group.",
-                            CompanyTypeId = 2,
-                            Description = "Asics sponsors a variety of sports associations",
-                            Email = "REEBOK@test.com",
-                            LicenseNumber = "242523",
-                            Name = "REEBOK",
-                            OnlineImage = "https://i.ibb.co/BBNBr0k/company-10.png",
-                            Password = "8989",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Address = "From Streat",
-                            CompanyTypeId = 3,
-                            Description = "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.",
-                            Email = "ZARA@test.com",
-                            LicenseNumber = "242523",
-                            Name = "ZARA",
-                            OnlineImage = "https://i.ibb.co/bvCVzX8/company-11.png",
-                            Password = "0909",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Address = "From Streat",
-                            CompanyTypeId = 3,
-                            Description = "Max Fashion is an Indian fashion brand under the banner of the Landmark Group in Dubai",
-                            Email = "MAX@test.com",
-                            LicenseNumber = "242523",
-                            Name = "MAX",
-                            OnlineImage = " https://i.ibb.co/bPCz1jL/company-12.jpg",
-                            Password = "111222",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Address = "From Streat",
-                            CompanyTypeId = 3,
-                            Description = "It is an Italian luxury fashion house specializing in ready-to-wear and haute couture, headquartered in Milan, Italy. Expanded to design raincoats, windbreakers, knitwear, leather goods, shoes, perfume, and accessories",
-                            Email = "MONCLER@test.com",
-                            LicenseNumber = "242523",
-                            Name = "MONCLER",
-                            OnlineImage = " https://i.ibb.co/7Cnn1WB/company-13.jpg",
-                            Password = "6789",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Address = "From Streat",
-                            CompanyTypeId = 3,
-                            Description = "Lacoste S.A. is a French company. It sells clothing, footwear, sportswear, eyewear, leather goods, perfume, towels and watches",
-                            Email = "LACOSTE@test.com",
-                            LicenseNumber = "242523",
-                            Name = "LACOSTE",
-                            OnlineImage = "https://i.ibb.co/QMDQMdQ/company-14.png",
-                            Password = "111222",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Address = "From Streat",
-                            CompanyTypeId = 3,
-                            Description = "It is one of the most famous fashion companies in the world. The group enjoys a unified identity consisting of colours, authentic fashion and quality at democratic prices",
-                            Email = "BENETTON@test.com",
-                            LicenseNumber = "242523",
-                            Name = "BENETTON",
-                            OnlineImage = " https://i.ibb.co/M278Nxy/company-15.png",
-                            Password = "9463",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Address = "Louisville, KentuckyFrom Streat",
-                            CompanyTypeId = 4,
-                            Description = "Kentucky Fried Chicken or KFC is a chain of fast food restaurants that specializes primarily in fried chicken.  It is the second largest chain of fast food restaurants in the world in terms of sales after McDonald's. Kentucky Fried Chicken has nearly twenty thousand branches spread over 123 countries and territories around the world.",
-                            Email = "KFC@test.com",
-                            LicenseNumber = "242523",
-                            Name = "KFC",
-                            OnlineImage = "https://i.ibb.co/RD6PPc3/company-16.png",
-                            Password = "5252",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Address = "From Streat",
-                            CompanyTypeId = 4,
-                            Description = "MCDONALD'S is the world's largest restaurant chain by revenue,McDonald's is best known for its hamburgers, cheeseburgers and french fries, although their menus include other items like chicken, fish, fruit, and salads",
-                            Email = "MCDONALDS@test.com",
-                            LicenseNumber = "242523",
-                            Name = "MCDONALDS",
-                            OnlineImage = "https://i.ibb.co/pQyQ9JG/company-17.png",
-                            Password = "99999",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Address = "From Streat",
-                            CompanyTypeId = 4,
-                            Description = "Nestlé is a multinational company specializing in the production of canned foods, founded in Vevey, Switzerland.",
-                            Email = "NESTLE@test.com",
-                            Name = "NESTLE",
-                            OnlineImage = "https://i.ibb.co/BwzvsfN/company-18.png",
-                            Password = "111222",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Address = "From Streat",
-                            CompanyTypeId = 4,
-                            Description = "STARBUCKS is a specialty coffee retailer. It roasts, markets, and retails specialty coffee. The company, through its stores, offers several blends of coffee, handcrafted beverages, merchandise, and food items",
-                            Email = "STARBUCKS@test.com",
-                            LicenseNumber = "242523",
-                            Name = "STARBUCKS",
-                            OnlineImage = "https://i.ibb.co/jJ1MdK5/company-19.png",
-                            Password = "123122",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Address = "From Streat",
                             CompanyTypeId = 4,
                             Description = "Pizza Hut is an American multinational restaurant chain and international franchise founded in 1958 in Wichita, Kansas by Dan and Frank Carney. They serve their signature pan pizza and other dishes including pasta, breadsticks and desserts.",
                             Email = "PIZZAHUT@test.com",
                             LicenseNumber = "242523",
                             Name = "PIZZA HUT",
-                            OnlineImage = " https://i.ibb.co/wB3sWFC/cmopany-20.png",
+                            OnlineImage = "https://i.ibb.co/wB3sWFC/cmopany-20.png",
                             Password = "34345",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -564,14 +391,14 @@ namespace MarketingSurplus.Migrations
                         },
                         new
                         {
-                            Id = 21,
+                            Id = 9,
                             Address = "Suwon, South Korea",
                             CompanyTypeId = 5,
                             Description = " Samsung Electronics is the world's largest electronics and information technology company.  Samsung Electronics is part of the Samsung Group, which is the largest conglomerate in South Korea and the global market leader with more than 60 products including semiconductors such as DRAM and flash memory, digital display devices such as liquid crystal TVs  LCD and plasma, consumer electronics such as DVD players, mobile phones, digital cameras and laser printers, household appliances such as refrigerators, microwaves and dishwashers.",
                             Email = "SAMSUNG@test.com",
                             LicenseNumber = "242523",
                             Name = "SAMSUNG",
-                            OnlineImage = "https://i.ibb.co/k5Dkc5H/company-21.jpg",
+                            OnlineImage = "https://i.ibb.co/fNGbPdT/Samsung.png",
                             Password = "111222",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -579,14 +406,14 @@ namespace MarketingSurplus.Migrations
                         },
                         new
                         {
-                            Id = 22,
+                            Id = 10,
                             Address = "Cupertino, California, United States",
                             CompanyTypeId = 5,
                             Description = "The Apple Corporation is an American multinational technology company specializing in consumer electronics, software and online services.  It is one of the top five American IT companies",
                             Email = "APPLE@test.com",
                             LicenseNumber = "242523",
                             Name = "APPLE",
-                            OnlineImage = "https://i.ibb.co/3CYcVn1/company-22.png",
+                            OnlineImage = "https://i.ibb.co/pzcm1C3/Apple.png",
                             Password = "77666",
                             Phone = "0921423432",
                             TelePhone = "223554",
@@ -594,91 +421,32 @@ namespace MarketingSurplus.Migrations
                         },
                         new
                         {
-                            Id = 23,
-                            Address = "South Korea",
-                            CompanyTypeId = 5,
-                            Description = "The Korean LG Group this company is the second largest holding company, producing electronics, chemicals and telecommunications products.  from 80 countries",
-                            Email = "LG@test.com",
-                            LicenseNumber = "242523",
-                            Name = "LG",
-                            OnlineImage = "https://i.ibb.co/myvmHqv/company-23.png",
-                            Password = "989887",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Address = " Los Gatos, California",
+                            Id = 11,
+                            Address = "USA",
                             CompanyTypeId = 6,
-                            Description = "Netflix is   an American entertainment company that specializes in providing live broadcasting, video-on-demand, and mail-delivery of CDs. Netflix has expanded into the production of films and television shows, and online video distribution",
-                            Email = "NETFLIX@test.com",
-                            LicenseNumber = "242523",
-                            Name = "NETFLIX",
-                            OnlineImage = "https://i.ibb.co/bJkkkSx/company-24.png",
-                            Password = "34567",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
+                            Description = "",
+                            Email = "Prada@test.com",
+                            LicenseNumber = "242004",
+                            Name = "Prada",
+                            OnlineImage = "https://i.ibb.co/NyNdVrN/prada.png",
+                            Password = "88810",
+                            Phone = "002875432",
+                            TelePhone = "242004",
                             isAccept = false
                         },
                         new
                         {
-                            Id = 25,
-                            Address = "From Streat",
+                            Id = 12,
+                            Address = "Germany",
                             CompanyTypeId = 6,
-                            Description = "Shahid is the first Arab platform to provide \"Video on Demand\" service in the Middle East, and it has been re-launched by the \"MBC\" media group.  It is worth noting that Shahid,the leading subscription video-on-demand platform, is considered the leading Arab broadcasting platform in the world and the home of original Arabic productions with world-class specifications.along with a live broadcast of a group of the most watched Arab TV channels",
-                            Email = "SHAHID@test.com",
-                            LicenseNumber = "242523",
-                            Name = "SHAHID",
-                            OnlineImage = "https://i.ibb.co/gSjfpWH/company-25.png",
-                            Password = "888877",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Address = "From Streat",
-                            CompanyTypeId = 7,
-                            Description = "DIOR Products Clothing, cosmetics, fashion accessories, jewelry, perfumes, watches",
-                            Email = "DIOR@test.com",
-                            LicenseNumber = "242523",
-                            Name = "DIOR",
-                            OnlineImage = "https://i.ibb.co/qmDXbbJ/company-26.png",
-                            Password = "777776",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 27,
-                            Address = "From Streat",
-                            CompanyTypeId = 7,
-                            Description = "Chanel Its products cover clothes, fragrances, handbags and watches",
-                            Email = "CHANNEL@test.com",
-                            LicenseNumber = "242523",
-                            Name = "CHANNEL",
-                            OnlineImage = "https://i.ibb.co/tc2Wt2W/company-27.png",
-                            Password = "333333",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 28,
-                            Address = "From Streat",
-                            CompanyTypeId = 7,
-                            Description = "Gucci offers a range of different luxury  Shoes, ready-to-wear apparel, watches, and jewelry are the other main , however they also sell other products such as perfume and home decor",
-                            Email = "Gucci@test.com",
-                            LicenseNumber = "242523",
-                            Name = "GUCCI",
-                            Password = "8888882",
-                            Phone = "0921423432",
-                            TelePhone = "223554",
+                            Description = "",
+                            Email = "Calvin_Klein@test.com",
+                            LicenseNumber = "203010",
+                            Name = "Calvin Klein",
+                            OnlineImage = "https://i.ibb.co/4pN0wbw/Calvin-Klein-Logo.png",
+                            Password = "87000",
+                            Phone = "002100572",
+                            TelePhone = "203010",
                             isAccept = false
                         });
                 });
@@ -715,32 +483,92 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 2,
-                            CompanyId = 1,
+                            CompanyId = 2,
                             PayMethodId = 3
                         },
                         new
                         {
                             Id = 3,
-                            CompanyId = 1,
+                            CompanyId = 3,
                             PayMethodId = 2
                         },
                         new
                         {
                             Id = 4,
-                            CompanyId = 2,
+                            CompanyId = 4,
                             PayMethodId = 1
                         },
                         new
                         {
                             Id = 5,
-                            CompanyId = 2,
+                            CompanyId = 5,
                             PayMethodId = 3
                         },
                         new
                         {
                             Id = 6,
-                            CompanyId = 3,
+                            CompanyId = 6,
                             PayMethodId = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CompanyId = 7,
+                            PayMethodId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CompanyId = 9,
+                            PayMethodId = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CompanyId = 9,
+                            PayMethodId = 1
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CompanyId = 10,
+                            PayMethodId = 2
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CompanyId = 11,
+                            PayMethodId = 3
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CompanyId = 12,
+                            PayMethodId = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CompanyId = 7,
+                            PayMethodId = 1
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CompanyId = 9,
+                            PayMethodId = 3
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CompanyId = 11,
+                            PayMethodId = 3
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CompanyId = 4,
+                            PayMethodId = 1
                         });
                 });
 
@@ -776,7 +604,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 1,
-                            Amount = 2,
+                            Amount = 10,
                             CompanyId = 1,
                             Favor = false,
                             ProductId = 1
@@ -784,16 +612,16 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 2,
-                            Amount = 4,
-                            CompanyId = 2,
+                            Amount = 10,
+                            CompanyId = 1,
                             Favor = false,
                             ProductId = 2
                         },
                         new
                         {
                             Id = 3,
-                            Amount = 7,
-                            CompanyId = 2,
+                            Amount = 10,
+                            CompanyId = 1,
                             Favor = false,
                             ProductId = 3
                         },
@@ -801,15 +629,15 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 4,
                             Amount = 10,
-                            CompanyId = 3,
+                            CompanyId = 2,
                             Favor = false,
                             ProductId = 4
                         },
                         new
                         {
                             Id = 5,
-                            Amount = 2,
-                            CompanyId = 3,
+                            Amount = 10,
+                            CompanyId = 2,
                             Favor = false,
                             ProductId = 5
                         },
@@ -817,15 +645,15 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 6,
                             Amount = 10,
-                            CompanyId = 4,
+                            CompanyId = 2,
                             Favor = false,
                             ProductId = 6
                         },
                         new
                         {
                             Id = 7,
-                            Amount = 9,
-                            CompanyId = 4,
+                            Amount = 10,
+                            CompanyId = 3,
                             Favor = false,
                             ProductId = 7
                         },
@@ -833,97 +661,233 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 8,
                             Amount = 10,
-                            CompanyId = 6,
+                            CompanyId = 3,
                             Favor = false,
                             ProductId = 8
                         },
                         new
                         {
                             Id = 9,
-                            Amount = 5,
-                            CompanyId = 6,
+                            Amount = 10,
+                            CompanyId = 3,
                             Favor = false,
                             ProductId = 9
                         },
                         new
                         {
                             Id = 10,
-                            Amount = 2,
-                            CompanyId = 11,
+                            Amount = 10,
+                            CompanyId = 4,
                             Favor = false,
                             ProductId = 10
                         },
                         new
                         {
                             Id = 11,
-                            Amount = 5,
-                            CompanyId = 11,
+                            Amount = 10,
+                            CompanyId = 4,
                             Favor = false,
                             ProductId = 11
                         },
                         new
                         {
                             Id = 12,
-                            Amount = 2,
-                            CompanyId = 16,
+                            Amount = 10,
+                            CompanyId = 4,
                             Favor = false,
                             ProductId = 12
                         },
                         new
                         {
                             Id = 13,
-                            Amount = 6,
-                            CompanyId = 16,
+                            Amount = 10,
+                            CompanyId = 5,
                             Favor = false,
                             ProductId = 13
                         },
                         new
                         {
                             Id = 14,
-                            Amount = 9,
-                            CompanyId = 21,
+                            Amount = 10,
+                            CompanyId = 5,
                             Favor = false,
-                            ProductId = 12
+                            ProductId = 14
                         },
                         new
                         {
                             Id = 15,
-                            Amount = 12,
-                            CompanyId = 21,
+                            Amount = 10,
+                            CompanyId = 5,
                             Favor = false,
-                            ProductId = 13
+                            ProductId = 15
                         },
                         new
                         {
                             Id = 16,
                             Amount = 10,
-                            CompanyId = 24,
+                            CompanyId = 6,
                             Favor = false,
-                            ProductId = 12
+                            ProductId = 16
                         },
                         new
                         {
                             Id = 17,
-                            Amount = 4,
-                            CompanyId = 24,
+                            Amount = 10,
+                            CompanyId = 6,
                             Favor = false,
-                            ProductId = 13
+                            ProductId = 17
                         },
                         new
                         {
                             Id = 18,
-                            Amount = 7,
-                            CompanyId = 26,
+                            Amount = 10,
+                            CompanyId = 6,
                             Favor = false,
-                            ProductId = 12
+                            ProductId = 18
                         },
                         new
                         {
                             Id = 19,
                             Amount = 10,
-                            CompanyId = 26,
+                            CompanyId = 7,
                             Favor = false,
-                            ProductId = 13
+                            ProductId = 19
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Amount = 10,
+                            CompanyId = 7,
+                            Favor = false,
+                            ProductId = 20
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Amount = 10,
+                            CompanyId = 7,
+                            Favor = false,
+                            ProductId = 21
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Amount = 10,
+                            CompanyId = 8,
+                            Favor = false,
+                            ProductId = 22
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Amount = 10,
+                            CompanyId = 8,
+                            Favor = false,
+                            ProductId = 23
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Amount = 10,
+                            CompanyId = 8,
+                            Favor = false,
+                            ProductId = 24
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Amount = 10,
+                            CompanyId = 9,
+                            Favor = false,
+                            ProductId = 25
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Amount = 10,
+                            CompanyId = 9,
+                            Favor = false,
+                            ProductId = 26
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Amount = 10,
+                            CompanyId = 9,
+                            Favor = false,
+                            ProductId = 27
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Amount = 10,
+                            CompanyId = 10,
+                            Favor = false,
+                            ProductId = 28
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Amount = 10,
+                            CompanyId = 10,
+                            Favor = false,
+                            ProductId = 29
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Amount = 10,
+                            CompanyId = 10,
+                            Favor = false,
+                            ProductId = 30
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Amount = 10,
+                            CompanyId = 11,
+                            Favor = false,
+                            ProductId = 31
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Amount = 11,
+                            CompanyId = 11,
+                            Favor = false,
+                            ProductId = 32
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Amount = 10,
+                            CompanyId = 11,
+                            Favor = false,
+                            ProductId = 33
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Amount = 10,
+                            CompanyId = 12,
+                            Favor = false,
+                            ProductId = 34
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Amount = 10,
+                            CompanyId = 12,
+                            Favor = false,
+                            ProductId = 35
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Amount = 10,
+                            CompanyId = 12,
+                            Favor = false,
+                            ProductId = 36
                         });
                 });
 
@@ -989,13 +953,6 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 6,
-                            Description = "All About Movies & Series",
-                            TypeName = "Platforms",
-                            isAccept = false
-                        },
-                        new
-                        {
-                            Id = 7,
                             Description = "All About Perfumes",
                             TypeName = "Perfumes",
                             isAccept = false
@@ -1282,25 +1239,25 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(2973),
+                            DateTime = new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9372),
                             status = 1
                         },
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(2992),
+                            DateTime = new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9406),
                             status = 2
                         },
                         new
                         {
                             Id = 3,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(3006),
+                            DateTime = new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9422),
                             status = 3
                         },
                         new
                         {
                             Id = 4,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(3021),
+                            DateTime = new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9437),
                             status = 4
                         });
                 });
@@ -1422,6 +1379,18 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 1,
                             DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Flamix is ​​a medicine that contains celecoxib as an active ingredient, and it is considered a non-steroidal anti-infl ammatory drug",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Newflamix",
+                            NewPrice = 13000f,
+                            OldPrice = 15000f,
+                            OnlineImage = "https://i.ibb.co/xjS4yyL/Flamix2040020mg20film20tablete203-D.jpg"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Moderate pain relief without the need for a prescription",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1432,147 +1401,411 @@ namespace MarketingSurplus.Migrations
                         },
                         new
                         {
-                            Id = 2,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1624),
-                            Descripation = "It is used to treat mild to moderate pain",
-                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsExpiration = false,
-                            Name = " Asealol",
-                            NewPrice = 13000f,
-                            OldPrice = 10000f,
-                            OnlineImage = "https://i.ibb.co/wJ2513B/product-3.jpg"
-                        },
-                        new
-                        {
                             Id = 3,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1657),
-                            Descripation = "Antipsychotic, treatment for schizophrenia",
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Clomiphene is used to treat some cases of infertility in women",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Asiacillin",
-                            NewPrice = 19000f,
-                            OldPrice = 20000f,
-                            OnlineImage = "https://i.ibb.co/sJgJYPz/product-4.jpg"
+                            Name = "Newclomiphene",
+                            NewPrice = 13000f,
+                            OldPrice = 15000f,
+                            OnlineImage = "https://i.ibb.co/kHFv6Yd/clomiphene-swiss-remedies.jpg"
                         },
                         new
                         {
                             Id = 4,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1673),
-                            Descripation = "Helps relieve dry eyes",
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Broad spectrum antibiotics",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Carbogel",
-                            NewPrice = 5000f,
-                            OldPrice = 2000f,
-                            OnlineImage = "https://i.ibb.co/c1Zw6N9/product-5.jpg"
+                            Name = "Newthyromax",
+                            NewPrice = 25000f,
+                            OldPrice = 30000f,
+                            OnlineImage = "https://i.ibb.co/crzLHnW/thyromaxx-50-kaps-za-normalnu-funkciju-titnja-e-bi-5fb8d11c86db5.jpg"
                         },
                         new
                         {
                             Id = 5,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1687),
-                            Descripation = "Alleviating the symptoms of acute sinusitis",
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "To treat depression",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Levo Act",
-                            NewPrice = 17000f,
-                            OldPrice = 20000f,
-                            OnlineImage = "https://i.ibb.co/2t7JpVH/product-6.jpg"
+                            Name = "Newsertraline",
+                            NewPrice = 30000f,
+                            OldPrice = 33000f,
+                            OnlineImage = "https://i.ibb.co/Fw53mry/0ceba66d9685fed081df064b3a30469b.webp"
                         },
                         new
                         {
                             Id = 6,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1703),
-                            Descripation = "It helps eliminate fluids and lower blood pressure.",
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Anti-hyperglycemic",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Sodamide",
-                            NewPrice = 25000f,
-                            OldPrice = 22000f,
-                            OnlineImage = "https://i.ibb.co/x3d2tJ3/product-7.jpg"
+                            Name = "Newmetformin",
+                            NewPrice = 8500f,
+                            OldPrice = 10000f,
+                            OnlineImage = "https://i.ibb.co/9qMw6yK/Njm9e5-KQez-GBFw-YRja-Tkb-C-1200-80.jpg"
                         },
                         new
                         {
                             Id = 7,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1717),
-                            Descripation = "antibiotic",
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Size 33",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Exozide",
-                            NewPrice = 17500f,
-                            OldPrice = 20000f,
-                            OnlineImage = "https://i.ibb.co/0hDnmyG/product-8.jpg"
+                            Name = " Spedrin",
+                            NewPrice = 13000f,
+                            OldPrice = 15000f,
+                            OnlineImage = "https://i.ibb.co/my2mYtr/Hff44c1c4dc104fc19a29e4f1d8fe5b96p-jpg-720x720q50.webp"
                         },
                         new
                         {
                             Id = 8,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1732),
-                            Descripation = "Antidepressant",
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Anfranil",
-                            NewPrice = 25000f,
-                            OldPrice = 23000f,
-                            OnlineImage = "https://i.ibb.co/12vr9Nc/product-9.jpg"
+                            Name = " Sportswear",
+                            NewPrice = 13000f,
+                            OldPrice = 15000f,
+                            OnlineImage = "https://i.ibb.co/7tjQZK6/https-hypebeast-com-image-2016-06-hm-sports-performance-collection-0.jpg"
                         },
                         new
                         {
                             Id = 9,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1746),
-                            Descripation = "Aminosic alcohol antibiotic",
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Apramycin",
-                            NewPrice = 26000f,
-                            OldPrice = 30000f,
-                            OnlineImage = "https://i.ibb.co/nc5vZFN/product-10.jpg"
+                            Name = " Sportswear",
+                            NewPrice = 13000f,
+                            OldPrice = 15000f,
+                            OnlineImage = "https://i.ibb.co/Pr32t0X/2022-1-1.jpg"
                         },
                         new
                         {
                             Id = 10,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1762),
-                            Descripation = " Pain reliever, antipyretic, antiemetic, and widely used antibiotic",
-                            Expiration = new DateTime(2025, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Comfortable cotton",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Evax Max",
-                            NewPrice = 12000f,
-                            OldPrice = 15000f,
-                            OnlineImage = " https://i.ibb.co/d5KT1tH/product-11.jpg"
+                            Name = " Shorts",
+                            NewPrice = 50000f,
+                            OldPrice = 75000f,
+                            OnlineImage = "https://i.ibb.co/F4zR55N/bdd3cef4-0e9b-4be4-b11a-1f45aaaee12d-thumbnail-770x770.png"
                         },
                         new
                         {
                             Id = 11,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1776),
-                            Descripation = " Pain reliever, antipyretic, antiemetic, and widely used antibiotic",
-                            Expiration = new DateTime(2025, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Free Size",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
-                            Name = "Evax flu",
-                            NewPrice = 12000f,
-                            OldPrice = 13000f,
-                            OnlineImage = "https://i.ibb.co/BBTyDxN/product-12.jpg"
+                            Name = " Dress",
+                            NewPrice = 130000f,
+                            OldPrice = 150000f,
+                            OnlineImage = "https://i.ibb.co/bdghtwQ/sefamerve-gri-tesettur-elbise-bwst8238-01-3316251535974586797-1-752x1152.jpg"
                         },
                         new
                         {
                             Id = 12,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1791),
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "for sea",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Sport hat",
+                            NewPrice = 50000f,
+                            OldPrice = 75000f,
+                            OnlineImage = "https://i.ibb.co/cyVGNs4/1.jpg"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Free Size",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
                             Name = " Bloues",
                             NewPrice = 130000f,
                             OldPrice = 150000f,
-                            OnlineImage = "https://i.ibb.co/VV3vvk9/product-13.jpg"
+                            OnlineImage = "https://i.ibb.co/wK9h3yd/1hoxd-AGYSt-Sp9-BCyq-XWP2vc-LRky-Pz-Bz-N5n-Ga-J5ad.jpg"
                         },
                         new
                         {
-                            Id = 13,
-                            DateTime = new DateTime(2024, 7, 6, 16, 9, 56, 9, DateTimeKind.Local).AddTicks(1804),
+                            Id = 14,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Free Size",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
                             Name = " pants",
                             NewPrice = 135000f,
                             OldPrice = 155000f,
-                            OnlineImage = "https://i.ibb.co/Pj8mQy1/product-14.jpg"
+                            OnlineImage = "https://i.ibb.co/Gnsr6w5/w1020-q80.jpg"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "mam jeans",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " jeans",
+                            NewPrice = 135000f,
+                            OldPrice = 155000f,
+                            OnlineImage = "https://i.ibb.co/xYNdXJ2/4b1d26be-d7dc-4056-bc63-39e30c160b7d.jpg"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Free Size",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Dress",
+                            NewPrice = 130000f,
+                            OldPrice = 150000f,
+                            OnlineImage = "https://i.ibb.co/YdBdM5m/16226197718.jpg"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Size 37",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Qandara",
+                            NewPrice = 13000f,
+                            OldPrice = 15000f,
+                            OnlineImage = "https://i.ibb.co/w7C1nJ2/31-AJD92clx-L-AC-SY780.jpg"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Color off white",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Wedding Suit",
+                            NewPrice = 13000f,
+                            OldPrice = 15000f,
+                            OnlineImage = ""
+                        },
+                        new
+                        {
+                            Id = 19,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Taza, hot, delicious",
+                            Expiration = new DateTime(2024, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Broasted",
+                            NewPrice = 200000f,
+                            OldPrice = 250000f,
+                            OnlineImage = "https://i.ibb.co/HPdCsJk/image.jpg"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Taza, hot, delicious",
+                            Expiration = new DateTime(2024, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Shawrama",
+                            NewPrice = 175000f,
+                            OldPrice = 200000f,
+                            OnlineImage = "https://i.ibb.co/RvpbMr3/8a13a1a95c8f094fe07b6e8c218fb6c2.jpg"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Taza, hot, delicious",
+                            Expiration = new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Grilled Chicken",
+                            NewPrice = 20000f,
+                            OldPrice = 25000f,
+                            OnlineImage = "https://i.ibb.co/f1k26g7/png-transparent-roast-chicken-barbecue-chicken-roasting-chicken-meat-roast-chicken-food-animals-baki.png"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Taza, hot, delicious",
+                            Expiration = new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Nugget",
+                            NewPrice = 50000f,
+                            OldPrice = 75000f,
+                            OnlineImage = "https://i.ibb.co/BgtCXnq/Nuggets.gif"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Taza, hot, delicious",
+                            Expiration = new DateTime(2024, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " pizza ",
+                            NewPrice = 200000f,
+                            OldPrice = 250000f,
+                            OnlineImage = "https://i.ibb.co/YQXBmKb/66951-7.jpg"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Taza, hot, delicious",
+                            Expiration = new DateTime(2024, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " salmey pizza",
+                            NewPrice = 175000f,
+                            OldPrice = 200000f,
+                            OnlineImage = "https://i.ibb.co/qrfSxXs/Q2-HGj-Nd-Babm7-S2n-FA.jpg"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Everything about the world of electronics",
+                            Expiration = new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Smart washing machine",
+                            NewPrice = 50000f,
+                            OldPrice = 75000f,
+                            OnlineImage = "https://i.ibb.co/Bcg2rCQ/ae-ar-WF1702-WEU-XSG-001-Front-624-624-PNG.png"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Everything about the world of electronics",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Camera",
+                            NewPrice = 130000f,
+                            OldPrice = 150000f,
+                            OnlineImage = "https://i.ibb.co/W3Wvh7k/2d257668b46d3cd5be228192fd02876f-fmt-pjpeg-res-Mode-bisharp-wid-354.jpg"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Everything about the world of electronics",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Mobile",
+                            NewPrice = 175000f,
+                            OldPrice = 20000f,
+                            OnlineImage = "https://i.ibb.co/BVY7rPz/eg-galaxy-s24-s928-sm-s928bztcmea-thumb-539296161-344-344-PNG.png"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Everything about the world of electronics",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " smart watch",
+                            NewPrice = 130000f,
+                            OldPrice = 150000f,
+                            OnlineImage = "https://i.ibb.co/VqCwH1C/61tp47u-ZRl-L-AC-UF1000-1000-QL80.jpg"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Everything about the world of electronics",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "tap",
+                            NewPrice = 25000f,
+                            OldPrice = 30000f,
+                            OnlineImage = "https://i.ibb.co/YhFVJvr/716o8-NCsj-DL-AC-UF894-1000-QL80.jpg"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Everything about the world of electronics",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "refrigerator",
+                            NewPrice = 230000f,
+                            OldPrice = 255000f,
+                            OnlineImage = "https://i.ibb.co/0qv7MX7/toshiba-refrigerator-no-frost-11-feet-silver-gr-ef31-s.jpg"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = " Floral Perfumes",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Chanel No.5",
+                            NewPrice = 130000f,
+                            OldPrice = 150000f,
+                            OnlineImage = "https://i.ibb.co/cCZZdrz/coco-mademoiselle-eau-de-parfum-intense-spray-3-4fl-oz-packshot-default-116660-9539148283934.png"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Oriental perfumes",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Tommy Hilfiger for Men ",
+                            NewPrice = 175000f,
+                            OldPrice = 20000f,
+                            OnlineImage = "https://i.ibb.co/QKvKKCw/91-D0-TXi2or-L.jpg"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Woody Perfumes",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Giorgio Armani",
+                            NewPrice = 130000f,
+                            OldPrice = 150000f,
+                            OnlineImage = "https://i.ibb.co/k38SvS0/517wv-Qgc-H0-L-AC-UF1000-1000-QL80.jpg"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Citrus Perfumes",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " Dolce & Gabbana Light Blue",
+                            NewPrice = 25000f,
+                            OldPrice = 30000f,
+                            OnlineImage = "https://i.ibb.co/8P2b254/miswag-Yf-M4c-AYMy-G4-U.jpg"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Amber Perfumes",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = "Bvlgari Black",
+                            NewPrice = 230000f,
+                            OldPrice = 255000f,
+                            OnlineImage = "https://i.ibb.co/X2Jhj99/Espcuc-FNv-Rg-Mn-Zucl-JFIeyq-LZ3adeu-D6-NPq-UTr44.png"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descripation = "Citrus Perfumes",
+                            Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsExpiration = false,
+                            Name = " 212",
+                            NewPrice = 25000f,
+                            OldPrice = 30000f,
+                            OnlineImage = "https://i.ibb.co/fCbqJ6Q/sg-Ai-Uj-PU5-RORz-Cf-PAj-QVd-K9spq-QL92cj-Q4-S5-ODmo.jpg"
                         });
                 });
 
@@ -1616,33 +1849,113 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 2,
-                            Amount = 1,
-                            CompanyProductId = 2,
-                            DonationId = 1,
-                            TotalPrice = 70000
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Amount = 1,
+                            Amount = 3,
                             CompanyProductId = 2,
                             DonationId = 2,
                             TotalPrice = 70000
                         },
                         new
                         {
-                            Id = 4,
-                            Amount = 1,
-                            CompanyProductId = 3,
+                            Id = 3,
+                            Amount = 2,
+                            CompanyProductId = 7,
                             DonationId = 3,
                             TotalPrice = 70000
                         },
                         new
                         {
+                            Id = 4,
+                            Amount = 3,
+                            CompanyProductId = 5,
+                            DonationId = 4,
+                            TotalPrice = 70000
+                        },
+                        new
+                        {
                             Id = 5,
-                            Amount = 1,
-                            CompanyProductId = 1,
+                            Amount = 3,
+                            CompanyProductId = 11,
+                            DonationId = 1,
+                            TotalPrice = 90000
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Amount = 4,
+                            CompanyProductId = 15,
+                            DonationId = 2,
+                            TotalPrice = 70000
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Amount = 9,
+                            CompanyProductId = 17,
                             DonationId = 3,
+                            TotalPrice = 679000
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Amount = 8,
+                            CompanyProductId = 20,
+                            DonationId = 3,
+                            TotalPrice = 98700
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Amount = 1,
+                            CompanyProductId = 29,
+                            DonationId = 3,
+                            TotalPrice = 7000
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Amount = 4,
+                            CompanyProductId = 33,
+                            DonationId = 4,
+                            TotalPrice = 70000
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Amount = 1,
+                            CompanyProductId = 31,
+                            DonationId = 2,
+                            TotalPrice = 101000
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Amount = 1,
+                            CompanyProductId = 34,
+                            DonationId = 2,
+                            TotalPrice = 70000
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Amount = 2,
+                            CompanyProductId = 22,
+                            DonationId = 3,
+                            TotalPrice = 97000
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Amount = 3,
+                            CompanyProductId = 26,
+                            DonationId = 1,
+                            TotalPrice = 120000
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Amount = 1,
+                            CompanyProductId = 19,
+                            DonationId = 1,
                             TotalPrice = 70000
                         });
                 });

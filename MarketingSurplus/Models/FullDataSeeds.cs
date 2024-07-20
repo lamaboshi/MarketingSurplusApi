@@ -2,10 +2,10 @@
 
 namespace MarketingSurplus.Models
 {
-    public class FullDataSeeds
+    public static class FullDataSeeds
     {
 
-        public void callFullData(ModelBuilder modelBuilder)
+        public static void callFullData(ModelBuilder modelBuilder)
         {
 
             modelBuilder.Entity<CompanyType>().HasData(new CompanyType { Id = 1, TypeName = "Medicines", Description = "All About Medicines", });
@@ -5433,13 +5433,8 @@ namespace MarketingSurplus.Models
                 CompanyId = 85,
                 ProductId = 149
             });
-            modelBuilder.Entity<CompanyProduct>().HasData(new CompanyProduct
-            {
-                Id = 475,
-                Amount = 10,
-                CompanyId = 85,
-                ProductId = 150
-            });
+
+
             //ordertype table
             modelBuilder.Entity<OrderType>().HasData(new OrderType { Id = 1, Name = "Normal", });
             modelBuilder.Entity<OrderType>().HasData(new OrderType { Id = 2, Name = "Donation", });

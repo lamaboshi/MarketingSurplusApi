@@ -22,6 +22,17 @@ namespace MarketingSurplus.Data
             _db.SaveChanges();
         }
 
+        public void DeleteProduct(int id)
+        {
+            var result = _db.Products.FirstOrDefault(p => p.Id == id);
+            if (result != null)
+            {
+
+                _db.Products.Remove(result);
+                _db.SaveChanges();
+            }
+        }
+
         public List<CompanyProduct> GetAllCompanyProduct(int companyId)
         {
            var data=_db.CompanyProducts.Where(q=>q.CompanyId == companyId).Include(q=>q.Product).ToList();
@@ -48,7 +59,14 @@ namespace MarketingSurplus.Data
             var data = _db.Subscriptions.Where(r => r.CompanyId == companyId).Include(q=>q.User).Select(w=>w.User).ToList();
             return data;
         }
+        public int GetAnyRate(int companyId)
+        {
+            int rate = 0;
+            Random rnd = new Random();
+            rate = rnd.Next(1, 5);
 
+            return rate;
+        }
         public List<CompnyProductDto> GetAllPosts(int UserId)
         {
             var products = new List<CompnyProductDto>();
@@ -62,15 +80,24 @@ namespace MarketingSurplus.Data
                     item.Company = company;
                     var type=_db.CompanyTypes.Where(q=>q.Id==company.CompanyTypeId).FirstOrDefault();
                     CompProduct.CompanyType = type!;
+                    CompProduct.RateNumber = GetAnyRate(company.CompanyTypeId);
                     if (UserId != 0)
                     {
                         var subscri = _db.Subscriptions.Where(q => q.UserId == UserId && q.CompanyId == company.Id).FirstOrDefault();
                         CompProduct.subscription = subscri;
                         if (subscri != null)
                         {
-                            var rate = _db.Evalution.Where(q => q.SubscriptionId == subscri.Id).Include(e => e.Rate).Select(q => q.Rate.RateNumber).FirstOrDefault();
-                            CompProduct.RateNumber = rate == null ? 0 : rate;
+                            var rate = _db.Evalution.Where(t => t.SubscriptionId == subscri.Id).Include(t => t.Rate).FirstOrDefault();
+                            if (rate != null)
+                            {
+                                CompProduct.Rate = rate.Rate;
+
+                            }
+                    
+
                         }
+
+
                     }
 
                 }
@@ -140,7 +167,8 @@ namespace MarketingSurplus.Data
                 if (company != null)
                 {
                     var subscri = _db.Subscriptions.Where(q => q.UserId == id && q.CompanyId == company.Id).FirstOrDefault();
-                     if(subscri != null)
+                    CompProduct.RateNumber = GetAnyRate(company.CompanyTypeId);
+                    if (subscri != null)
                     {
                         item.Company = company;
                         var type = _db.CompanyTypes.Where(q => q.Id == company.CompanyTypeId).FirstOrDefault();
@@ -150,8 +178,12 @@ namespace MarketingSurplus.Data
                         {
                             item.Product = product;
                         }
-                        var rate=_db.Evalution.Where(q=>q.SubscriptionId== subscri.Id).Include(e=>e.Rate).Select(q => q.Rate.RateNumber).FirstOrDefault();
-                        CompProduct.RateNumber = rate == null ? 0 : rate;
+                        var rate = _db.Evalution.Where(t => t.SubscriptionId == subscri.Id).Include(t => t.Rate).FirstOrDefault();
+                        if (rate != null)
+                        {
+                            CompProduct.Rate = rate.Rate;
+
+                        }
                         CompProduct.CompanyProduct = item;
                         products.Add(CompProduct);
                     }
@@ -178,6 +210,36 @@ namespace MarketingSurplus.Data
             _db.SaveChanges();
             _db.Bills.Add(new Bill { OrderProductId = stutas.Entity.Id, OrderStatusId = 1 });
             _db.SaveChanges();
+            var updateAmount = _db.CompanyProducts.Where(t => t.Id == orderProduct.CompanyProductId).Single();
+            var amount = updateAmount.Amount - orderProduct.Amount;
+            if (amount > 0)
+            {
+                updateAmount.Amount = amount;
+                _db.SaveChanges();
+            }
+            else if (amount == 0)
+            {
+                _db.CompanyProducts.Remove(updateAmount);
+                _db.SaveChanges();
+            }
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            if (product.Id != 0)
+            {
+                var companyEntity = _db.Products.First(t => t.Id == product.Id);
+                if (companyEntity != null)
+                {
+                    companyEntity.Name = product.Name;
+                    companyEntity.Descripation = product.Descripation;
+                    companyEntity.Image = product.Image;
+                    companyEntity.NewPrice = product.NewPrice;
+                    companyEntity.OldPrice = product.OldPrice;
+             
+                      _db.SaveChanges();
+                }
+            }
         }
 
         public void UpdateStutasOrder(int  idOrder, int Stutas)

@@ -13,10 +13,18 @@ namespace MarketingSurplus.Controllers
         {
             db = _db;
         }
-        [HttpGet]
-        public IActionResult GetPayMethods()
+        [HttpGet("{idCompany}")]
+        [ActionName("GetPayMethods")]
+        public IActionResult GetPayMethods(int idCompany)
         {
-           var data = db.GetPayMethods();
+           var data = db.GetPayMethods(idCompany);
+            return Ok(data);
+        }
+        [HttpGet]
+        [ActionName("GetAllPayMethod")]
+        public IActionResult GetAllPayMethod()
+        {
+            var data = db.GetAllPayMethod();
             return Ok(data);
         }
         [HttpGet("{id}")]
@@ -30,20 +38,14 @@ namespace MarketingSurplus.Controllers
             // return NotFound();
             return Ok(new List<object>());
         }
-        [HttpPost]
-        public IActionResult AddPayMethod([FromBody] PayMethod payMethod)
+        [HttpPost("{idCompany}")]
+        [ActionName("AddPayMethod")]
+        public IActionResult AddPayMethod(int idCompany, [FromBody] PayMethod payMethod)
         {
-            if (payMethod == null)
-            {
-                // return BadRequest();
-                return Ok(new List<object>());
-            }
-            else
-            {
-                db.Save(payMethod);
-                return Ok();
-            }
+            db.Save(payMethod, idCompany);
+            return Ok();
         }
+
         [HttpPut("{id}")]
         public IActionResult Put([FromBody] PayMethod payMethod)
         {
@@ -54,7 +56,7 @@ namespace MarketingSurplus.Controllers
             }
             else
             {
-                db.Update(payMethod);
+                db.Update(new CompanyMethods());
                 return Ok();
             }
         }
