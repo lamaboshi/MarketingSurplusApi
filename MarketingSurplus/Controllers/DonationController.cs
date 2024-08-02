@@ -1,4 +1,5 @@
-﻿using MarketingSurplus.Infrastructure;
+﻿using MarketingSurplus.Dto;
+using MarketingSurplus.Infrastructure;
 using MarketingSurplus.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -73,6 +74,14 @@ namespace MarketingSurplus.Controllers
             }
             else return Ok(new List<object>());
 
+        }
+
+        [HttpPost("{idDonation}")]
+        [ActionName("UpdateStutasDonation")]
+        public IActionResult UpdateStutasDonation(int idDonation, [FromBody] UpdateDontation updateDontation)
+        {
+            db.UpdateStutasDonation(idDonation, updateDontation);
+            return Ok();
         }
     }
 }

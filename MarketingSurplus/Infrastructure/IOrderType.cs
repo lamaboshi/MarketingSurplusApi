@@ -9,6 +9,7 @@ namespace MarketingSurplus.Infrastructure
         public void Save(OrderType orderType);
         public void Delete(int id);
         public void Update(OrderType orderType);
+        public void AcceptOrderType(int idOrderType, bool accept);
 
     }
 }

@@ -11,6 +11,17 @@ namespace MarketingSurplus.Data
         {
             _db = db;
         }
+
+        public void AcceptOrderType(int idOrderType, bool accept)
+        {
+            if (accept)
+            {
+                var user = _db.OrderTypes.Where(q => q.Id == idOrderType).FirstOrDefault();
+                user.isAccept = true;
+                _db.SaveChanges();
+            }
+        }
+
         public void Delete(int id)
         {
             var type = _db.OrderTypes.FirstOrDefault(p => p.Id == id);

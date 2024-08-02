@@ -30,6 +30,9 @@ namespace MarketingSurplus.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
@@ -51,6 +54,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 10,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Note = "  Welcom to you",
                             OrderProductId = 4,
                             OrderStatusId = 1
@@ -58,6 +62,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 21,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Note = " Welcom to you",
                             OrderProductId = 2,
                             OrderStatusId = 1
@@ -65,6 +70,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 22,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Note = " Welcom to you",
                             OrderProductId = 2,
                             OrderStatusId = 2
@@ -72,6 +78,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 23,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Note = " Welcom to you",
                             OrderProductId = 1,
                             OrderStatusId = 1
@@ -79,6 +86,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 24,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Note = " Welcom to you",
                             OrderProductId = 3,
                             OrderStatusId = 1
@@ -970,6 +978,9 @@ namespace MarketingSurplus.Migrations
                     b.Property<int>("CharityId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("OrderTypeId")
                         .HasColumnType("int");
 
@@ -989,6 +1000,7 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 1,
                             CharityId = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OrderTypeId = 3,
                             PricePay = 20000f
                         },
@@ -996,6 +1008,7 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 2,
                             CharityId = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OrderTypeId = 2,
                             PricePay = 18000f
                         },
@@ -1003,6 +1016,7 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 3,
                             CharityId = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OrderTypeId = 2,
                             PricePay = 11000f
                         },
@@ -1010,6 +1024,7 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 4,
                             CharityId = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OrderTypeId = 3,
                             PricePay = 10000f
                         });
@@ -1064,6 +1079,70 @@ namespace MarketingSurplus.Migrations
                         });
                 });
 
+            modelBuilder.Entity("MarketingSurplus.Models.Notification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Notifications");
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.NotificationCharity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CharityId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CharityId");
+
+                    b.ToTable("NotificationCharities");
+                });
+
             modelBuilder.Entity("MarketingSurplus.Models.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -1074,6 +1153,9 @@ namespace MarketingSurplus.Migrations
 
                     b.Property<int?>("Amount")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Descripation")
                         .IsRequired()
@@ -1103,6 +1185,7 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 1,
                             Amount = 10,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "The order was placed at 3:05 and will expire after a quarter of an hour from this time ",
                             IsDelivery = true,
                             Name = "Order 1",
@@ -1113,6 +1196,7 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 2,
                             Amount = 5,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "The order was placed at 2:50 and will expire after a quarter of an hour from this time",
                             IsDelivery = false,
                             Name = "Order 2",
@@ -1123,6 +1207,7 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 3,
                             Amount = 6,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "The order was placed at 4:40 and will expire after a quarter of an hour from this time",
                             IsDelivery = true,
                             Name = "Order 3",
@@ -1133,6 +1218,7 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 4,
                             Amount = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "The order was placed at 3:20 and will expire after a quarter of an hour from this time",
                             IsDelivery = true,
                             Name = "Order 4",
@@ -1143,6 +1229,7 @@ namespace MarketingSurplus.Migrations
                         {
                             Id = 5,
                             Amount = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "The order was placed at 1:15 and will expire after a quarter of an hour from this time",
                             IsDelivery = false,
                             Name = "Order 5",
@@ -1239,25 +1326,25 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9372),
+                            DateTime = new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9415),
                             status = 1
                         },
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9406),
+                            DateTime = new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9449),
                             status = 2
                         },
                         new
                         {
                             Id = 3,
-                            DateTime = new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9422),
+                            DateTime = new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9468),
                             status = 3
                         },
                         new
                         {
                             Id = 4,
-                            DateTime = new DateTime(2024, 7, 16, 11, 43, 8, 545, DateTimeKind.Local).AddTicks(9437),
+                            DateTime = new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9485),
                             status = 4
                         });
                 });
@@ -1277,6 +1364,9 @@ namespace MarketingSurplus.Migrations
                     b.Property<float?>("Percentage")
                         .HasColumnType("real");
 
+                    b.Property<bool>("isAccept")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("OrderTypes");
@@ -1285,17 +1375,20 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Normal"
+                            Name = "Normal",
+                            isAccept = false
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Donation"
+                            Name = "Donation",
+                            isAccept = false
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Charity Organization"
+                            Name = "Charity Organization",
+                            isAccept = false
                         });
                 });
 
@@ -1311,6 +1404,9 @@ namespace MarketingSurplus.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("isAccept")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("PayMethods");
@@ -1319,17 +1415,20 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Cash Pay"
+                            Name = "Cash Pay",
+                            isAccept = false
                         },
                         new
                         {
                             Id = 2,
-                            Name = "PayPal"
+                            Name = "PayPal",
+                            isAccept = false
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Credit Card"
+                            Name = "Credit Card",
+                            isAccept = false
                         });
                 });
 
@@ -1826,6 +1925,15 @@ namespace MarketingSurplus.Migrations
                     b.Property<int>("DonationId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsAccept")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsCencal")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsCompany")
+                        .HasColumnType("bit");
+
                     b.Property<int>("TotalPrice")
                         .HasColumnType("int");
 
@@ -1844,6 +1952,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 1,
                             CompanyProductId = 1,
                             DonationId = 1,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 60000
                         },
                         new
@@ -1852,6 +1963,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 3,
                             CompanyProductId = 2,
                             DonationId = 2,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 70000
                         },
                         new
@@ -1860,6 +1974,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 2,
                             CompanyProductId = 7,
                             DonationId = 3,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 70000
                         },
                         new
@@ -1868,6 +1985,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 3,
                             CompanyProductId = 5,
                             DonationId = 4,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 70000
                         },
                         new
@@ -1876,6 +1996,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 3,
                             CompanyProductId = 11,
                             DonationId = 1,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 90000
                         },
                         new
@@ -1884,6 +2007,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 4,
                             CompanyProductId = 15,
                             DonationId = 2,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 70000
                         },
                         new
@@ -1892,6 +2018,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 9,
                             CompanyProductId = 17,
                             DonationId = 3,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 679000
                         },
                         new
@@ -1900,6 +2029,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 8,
                             CompanyProductId = 20,
                             DonationId = 3,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 98700
                         },
                         new
@@ -1908,6 +2040,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 1,
                             CompanyProductId = 29,
                             DonationId = 3,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 7000
                         },
                         new
@@ -1916,6 +2051,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 4,
                             CompanyProductId = 33,
                             DonationId = 4,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 70000
                         },
                         new
@@ -1924,6 +2062,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 1,
                             CompanyProductId = 31,
                             DonationId = 2,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 101000
                         },
                         new
@@ -1932,6 +2073,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 1,
                             CompanyProductId = 34,
                             DonationId = 2,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 70000
                         },
                         new
@@ -1940,6 +2084,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 2,
                             CompanyProductId = 22,
                             DonationId = 3,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 97000
                         },
                         new
@@ -1948,6 +2095,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 3,
                             CompanyProductId = 26,
                             DonationId = 1,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 120000
                         },
                         new
@@ -1956,6 +2106,9 @@ namespace MarketingSurplus.Migrations
                             Amount = 1,
                             CompanyProductId = 19,
                             DonationId = 1,
+                            IsAccept = false,
+                            IsCencal = false,
+                            IsCompany = false,
                             TotalPrice = 70000
                         });
                 });
@@ -2248,6 +2401,28 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("Subscription");
                 });
 
+            modelBuilder.Entity("MarketingSurplus.Models.Notification", b =>
+                {
+                    b.HasOne("MarketingSurplus.Models.User", "User")
+                        .WithMany("notifications")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MarketingSurplus.Models.NotificationCharity", b =>
+                {
+                    b.HasOne("MarketingSurplus.Models.Charity", "Charity")
+                        .WithMany()
+                        .HasForeignKey("CharityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Charity");
+                });
+
             modelBuilder.Entity("MarketingSurplus.Models.Order", b =>
                 {
                     b.HasOne("MarketingSurplus.Models.User", "User")
@@ -2378,6 +2553,8 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("Orders");
 
                     b.Navigation("Subscriptions");
+
+                    b.Navigation("notifications");
                 });
 #pragma warning restore 612, 618
         }

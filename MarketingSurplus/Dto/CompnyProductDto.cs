@@ -9,7 +9,7 @@ namespace MarketingSurplus.Dto
         public Subscription? subscription { get; set; }
         public int? RateNumber { get; set; }
         public CompanyType CompanyType { get; set; }
-        public Rate? Rate { get; set; }
+        public List<Rate>? Rates { get; set; }
 
     }
 }

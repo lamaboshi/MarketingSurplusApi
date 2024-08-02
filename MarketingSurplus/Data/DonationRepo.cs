@@ -1,4 +1,5 @@
-﻿using MarketingSurplus.Infrastructure;
+﻿using MarketingSurplus.Dto;
+using MarketingSurplus.Infrastructure;
 using MarketingSurplus.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -71,8 +72,37 @@ namespace MarketingSurplus.Data
 
         public void SaveProductDonation(ProductDonation productDonation)
         {
-             _db.ProductDonations.Add(productDonation);
+            _db.ProductDonations.Add(productDonation);
             _db.SaveChanges();
+
+            var updateAmount = _db.CompanyProducts.Where(t => t.Id == productDonation.CompanyProductId).Single();
+            var amount = updateAmount.Amount - productDonation.Amount;
+            if (amount > 0)
+            {
+                updateAmount.Amount = amount;
+                _db.SaveChanges();
+            }
+            else if (amount == 0)
+            {
+                _db.CompanyProducts.Remove(updateAmount);
+                _db.SaveChanges();
+            }
+       
+        }
+
+        public void UpdateStutasDonation(int idDonation, UpdateDontation updateDontation)
+        {
+            var order = _db.Donations.Where(q => q.Id == idDonation).FirstOrDefault();
+            var allProduct = _db.ProductDonations.Where(r => r.DonationId == idDonation).ToList();
+            foreach (var item in allProduct)
+            {
+                item.IsAccept = updateDontation.Status;
+                item.IsCompany = updateDontation.isCompany;
+                item.IsCencal = updateDontation.isCencal;
+                _db.SaveChanges();
+
+            }
+
         }
     }
 }

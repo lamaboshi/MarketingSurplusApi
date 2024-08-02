@@ -1,4 +1,5 @@
-﻿using MarketingSurplus.Models;
+﻿using MarketingSurplus.Dto;
+using MarketingSurplus.Models;
 
 namespace MarketingSurplus.Infrastructure
 {
@@ -9,6 +10,7 @@ namespace MarketingSurplus.Infrastructure
         List<Company> GetAllCompanyForThis(int charityId);
         public void SaveProductDonation(ProductDonation productDonation);
         int SaveDonation(Donation donation);
+        public void UpdateStutasDonation(int idDonation, UpdateDontation updateDontation);
         Donation GetDonation(int Id);
 
     }

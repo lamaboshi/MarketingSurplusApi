@@ -36,6 +36,8 @@ builder.Services.AddTransient<IOrderType, OrderTypeRepo>();
 builder.Services.AddTransient<IRate, RateRepo>();
 builder.Services.AddTransient<ISubscription, SubscriptionRepo>();
 builder.Services.AddTransient<IDonation, DonationRepo>();
+builder.Services.AddTransient<INotificationService, NotificationService>();
+
 //builder.Services.AddSingleton<MLContext>(new MLContext(seed: 0));
 //builder.Services.AddScoped<RestaurantRatingService>(); 
 

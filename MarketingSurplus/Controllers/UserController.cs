@@ -1,4 +1,5 @@
-﻿using MarketingSurplus.Infrastructure;
+﻿using MarketingSurplus.Data;
+using MarketingSurplus.Infrastructure;
 using MarketingSurplus.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,10 +10,27 @@ namespace MarketingSurplus.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUser db;
+        private readonly CompanyRecommendationModel _recommendationModel;
         public UserController(IUser _db)
         {
             db = _db;
+            _recommendationModel = new CompanyRecommendationModel();
         }
+        [HttpGet]
+        [ActionName("Index")]
+        public IActionResult Index()
+        {
+            var userInput = new UserData
+            {
+                TotalAmount = 1000.0f,
+                PurchaseFrequency = 5.0f
+                // تعيين القيم الأخرى إذا لزم الأمر
+            };
+            var recommendedCompanyId = _recommendationModel.Predict(userInput);
+  
+            return Ok(recommendedCompanyId);
+        }
+
         [HttpGet]
         [ActionName("GetUser")]
         public IActionResult GetUser()

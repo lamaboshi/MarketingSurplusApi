@@ -8,6 +8,7 @@
         public int? Amount { get; set; }
         public float? Price { get; set; }
         public bool IsDelivery { get; set; }
+        public DateTime CreatedAt { get; set; }
         public int UserId { get; set; }
         public User? User { get; set; }
         public ICollection<OrderProduct>? OrderProducts { get; set; }

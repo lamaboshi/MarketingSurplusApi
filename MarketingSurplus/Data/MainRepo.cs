@@ -61,11 +61,15 @@ namespace MarketingSurplus.Data
         }
         public int GetAnyRate(int companyId)
         {
-            int rate = 0;
-            Random rnd = new Random();
-            rate = rnd.Next(1, 5);
+            var dataSub = _db.Subscriptions.Where(r => r.CompanyId == companyId).Select(r=>r.Id).ToList();
+            var rates = _db.Evalution.Where(t => dataSub.Contains(t.SubscriptionId)).Include(q => q.Rate).Select(t => t.Rate).ToList();
 
-            return rate;
+            var results = rates.Sum(item => item.RateNumber);
+            if (results != 0)
+            {
+                return results / rates.Count();
+            }
+            return 0;
         }
         public List<CompnyProductDto> GetAllPosts(int UserId)
         {
@@ -80,17 +84,17 @@ namespace MarketingSurplus.Data
                     item.Company = company;
                     var type=_db.CompanyTypes.Where(q=>q.Id==company.CompanyTypeId).FirstOrDefault();
                     CompProduct.CompanyType = type!;
-                    CompProduct.RateNumber = GetAnyRate(company.CompanyTypeId);
+                    CompProduct.RateNumber = GetAnyRate(company.Id);
                     if (UserId != 0)
                     {
                         var subscri = _db.Subscriptions.Where(q => q.UserId == UserId && q.CompanyId == company.Id).FirstOrDefault();
                         CompProduct.subscription = subscri;
                         if (subscri != null)
                         {
-                            var rate = _db.Evalution.Where(t => t.SubscriptionId == subscri.Id).Include(t => t.Rate).FirstOrDefault();
+                            var rate = _db.Evalution.Where(t => t.SubscriptionId == subscri.Id).Include(t => t.Rate).Select(t=>t.Rate).ToList();
                             if (rate != null)
                             {
-                                CompProduct.Rate = rate.Rate;
+                                CompProduct.Rates = rate;
 
                             }
                     
@@ -145,7 +149,7 @@ namespace MarketingSurplus.Data
             var data = _db.CompanyProducts.Where(q => q.CompanyId==companyId).ToList();
             foreach (var item in data)
             {
-                var orderProduct = _db.OrderProducts.Where(p => p.CompanyProductId == item.Id).Include(t=>t.Order).Include(w=>w.Bills).ToList();
+                var orderProduct = _db.OrderProducts.Where(p => p.CompanyProductId == item.Id).Include(t=>t.Order).ThenInclude(r=>r.User).Include(w=>w.Bills).ToList();
                 foreach (var element in orderProduct)
                 {
                     allOrder.Add(element!);
@@ -178,10 +182,10 @@ namespace MarketingSurplus.Data
                         {
                             item.Product = product;
                         }
-                        var rate = _db.Evalution.Where(t => t.SubscriptionId == subscri.Id).Include(t => t.Rate).FirstOrDefault();
+                        var rate = _db.Evalution.Where(t => t.SubscriptionId == subscri.Id).Include(t => t.Rate).Select(t => t.Rate).ToList();
                         if (rate != null)
                         {
-                            CompProduct.Rate = rate.Rate;
+                            CompProduct.Rates = rate;
 
                         }
                         CompProduct.CompanyProduct = item;

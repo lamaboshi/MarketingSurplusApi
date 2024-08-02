@@ -7,6 +7,7 @@
         public OrderProduct? OrderProduct  { get; set; }
         public int OrderStatusId { get; set; }
         public OrderStatus? OrderStatus { get; set; }
+        public DateTime CreatedAt { get; set; }
         public string? Note { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace MarketingSurplus.Data
         public List<Evalution> GetRates(int companyId)
         {
             var subscriptions = _db.Subscriptions.Where(r => r.CompanyId == companyId).First();
-            var data = _db.Evalution.Where(p => p.SubscriptionId == subscriptions.Id).Include(t => t.Rate).Include(y => y.Subscription).ToList();
+            var data = _db.Evalution.Where(p => p.SubscriptionId == subscriptions.Id).Include(t => t.Rate).Include(y => y.Subscription).ThenInclude(y=>y.User).ToList();
             return data;
         }
 

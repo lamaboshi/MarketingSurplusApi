@@ -11,6 +11,7 @@ namespace MarketingSurplus.Infrastructure
         public void Save(PayMethod payMethod, int companyId);
         public void Delete(int id);
         public void Update(CompanyMethods payMethod);
+        public void AcceptMethod(int idMethod, bool accept);
 
     }
 }

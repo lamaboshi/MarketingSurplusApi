@@ -64,6 +64,10 @@
               "target": "Package",
               "version": "[4.0.0-preview.24271.1, )"
             },
+            "Microsoft.ML.OnnxRuntime": {
+              "target": "Package",
+              "version": "[1.18.1, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"

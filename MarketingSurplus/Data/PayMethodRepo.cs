@@ -12,6 +12,16 @@ namespace MarketingSurplus.Data
             _db = db;
         }
 
+        public void AcceptMethod(int idMethod, bool accept)
+        {
+            if (accept)
+            {
+                var user = _db.PayMethods.Where(q => q.Id == idMethod).FirstOrDefault();
+                user.isAccept = true;
+                _db.SaveChanges();
+            }
+        }
+
         public void Delete(int id)
         {
             var type = _db.CompanyMethods.FirstOrDefault(p => p.Id == id);
