@@ -207,7 +207,7 @@ namespace MarketingSurplus.Data
             return result.Entity.Id;
         }
 
-        public void SaveOrderProduct(OrderProduct orderProduct)
+        public int  SaveOrderProduct(OrderProduct orderProduct)
         {
  
             var stutas = _db.OrderProducts.Add(orderProduct);
@@ -226,6 +226,7 @@ namespace MarketingSurplus.Data
                 _db.CompanyProducts.Remove(updateAmount);
                 _db.SaveChanges();
             }
+            return stutas.Entity.Id;
         }
 
         public void UpdateProduct(Product product)

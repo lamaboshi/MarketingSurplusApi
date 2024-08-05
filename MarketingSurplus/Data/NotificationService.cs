@@ -26,15 +26,31 @@ namespace MarketingSurplus.Data
         public List<NotificationCharity> GetNotificationCharity(int charityId)
         {
             return _db.NotificationCharities
-      .Where(n => n.CharityId == charityId && !n.IsRead)
-      .OrderByDescending(n => n.CreatedAt)
-      .ToList();
+                .Where(n => n.ProductDonation.Donation.CharityId==charityId && !n.IsRead)
+            .OrderByDescending(n => n.CreatedAt)
+             .ToList();
+        }
+
+        public List<NotificationCharity> GetNotificationCompanyForCharity(int companyId)
+        {
+            return _db.NotificationCharities
+               .Where(n => n.ProductDonation.CompanyProduct.CompanyId == companyId && !n.IsRead)
+           .OrderByDescending(n => n.CreatedAt)
+            .ToList();
+        }
+
+        public List<Notification> GetNotificationCompanyForUser(int companyId)
+        {
+            return _db.Notifications
+          .Where(n => n.OrderProduct.CompanyProduct.CompanyId == companyId && !n.IsRead)
+          .OrderByDescending(n => n.CreatedAt)
+          .ToList();
         }
 
         public List<Notification> GetNotifications(int userId)
         {
             return  _db.Notifications
-          .Where(n => n.UserId == userId && !n.IsRead)
+          .Where(n => n.OrderProduct.Order.UserId == userId && !n.IsRead)
           .OrderByDescending(n => n.CreatedAt)
           .ToList();
         }

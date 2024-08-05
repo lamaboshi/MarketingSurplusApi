@@ -17,7 +17,7 @@
         public bool isAccept { get; set; }
         public ICollection<Order>? Orders { get; set; }
         public ICollection<Subscription>? Subscriptions { get; set; }
-        public ICollection<Notification>? notifications { get; set; }
+
         
     }
 }

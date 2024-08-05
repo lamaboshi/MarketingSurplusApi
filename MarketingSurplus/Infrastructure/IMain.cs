@@ -9,7 +9,7 @@ namespace MarketingSurplus.Infrastructure
         List<CompnyProductDto> GetSubscriptionPosts(int id);
         List<CompanyProduct> GetAllCompanyProduct(int companyId);
         int SaveOrder(Order order);
-        void SaveOrderProduct(OrderProduct orderProduct);
+        int SaveOrderProduct(OrderProduct orderProduct);
         void UpdateStutasOrder(int idOrder, int Stutas);
         void AddCompanyProduct(SaveCompanyProduct saveCompany);
         List<User> GetAllCompanyUsers(int companyId);

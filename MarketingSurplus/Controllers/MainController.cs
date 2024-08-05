@@ -111,8 +111,8 @@ namespace MarketingSurplus.Controllers
         {
             if (orderProduct != null)
             {
-                 db.SaveOrderProduct(orderProduct);
-                return Ok();
+                var result = db.SaveOrderProduct(orderProduct);
+                return Ok(result);
             }
             else return Ok(new List<object>());
 

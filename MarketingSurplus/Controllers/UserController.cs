@@ -16,20 +16,7 @@ namespace MarketingSurplus.Controllers
             db = _db;
             _recommendationModel = new CompanyRecommendationModel();
         }
-        [HttpGet]
-        [ActionName("Index")]
-        public IActionResult Index()
-        {
-            var userInput = new UserData
-            {
-                TotalAmount = 1000.0f,
-                PurchaseFrequency = 5.0f
-                // تعيين القيم الأخرى إذا لزم الأمر
-            };
-            var recommendedCompanyId = _recommendationModel.Predict(userInput);
-  
-            return Ok(recommendedCompanyId);
-        }
+
 
         [HttpGet]
         [ActionName("GetUser")]
@@ -69,6 +56,14 @@ namespace MarketingSurplus.Controllers
                 }
                 else return Ok(new List<object>());//return NotFound();
             }
+
+        }
+        [HttpPost("{id}")]
+        [ActionName("AcceptUser")]
+        public IActionResult AcceptUser(int id , [FromQuery] bool accept)
+        {
+            db.AcceptUser(id,accept);
+            return Ok();
 
         }
         [HttpPut("{id}")]

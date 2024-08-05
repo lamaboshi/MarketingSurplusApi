@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MarketingSurplus.Migrations
 {
     [DbContext(typeof(MarketingSurplusDbContext))]
-    [Migration("20240802063651_last")]
-    partial class last
+    [Migration("20240805111928_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -220,7 +220,7 @@ namespace MarketingSurplus.Migrations
                             Password = "Namaa369",
                             Phone = "02151174369",
                             TargetGroup = "Rich Pepole",
-                            isAccept = false
+                            isAccept = true
                         });
                 });
 
@@ -294,7 +294,7 @@ namespace MarketingSurplus.Migrations
                             Password = "12123",
                             Phone = "0921423432",
                             TelePhone = "4232543",
-                            isAccept = false
+                            isAccept = true
                         },
                         new
                         {
@@ -361,11 +361,11 @@ namespace MarketingSurplus.Migrations
                             Address = "From Streat",
                             CompanyTypeId = 3,
                             Description = "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.",
-                            Email = "ZARA@test.com",
+                            Email = "LC@test.com",
                             LicenseNumber = "242523",
                             Name = "LC",
                             OnlineImage = "https://i.ibb.co/KXYZN1b/Zara-Logo-svg.png",
-                            Password = "0909",
+                            Password = "01010",
                             Phone = "0921423432",
                             TelePhone = "223554",
                             isAccept = false
@@ -987,7 +987,10 @@ namespace MarketingSurplus.Migrations
                     b.Property<int>("OrderTypeId")
                         .HasColumnType("int");
 
-                    b.Property<float>("PricePay")
+                    b.Property<float?>("Percentage")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("PricePay")
                         .HasColumnType("real");
 
                     b.HasKey("Id");
@@ -1090,26 +1093,25 @@ namespace MarketingSurplus.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRead")
                         .HasColumnType("bit");
 
                     b.Property<string>("Message")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderProductId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("OrderProductId");
 
                     b.ToTable("Notifications");
                 });
@@ -1122,26 +1124,24 @@ namespace MarketingSurplus.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CharityId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRead")
                         .HasColumnType("bit");
 
                     b.Property<string>("Message")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ProductDonationId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Type")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CharityId");
+                    b.HasIndex("ProductDonationId");
 
                     b.ToTable("NotificationCharities");
                 });
@@ -1329,25 +1329,25 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9415),
+                            DateTime = new DateTime(2024, 8, 5, 14, 19, 27, 688, DateTimeKind.Local).AddTicks(691),
                             status = 1
                         },
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9449),
+                            DateTime = new DateTime(2024, 8, 5, 14, 19, 27, 688, DateTimeKind.Local).AddTicks(721),
                             status = 2
                         },
                         new
                         {
                             Id = 3,
-                            DateTime = new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9468),
+                            DateTime = new DateTime(2024, 8, 5, 14, 19, 27, 688, DateTimeKind.Local).AddTicks(736),
                             status = 3
                         },
                         new
                         {
                             Id = 4,
-                            DateTime = new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9485),
+                            DateTime = new DateTime(2024, 8, 5, 14, 19, 27, 688, DateTimeKind.Local).AddTicks(761),
                             status = 4
                         });
                 });
@@ -1480,7 +1480,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Flamix is ​​a medicine that contains celecoxib as an active ingredient, and it is considered a non-steroidal anti-infl ammatory drug",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1492,7 +1492,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Moderate pain relief without the need for a prescription",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1504,7 +1504,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 3,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Clomiphene is used to treat some cases of infertility in women",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1516,7 +1516,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 4,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Broad spectrum antibiotics",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1528,7 +1528,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 5,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "To treat depression",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1540,7 +1540,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 6,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Anti-hyperglycemic",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1552,7 +1552,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 7,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Size 33",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1564,7 +1564,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 8,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1576,7 +1576,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 9,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1588,7 +1588,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 10,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Comfortable cotton",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1600,7 +1600,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 11,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Free Size",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1612,7 +1612,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 12,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "for sea",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1624,7 +1624,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 13,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2023, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Free Size",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1636,7 +1636,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 14,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Free Size",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1648,7 +1648,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 15,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "mam jeans",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1660,7 +1660,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 16,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Free Size",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1672,7 +1672,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 17,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Size 37",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1684,19 +1684,19 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 18,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Color off white",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
                             Name = " Wedding Suit",
                             NewPrice = 13000f,
                             OldPrice = 15000f,
-                            OnlineImage = ""
+                            OnlineImage = "https://i.ibb.co/6X9CHQ5/wedding-mob-3-1.jpg"
                         },
                         new
                         {
                             Id = 19,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Taza, hot, delicious",
                             Expiration = new DateTime(2024, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1708,7 +1708,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 20,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Taza, hot, delicious",
                             Expiration = new DateTime(2024, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1720,7 +1720,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 21,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Taza, hot, delicious",
                             Expiration = new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1732,7 +1732,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 22,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Taza, hot, delicious",
                             Expiration = new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1744,7 +1744,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 23,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Taza, hot, delicious",
                             Expiration = new DateTime(2024, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1756,7 +1756,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 24,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Taza, hot, delicious",
                             Expiration = new DateTime(2024, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1768,7 +1768,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 25,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Everything about the world of electronics",
                             Expiration = new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1780,7 +1780,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 26,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Everything about the world of electronics",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1797,14 +1797,14 @@ namespace MarketingSurplus.Migrations
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
                             Name = " Mobile",
-                            NewPrice = 175000f,
+                            NewPrice = 17500f,
                             OldPrice = 20000f,
                             OnlineImage = "https://i.ibb.co/BVY7rPz/eg-galaxy-s24-s928-sm-s928bztcmea-thumb-539296161-344-344-PNG.png"
                         },
                         new
                         {
                             Id = 28,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Everything about the world of electronics",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1816,7 +1816,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 29,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Everything about the world of electronics",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1828,7 +1828,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 30,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Everything about the world of electronics",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1840,7 +1840,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 31,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = " Floral Perfumes",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1852,19 +1852,19 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 32,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Oriental perfumes",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
                             Name = " Tommy Hilfiger for Men ",
-                            NewPrice = 175000f,
+                            NewPrice = 17500f,
                             OldPrice = 20000f,
                             OnlineImage = "https://i.ibb.co/QKvKKCw/91-D0-TXi2or-L.jpg"
                         },
                         new
                         {
                             Id = 33,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Woody Perfumes",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1876,7 +1876,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 34,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Citrus Perfumes",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1888,7 +1888,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 35,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Amber Perfumes",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1900,7 +1900,7 @@ namespace MarketingSurplus.Migrations
                         new
                         {
                             Id = 36,
-                            DateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateTime = new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descripation = "Citrus Perfumes",
                             Expiration = new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsExpiration = false,
@@ -1921,6 +1921,9 @@ namespace MarketingSurplus.Migrations
 
                     b.Property<int>("Amount")
                         .HasColumnType("int");
+
+                    b.Property<string>("CommintCencal")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CompanyProductId")
                         .HasColumnType("int");
@@ -2406,24 +2409,24 @@ namespace MarketingSurplus.Migrations
 
             modelBuilder.Entity("MarketingSurplus.Models.Notification", b =>
                 {
-                    b.HasOne("MarketingSurplus.Models.User", "User")
+                    b.HasOne("MarketingSurplus.Models.OrderProduct", "OrderProduct")
                         .WithMany("notifications")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("OrderProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("OrderProduct");
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.NotificationCharity", b =>
                 {
-                    b.HasOne("MarketingSurplus.Models.Charity", "Charity")
-                        .WithMany()
-                        .HasForeignKey("CharityId")
+                    b.HasOne("MarketingSurplus.Models.ProductDonation", "ProductDonation")
+                        .WithMany("NotificationCharities")
+                        .HasForeignKey("ProductDonationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Charity");
+                    b.Navigation("ProductDonation");
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.Order", b =>
@@ -2524,6 +2527,8 @@ namespace MarketingSurplus.Migrations
             modelBuilder.Entity("MarketingSurplus.Models.OrderProduct", b =>
                 {
                     b.Navigation("Bills");
+
+                    b.Navigation("notifications");
                 });
 
             modelBuilder.Entity("MarketingSurplus.Models.OrderStatus", b =>
@@ -2541,6 +2546,11 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("CompanyMethods");
                 });
 
+            modelBuilder.Entity("MarketingSurplus.Models.ProductDonation", b =>
+                {
+                    b.Navigation("NotificationCharities");
+                });
+
             modelBuilder.Entity("MarketingSurplus.Models.Rate", b =>
                 {
                     b.Navigation("Evalutions");
@@ -2556,8 +2566,6 @@ namespace MarketingSurplus.Migrations
                     b.Navigation("Orders");
 
                     b.Navigation("Subscriptions");
-
-                    b.Navigation("notifications");
                 });
 #pragma warning restore 612, 618
         }

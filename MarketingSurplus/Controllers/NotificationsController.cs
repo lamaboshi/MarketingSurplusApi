@@ -20,6 +20,21 @@ namespace MarketingSurplus.Controllers
             var data = db.GetNotifications(userId);
             return Ok(data);
         }
+        [HttpGet("{companyId}")]
+        [ActionName("GetNotificationCompanyForUser")]
+        public IActionResult GetNotificationCompanyForUser(int companyId)
+        {
+            var data = db.GetNotificationCompanyForUser(companyId);
+            return Ok(data);
+        }
+        [HttpGet("{companyId}")]
+        [ActionName("GetNotificationCompanyForCharity")]
+        public IActionResult GetNotificationCompanyForCharity(int companyId)
+        {
+            var data = db.GetNotificationCompanyForCharity(companyId);
+            return Ok(data);
+        }
+
         [HttpGet("{charityId}")]
         [ActionName("GetNotificationCharity")]
         public IActionResult GetNotificationCharity(int charityId)

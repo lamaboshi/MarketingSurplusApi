@@ -87,7 +87,7 @@ namespace MarketingSurplus.Data
             }
         }
 
-        public void AcceptUser(int idUser, bool accept)
+        public void AcceptCharity(int idUser, bool accept)
         {
             if (accept)
             {

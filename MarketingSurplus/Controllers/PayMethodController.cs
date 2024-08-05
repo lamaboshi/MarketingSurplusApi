@@ -45,7 +45,14 @@ namespace MarketingSurplus.Controllers
             db.Save(payMethod, idCompany);
             return Ok();
         }
+        [HttpPost("{id}")]
+        [ActionName("AcceptMethod")]
+        public IActionResult AcceptMethod(int id, [FromQuery] bool accept)
+        {
+            db.AcceptMethod(id, accept);
+            return Ok();
 
+        }
         [HttpPut("{id}")]
         public IActionResult Put([FromBody] PayMethod payMethod)
         {

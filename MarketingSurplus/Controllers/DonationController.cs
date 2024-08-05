@@ -69,8 +69,8 @@ namespace MarketingSurplus.Controllers
         {
             if (productDonation != null)
             {
-                db.SaveProductDonation(productDonation);
-                return Ok();
+                var result = db.SaveProductDonation(productDonation);
+                return Ok(result);
             }
             else return Ok(new List<object>());
 

@@ -10,7 +10,10 @@
         public bool IsAccept { get; set; }
         public bool IsCompany { get; set; }
         public bool IsCencal { get; set; }
+        public string? CommintCencal { get; set; }
         public int Amount { get; set; }
         public int TotalPrice { get; set; }
+
+        public ICollection<NotificationCharity>? NotificationCharities { get; set; }
     }
 }

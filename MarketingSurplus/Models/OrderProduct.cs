@@ -10,5 +10,6 @@
         public int Amount { get; set; }
         public int TotalPrice { get; set; }
         public ICollection<Bill>? Bills { get; set; }
+        public ICollection<Notification>? notifications { get; set; }
     }
 }

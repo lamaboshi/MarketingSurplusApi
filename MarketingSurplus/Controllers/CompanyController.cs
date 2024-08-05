@@ -84,6 +84,14 @@ namespace MarketingSurplus.Controllers
             }
 
         }
+        [HttpPost("{id}")]
+        [ActionName("AcceptCompany")]
+        public IActionResult AcceptCompany(int id, [FromQuery] bool accept)
+        {
+            db.AcceptCompany(id, accept);
+            return Ok();
+
+        }
         [HttpPut("{id}")]
         public IActionResult Put([FromBody] Company company)
         {

@@ -17,14 +17,14 @@ namespace MarketingSurplus.Models
             modelBuilder.Entity<CompanyType>().HasData(new CompanyType { Id = 5, TypeName = "Electronics", Description = "All About electronics", });
 
             modelBuilder.Entity<CompanyType>().HasData(new CompanyType { Id = 6, TypeName = "Perfumes", Description = "All About Perfumes", });
-            modelBuilder.Entity<Company>().HasData(new Company { Id = 1, CompanyTypeId = 1, Name = "Ultra Medica", OnlineImage = "https://i.ibb.co/z4vNrPc/company-1.png", Description = "As in 1955, when Ultra Medica started its ascent in the world of pharmaceutical industry in Syria (Sednaya) founded with emphasis activities and enthusiasm for the manufacturing and developing of life science industry", Address = "From Streat", Email = "UltraMedica@test.com", Phone = "0921423432", TelePhone = "4232543", Password = "12123", LicenseNumber = "242523" });
+            modelBuilder.Entity<Company>().HasData(new Company { Id = 1, CompanyTypeId = 1, Name = "Ultra Medica", OnlineImage = "https://i.ibb.co/z4vNrPc/company-1.png", Description = "As in 1955, when Ultra Medica started its ascent in the world of pharmaceutical industry in Syria (Sednaya) founded with emphasis activities and enthusiasm for the manufacturing and developing of life science industry", Address = "From Streat", Email = "UltraMedica@test.com", Phone = "0921423432", TelePhone = "4232543", Password = "12123", LicenseNumber = "242523",isAccept=true });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 2, CompanyTypeId = 1, Name = "New pharma", OnlineImage = " https://i.ibb.co/yPnHycP/company-2.png", Description = "Newpharma is een online apotheek, een uitbreiding van een echte apotheek, gevestigd in België. We spreken ook van internet apotheek of e-apotheek.", Address = "From Streat", Email = "newpharma@test.com", Phone = "0921423432", TelePhone = "4232543", Password = "12123" });
 
 
             modelBuilder.Entity<Company>().HasData(new Company { Id = 3, CompanyTypeId = 2, Name = "MAX", OnlineImage = "https://i.ibb.co/9ptGtb1/max-fashion-india-logo.jpg", Description = "Max Fashion is an Indian fashion brand under the banner of the Landmark Group in Dubai", Address = "From Streat", Email = "MAX@test.com", Phone = "0921423432", TelePhone = "223554", Password = "111222", LicenseNumber = "242523" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 4, CompanyTypeId = 2, Name = "MONCLER", OnlineImage = "https://i.ibb.co/0fmgNQL/download.png", Description = "It is an Italian luxury fashion house specializing in ready-to-wear and haute couture, headquartered in Milan, Italy. Expanded to design raincoats, windbreakers, knitwear, leather goods, shoes, perfume, and accessories", Address = "From Streat", Email = "MONCLER@test.com", Phone = "0921423432", TelePhone = "223554", Password = "6789", LicenseNumber = "242523" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 5, CompanyTypeId = 3, Name = "ZARA", OnlineImage = "https://i.ibb.co/KXYZN1b/Zara-Logo-svg.png", Description = "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.", Address = "From Streat", Email = "ZARA@test.com", Phone = "0921423432", TelePhone = "223554", Password = "0909", LicenseNumber = "242523" });
-            modelBuilder.Entity<Company>().HasData(new Company { Id = 6, CompanyTypeId = 3, Name = "LC", OnlineImage = "https://i.ibb.co/KXYZN1b/Zara-Logo-svg.png", Description = "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.", Address = "From Streat", Email = "ZARA@test.com", Phone = "0921423432", TelePhone = "223554", Password = "0909", LicenseNumber = "242523" });
+            modelBuilder.Entity<Company>().HasData(new Company { Id = 6, CompanyTypeId = 3, Name = "LC", OnlineImage = "https://i.ibb.co/KXYZN1b/Zara-Logo-svg.png", Description = "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.", Address = "From Streat", Email = "LC@test.com", Phone = "0921423432", TelePhone = "223554", Password = "01010", LicenseNumber = "242523" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 7, CompanyTypeId = 4, Name = "KFC", OnlineImage = "https://i.ibb.co/30ggCjY/download-2.png", Description = "Kentucky Fried Chicken or KFC is a chain of fast food restaurants that specializes primarily in fried chicken.  It is the second largest chain of fast food restaurants in the world in terms of sales after McDonald's. Kentucky Fried Chicken has nearly twenty thousand branches spread over 123 countries and territories around the world.", Address = "Louisville, KentuckyFrom Streat", Email = "KFC@test.com", Phone = "0921423432", TelePhone = "223554", Password = "5252", LicenseNumber = "242523" }); modelBuilder.Entity<Company>().HasData(new Company { Id = 8, CompanyTypeId = 4, Name = "PIZZA HUT", OnlineImage = "https://i.ibb.co/wB3sWFC/cmopany-20.png", Description = "Pizza Hut is an American multinational restaurant chain and international franchise founded in 1958 in Wichita, Kansas by Dan and Frank Carney. They serve their signature pan pizza and other dishes including pasta, breadsticks and desserts.", Address = "From Streat", Email = "PIZZAHUT@test.com", Phone = "0921423432", TelePhone = "223554", Password = "34345", LicenseNumber = "242523" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 9, CompanyTypeId = 5, Name = "SAMSUNG", OnlineImage = "https://i.ibb.co/fNGbPdT/Samsung.png", Description = " Samsung Electronics is the world's largest electronics and information technology company.  Samsung Electronics is part of the Samsung Group, which is the largest conglomerate in South Korea and the global market leader with more than 60 products including semiconductors such as DRAM and flash memory, digital display devices such as liquid crystal TVs  LCD and plasma, consumer electronics such as DVD players, mobile phones, digital cameras and laser printers, household appliances such as refrigerators, microwaves and dishwashers.", Address = "Suwon, South Korea", Email = "SAMSUNG@test.com", Phone = "0921423432", TelePhone = "223554", Password = "111222", LicenseNumber = "242523" });
             modelBuilder.Entity<Company>().HasData(new Company { Id = 10, CompanyTypeId = 5, Name = "APPLE", OnlineImage = "https://i.ibb.co/pzcm1C3/Apple.png", Description = "The Apple Corporation is an American multinational technology company specializing in consumer electronics, software and online services.  It is one of the top five American IT companies", Address = "Cupertino, California, United States", Email = "APPLE@test.com", Phone = "0921423432", TelePhone = "223554", Password = "77666", LicenseNumber = "242523" });
@@ -83,7 +83,7 @@ namespace MarketingSurplus.Models
             modelBuilder.Entity<Charity>().HasData(new Charity { Id = 2, Name = "Hand By Hand", OnlineImage = "https://i.ibb.co/CH67mMZ/9ba9d0086cff0ceb5155420e01fda24e.jpg", Phone = "0215117894", Address = "Al mohafaza", Email = "Hand-By-Hand@test.com", Password = "Hand-By-Hand456", Goals = "Old Pepole", TargetGroup = "Rich Pepole", AssociationLicense = "2435" });
             modelBuilder.Entity<Charity>().HasData(new Charity { Id = 3, Name = "Al-Noor", OnlineImage = "https://i.ibb.co/7GY0Qvs/al-nour.jpg", Phone = "021524895 ", Address = "Mohamad Fares Street", Email = "Al-Noor@test.com", Password = "Al-Noor123", Goals = "childern", TargetGroup = "Rich Pepole", AssociationLicense = "2435" });
             modelBuilder.Entity<Charity>().HasData(new Charity { Id = 4, Name = "George", OnlineImage = "https://i.ibb.co/HpFwRsc/259490784-888270292057739-1584770156068076983-n-300x378.png", Phone = "0215115827", Address = "Al Azizeh", Email = "George@test.com", Password = "George147", Goals = "childern", TargetGroup = "Rich Pepole", AssociationLicense = "2435" });
-            modelBuilder.Entity<Charity>().HasData(new Charity { Id = 5, Name = "Namaa", OnlineImage = "https://i.ibb.co/rwW5L3G/namma.jpg", Phone = "02151174369", Address = "Al Marterni", Email = "Namaa@test.com", Password = "Namaa369", Goals = "childern", TargetGroup = "Rich Pepole", AssociationLicense = "2435" });
+            modelBuilder.Entity<Charity>().HasData(new Charity { Id = 5, Name = "Namaa", OnlineImage = "https://i.ibb.co/rwW5L3G/namma.jpg", Phone = "02151174369", Address = "Al Marterni", Email = "Namaa@test.com", Password = "Namaa369", Goals = "childern", TargetGroup = "Rich Pepole", AssociationLicense = "2435",isAccept=true });
 
 
             //medicine
@@ -95,6 +95,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 15000,
                 NewPrice = 13000,
                 OnlineImage = "https://i.ibb.co/xjS4yyL/Flamix2040020mg20film20tablete203-D.jpg",
+                DateTime= new DateTime(2023, 2, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -106,6 +107,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 9000,
                 NewPrice = 6000,
                 OnlineImage = "https://i.ibb.co/yykJXSj/product-1.jpg",
+                DateTime = new DateTime(2023, 3, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -117,6 +119,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 15000,
                 NewPrice = 13000,
                 OnlineImage = "https://i.ibb.co/kHFv6Yd/clomiphene-swiss-remedies.jpg",
+                DateTime = new DateTime(2023, 4, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -128,6 +131,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 30000,
                 NewPrice = 25000,
                 OnlineImage = "https://i.ibb.co/crzLHnW/thyromaxx-50-kaps-za-normalnu-funkciju-titnja-e-bi-5fb8d11c86db5.jpg",
+                DateTime = new DateTime(2023, 5, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -139,6 +143,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 33000,
                 NewPrice = 30000,
                 OnlineImage = "https://i.ibb.co/Fw53mry/0ceba66d9685fed081df064b3a30469b.webp",
+                DateTime = new DateTime(2023, 6, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -150,6 +155,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 10000,
                 NewPrice = 8500,
                 OnlineImage = "https://i.ibb.co/9qMw6yK/Njm9e5-KQez-GBFw-YRja-Tkb-C-1200-80.jpg",
+                DateTime = new DateTime(2023, 7, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -164,6 +170,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 15000,
                 NewPrice = 13000,
                 OnlineImage = "https://i.ibb.co/my2mYtr/Hff44c1c4dc104fc19a29e4f1d8fe5b96p-jpg-720x720q50.webp",
+                DateTime = new DateTime(2023, 7, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -176,6 +183,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 15000,
                 NewPrice = 13000,
                 OnlineImage = "https://i.ibb.co/7tjQZK6/https-hypebeast-com-image-2016-06-hm-sports-performance-collection-0.jpg",
+                DateTime = new DateTime(2023, 8, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -187,6 +195,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 15000,
                 NewPrice = 13000,
                 OnlineImage = "https://i.ibb.co/Pr32t0X/2022-1-1.jpg",
+                DateTime = new DateTime(2023, 9, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -198,6 +207,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 75000,
                 NewPrice = 50000,
                 OnlineImage = "https://i.ibb.co/F4zR55N/bdd3cef4-0e9b-4be4-b11a-1f45aaaee12d-thumbnail-770x770.png",
+                DateTime = new DateTime(2023, 10, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -209,6 +219,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 150000,
                 NewPrice = 130000,
                 OnlineImage = "https://i.ibb.co/bdghtwQ/sefamerve-gri-tesettur-elbise-bwst8238-01-3316251535974586797-1-752x1152.jpg",
+                DateTime = new DateTime(2023, 11, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -220,6 +231,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 75000,
                 NewPrice = 50000,
                 OnlineImage = "https://i.ibb.co/cyVGNs4/1.jpg",
+                DateTime = new DateTime(2023, 12, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -232,6 +244,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 150000,
                 NewPrice = 130000,
                 OnlineImage = "https://i.ibb.co/wK9h3yd/1hoxd-AGYSt-Sp9-BCyq-XWP2vc-LRky-Pz-Bz-N5n-Ga-J5ad.jpg",
+                DateTime = new DateTime(2023, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -243,6 +256,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 155000,
                 NewPrice = 135000,
                 OnlineImage = "https://i.ibb.co/Gnsr6w5/w1020-q80.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -254,6 +268,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 155000,
                 NewPrice = 135000,
                 OnlineImage = "https://i.ibb.co/xYNdXJ2/4b1d26be-d7dc-4056-bc63-39e30c160b7d.jpg",
+                DateTime = new DateTime(2024, 2, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -266,6 +281,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 150000,
                 NewPrice = 130000,
                 OnlineImage = "https://i.ibb.co/YdBdM5m/16226197718.jpg",
+                DateTime = new DateTime(2024, 3, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -277,6 +293,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 15000,
                 NewPrice = 13000,
                 OnlineImage = "https://i.ibb.co/w7C1nJ2/31-AJD92clx-L-AC-SY780.jpg",
+                DateTime = new DateTime(2024, 4, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -287,7 +304,8 @@ namespace MarketingSurplus.Models
                 Descripation = "Color off white",
                 OldPrice = 15000,
                 NewPrice = 13000,
-                OnlineImage = "",
+                OnlineImage = "https://i.ibb.co/6X9CHQ5/wedding-mob-3-1.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -301,6 +319,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 250000,
                 NewPrice = 200000,
                 OnlineImage = "https://i.ibb.co/HPdCsJk/image.jpg",
+                DateTime = new DateTime(2024, 5, 2),
                 Expiration = new DateTime(2024, 9, 9),
                 IsExpiration = false,
             });
@@ -312,6 +331,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 200000,
                 NewPrice = 175000,
                 OnlineImage = "https://i.ibb.co/RvpbMr3/8a13a1a95c8f094fe07b6e8c218fb6c2.jpg",
+                DateTime = new DateTime(2024, 7, 2),
                 Expiration = new DateTime(2024, 9, 8),
                 IsExpiration = false,
             });
@@ -323,6 +343,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 25000,
                 NewPrice = 20000,
                 OnlineImage = "https://i.ibb.co/f1k26g7/png-transparent-roast-chicken-barbecue-chicken-roasting-chicken-meat-roast-chicken-food-animals-baki.png",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2024, 9, 2),
                 IsExpiration = false,
             });
@@ -334,6 +355,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 75000,
                 NewPrice = 50000,
                 OnlineImage = "https://i.ibb.co/BgtCXnq/Nuggets.gif",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2024, 9, 2),
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -344,6 +366,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 250000,
                 NewPrice = 200000,
                 OnlineImage = "https://i.ibb.co/YQXBmKb/66951-7.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2024, 9, 9),
                 IsExpiration = false,
             });
@@ -355,6 +378,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 200000,
                 NewPrice = 175000,
                 OnlineImage = "https://i.ibb.co/qrfSxXs/Q2-HGj-Nd-Babm7-S2n-FA.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2024, 9, 8),
                 IsExpiration = false,
             });
@@ -367,6 +391,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 75000,
                 NewPrice = 50000,
                 OnlineImage = "https://i.ibb.co/Bcg2rCQ/ae-ar-WF1702-WEU-XSG-001-Front-624-624-PNG.png",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2024, 9, 2),
                 IsExpiration = false,
             });
@@ -378,6 +403,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 150000,
                 NewPrice = 130000,
                 OnlineImage = "https://i.ibb.co/W3Wvh7k/2d257668b46d3cd5be228192fd02876f-fmt-pjpeg-res-Mode-bisharp-wid-354.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -387,7 +413,7 @@ namespace MarketingSurplus.Models
                 Name = " Mobile",
                 Descripation = "Everything about the world of electronics",
                 OldPrice = 20000,
-                NewPrice = 175000,
+                NewPrice = 17500,
                 OnlineImage = "https://i.ibb.co/BVY7rPz/eg-galaxy-s24-s928-sm-s928bztcmea-thumb-539296161-344-344-PNG.png",
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
@@ -400,6 +426,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 150000,
                 NewPrice = 130000,
                 OnlineImage = "https://i.ibb.co/VqCwH1C/61tp47u-ZRl-L-AC-UF1000-1000-QL80.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -411,6 +438,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 30000,
                 NewPrice = 25000,
                 OnlineImage = "https://i.ibb.co/YhFVJvr/716o8-NCsj-DL-AC-UF894-1000-QL80.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -422,6 +450,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 255000,
                 NewPrice = 230000,
                 OnlineImage = "https://i.ibb.co/0qv7MX7/toshiba-refrigerator-no-frost-11-feet-silver-gr-ef31-s.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -436,6 +465,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 150000,
                 NewPrice = 130000,
                 OnlineImage = "https://i.ibb.co/cCZZdrz/coco-mademoiselle-eau-de-parfum-intense-spray-3-4fl-oz-packshot-default-116660-9539148283934.png",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -445,8 +475,9 @@ namespace MarketingSurplus.Models
                 Name = " Tommy Hilfiger for Men ",
                 Descripation = "Oriental perfumes",
                 OldPrice = 20000,
-                NewPrice = 175000,
+                NewPrice = 17500,
                 OnlineImage = "https://i.ibb.co/QKvKKCw/91-D0-TXi2or-L.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -458,6 +489,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 150000,
                 NewPrice = 130000,
                 OnlineImage = "https://i.ibb.co/k38SvS0/517wv-Qgc-H0-L-AC-UF1000-1000-QL80.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -469,6 +501,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 30000,
                 NewPrice = 25000,
                 OnlineImage = "https://i.ibb.co/8P2b254/miswag-Yf-M4c-AYMy-G4-U.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -480,6 +513,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 255000,
                 NewPrice = 230000,
                 OnlineImage = "https://i.ibb.co/X2Jhj99/Espcuc-FNv-Rg-Mn-Zucl-JFIeyq-LZ3adeu-D6-NPq-UTr44.png",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });
@@ -491,6 +525,7 @@ namespace MarketingSurplus.Models
                 OldPrice = 30000,
                 NewPrice = 25000,
                 OnlineImage = "https://i.ibb.co/fCbqJ6Q/sg-Ai-Uj-PU5-RORz-Cf-PAj-QVd-K9spq-QL92cj-Q4-S5-ODmo.jpg",
+                DateTime = new DateTime(2024, 1, 2),
                 Expiration = new DateTime(2025, 2, 2),
                 IsExpiration = false,
             });

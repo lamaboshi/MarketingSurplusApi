@@ -5,5 +5,6 @@
         public bool Status { get; set; }
         public bool  isCompany { get; set; }
         public bool isCencal { get; set; }
+        public string commint { get; set; }
     }
 }

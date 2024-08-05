@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MarketingSurplus.Migrations
 {
     /// <inheritdoc />
-    public partial class last : Migration
+    public partial class first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -156,29 +156,6 @@ namespace MarketingSurplus.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "NotificationCharities",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CharityId = table.Column<int>(type: "int", nullable: false),
-                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsRead = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_NotificationCharities", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_NotificationCharities_Charities_CharityId",
-                        column: x => x.CharityId,
-                        principalTable: "Charities",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Companies",
                 columns: table => new
                 {
@@ -217,7 +194,8 @@ namespace MarketingSurplus.Migrations
                     CharityId = table.Column<int>(type: "int", nullable: false),
                     OrderTypeId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PricePay = table.Column<float>(type: "real", nullable: false)
+                    PricePay = table.Column<float>(type: "real", nullable: true),
+                    Percentage = table.Column<float>(type: "real", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -232,29 +210,6 @@ namespace MarketingSurplus.Migrations
                         name: "FK_Donations_OrderTypes_OrderTypeId",
                         column: x => x.OrderTypeId,
                         principalTable: "OrderTypes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Notifications",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsRead = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Notifications", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Notifications_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -403,6 +358,7 @@ namespace MarketingSurplus.Migrations
                     IsAccept = table.Column<bool>(type: "bit", nullable: false),
                     IsCompany = table.Column<bool>(type: "bit", nullable: false),
                     IsCencal = table.Column<bool>(type: "bit", nullable: false),
+                    CommintCencal = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Amount = table.Column<int>(type: "int", nullable: false),
                     TotalPrice = table.Column<int>(type: "int", nullable: false)
                 },
@@ -477,6 +433,52 @@ namespace MarketingSurplus.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Notifications",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderProductId = table.Column<int>(type: "int", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsRead = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Notifications", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Notifications_OrderProducts_OrderProductId",
+                        column: x => x.OrderProductId,
+                        principalTable: "OrderProducts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "NotificationCharities",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductDonationId = table.Column<int>(type: "int", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsRead = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NotificationCharities", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_NotificationCharities_ProductDonations_ProductDonationId",
+                        column: x => x.ProductDonationId,
+                        principalTable: "ProductDonations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "Charities",
                 columns: new[] { "Id", "Address", "AssociationLicense", "Email", "Goals", "Image", "Name", "OnlineImage", "Password", "Phone", "QRCode", "TargetGroup", "isAccept" },
@@ -486,7 +488,7 @@ namespace MarketingSurplus.Migrations
                     { 2, "Al mohafaza", "2435", "Hand-By-Hand@test.com", "Old Pepole", null, "Hand By Hand", "https://i.ibb.co/CH67mMZ/9ba9d0086cff0ceb5155420e01fda24e.jpg", "Hand-By-Hand456", "0215117894", null, "Rich Pepole", false },
                     { 3, "Mohamad Fares Street", "2435", "Al-Noor@test.com", "childern", null, "Al-Noor", "https://i.ibb.co/7GY0Qvs/al-nour.jpg", "Al-Noor123", "021524895 ", null, "Rich Pepole", false },
                     { 4, "Al Azizeh", "2435", "George@test.com", "childern", null, "George", "https://i.ibb.co/HpFwRsc/259490784-888270292057739-1584770156068076983-n-300x378.png", "George147", "0215115827", null, "Rich Pepole", false },
-                    { 5, "Al Marterni", "2435", "Namaa@test.com", "childern", null, "Namaa", "https://i.ibb.co/rwW5L3G/namma.jpg", "Namaa369", "02151174369", null, "Rich Pepole", false }
+                    { 5, "Al Marterni", "2435", "Namaa@test.com", "childern", null, "Namaa", "https://i.ibb.co/rwW5L3G/namma.jpg", "Namaa369", "02151174369", null, "Rich Pepole", true }
                 });
 
             migrationBuilder.InsertData(
@@ -507,10 +509,10 @@ namespace MarketingSurplus.Migrations
                 columns: new[] { "Id", "DateTime", "Note", "status" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9415), null, 1 },
-                    { 2, new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9449), null, 2 },
-                    { 3, new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9468), null, 3 },
-                    { 4, new DateTime(2024, 8, 2, 9, 36, 51, 339, DateTimeKind.Local).AddTicks(9485), null, 4 }
+                    { 1, new DateTime(2024, 8, 5, 14, 19, 27, 688, DateTimeKind.Local).AddTicks(691), null, 1 },
+                    { 2, new DateTime(2024, 8, 5, 14, 19, 27, 688, DateTimeKind.Local).AddTicks(721), null, 2 },
+                    { 3, new DateTime(2024, 8, 5, 14, 19, 27, 688, DateTimeKind.Local).AddTicks(736), null, 3 },
+                    { 4, new DateTime(2024, 8, 5, 14, 19, 27, 688, DateTimeKind.Local).AddTicks(761), null, 4 }
                 });
 
             migrationBuilder.InsertData(
@@ -538,42 +540,42 @@ namespace MarketingSurplus.Migrations
                 columns: new[] { "Id", "DateTime", "Descripation", "Expiration", "Image", "IsExpiration", "Name", "NewPrice", "OldPrice", "OnlineImage" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Flamix is ​​a medicine that contains celecoxib as an active ingredient, and it is considered a non-steroidal anti-infl ammatory drug", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Newflamix", 13000f, 15000f, "https://i.ibb.co/xjS4yyL/Flamix2040020mg20film20tablete203-D.jpg" },
-                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Moderate pain relief without the need for a prescription", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "New Profin", 6000f, 9000f, "https://i.ibb.co/yykJXSj/product-1.jpg" },
-                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Clomiphene is used to treat some cases of infertility in women", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newclomiphene", 13000f, 15000f, "https://i.ibb.co/kHFv6Yd/clomiphene-swiss-remedies.jpg" },
-                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Broad spectrum antibiotics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newthyromax", 25000f, 30000f, "https://i.ibb.co/crzLHnW/thyromaxx-50-kaps-za-normalnu-funkciju-titnja-e-bi-5fb8d11c86db5.jpg" },
-                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "To treat depression", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newsertraline", 30000f, 33000f, "https://i.ibb.co/Fw53mry/0ceba66d9685fed081df064b3a30469b.webp" },
-                    { 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Anti-hyperglycemic", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newmetformin", 8500f, 10000f, "https://i.ibb.co/9qMw6yK/Njm9e5-KQez-GBFw-YRja-Tkb-C-1200-80.jpg" },
-                    { 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Size 33", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Spedrin", 13000f, 15000f, "https://i.ibb.co/my2mYtr/Hff44c1c4dc104fc19a29e4f1d8fe5b96p-jpg-720x720q50.webp" },
-                    { 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Sportswear", 13000f, 15000f, "https://i.ibb.co/7tjQZK6/https-hypebeast-com-image-2016-06-hm-sports-performance-collection-0.jpg" },
-                    { 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Sportswear", 13000f, 15000f, "https://i.ibb.co/Pr32t0X/2022-1-1.jpg" },
-                    { 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Comfortable cotton", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Shorts", 50000f, 75000f, "https://i.ibb.co/F4zR55N/bdd3cef4-0e9b-4be4-b11a-1f45aaaee12d-thumbnail-770x770.png" },
-                    { 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Dress", 130000f, 150000f, "https://i.ibb.co/bdghtwQ/sefamerve-gri-tesettur-elbise-bwst8238-01-3316251535974586797-1-752x1152.jpg" },
-                    { 12, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "for sea", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Sport hat", 50000f, 75000f, "https://i.ibb.co/cyVGNs4/1.jpg" },
-                    { 13, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Bloues", 130000f, 150000f, "https://i.ibb.co/wK9h3yd/1hoxd-AGYSt-Sp9-BCyq-XWP2vc-LRky-Pz-Bz-N5n-Ga-J5ad.jpg" },
-                    { 14, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " pants", 135000f, 155000f, "https://i.ibb.co/Gnsr6w5/w1020-q80.jpg" },
-                    { 15, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "mam jeans", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " jeans", 135000f, 155000f, "https://i.ibb.co/xYNdXJ2/4b1d26be-d7dc-4056-bc63-39e30c160b7d.jpg" },
-                    { 16, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Dress", 130000f, 150000f, "https://i.ibb.co/YdBdM5m/16226197718.jpg" },
-                    { 17, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Size 37", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Qandara", 13000f, 15000f, "https://i.ibb.co/w7C1nJ2/31-AJD92clx-L-AC-SY780.jpg" },
-                    { 18, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Color off white", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Wedding Suit", 13000f, 15000f, "" },
-                    { 19, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Broasted", 200000f, 250000f, "https://i.ibb.co/HPdCsJk/image.jpg" },
-                    { 20, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Shawrama", 175000f, 200000f, "https://i.ibb.co/RvpbMr3/8a13a1a95c8f094fe07b6e8c218fb6c2.jpg" },
-                    { 21, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Grilled Chicken", 20000f, 25000f, "https://i.ibb.co/f1k26g7/png-transparent-roast-chicken-barbecue-chicken-roasting-chicken-meat-roast-chicken-food-animals-baki.png" },
-                    { 22, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Nugget", 50000f, 75000f, "https://i.ibb.co/BgtCXnq/Nuggets.gif" },
-                    { 23, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " pizza ", 200000f, 250000f, "https://i.ibb.co/YQXBmKb/66951-7.jpg" },
-                    { 24, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " salmey pizza", 175000f, 200000f, "https://i.ibb.co/qrfSxXs/Q2-HGj-Nd-Babm7-S2n-FA.jpg" },
-                    { 25, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Smart washing machine", 50000f, 75000f, "https://i.ibb.co/Bcg2rCQ/ae-ar-WF1702-WEU-XSG-001-Front-624-624-PNG.png" },
-                    { 26, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Camera", 130000f, 150000f, "https://i.ibb.co/W3Wvh7k/2d257668b46d3cd5be228192fd02876f-fmt-pjpeg-res-Mode-bisharp-wid-354.jpg" },
-                    { 27, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Mobile", 175000f, 20000f, "https://i.ibb.co/BVY7rPz/eg-galaxy-s24-s928-sm-s928bztcmea-thumb-539296161-344-344-PNG.png" },
-                    { 28, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " smart watch", 130000f, 150000f, "https://i.ibb.co/VqCwH1C/61tp47u-ZRl-L-AC-UF1000-1000-QL80.jpg" },
-                    { 29, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "tap", 25000f, 30000f, "https://i.ibb.co/YhFVJvr/716o8-NCsj-DL-AC-UF894-1000-QL80.jpg" },
-                    { 30, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "refrigerator", 230000f, 255000f, "https://i.ibb.co/0qv7MX7/toshiba-refrigerator-no-frost-11-feet-silver-gr-ef31-s.jpg" },
-                    { 31, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), " Floral Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Chanel No.5", 130000f, 150000f, "https://i.ibb.co/cCZZdrz/coco-mademoiselle-eau-de-parfum-intense-spray-3-4fl-oz-packshot-default-116660-9539148283934.png" },
-                    { 32, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Oriental perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Tommy Hilfiger for Men ", 175000f, 20000f, "https://i.ibb.co/QKvKKCw/91-D0-TXi2or-L.jpg" },
-                    { 33, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Woody Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Giorgio Armani", 130000f, 150000f, "https://i.ibb.co/k38SvS0/517wv-Qgc-H0-L-AC-UF1000-1000-QL80.jpg" },
-                    { 34, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Citrus Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Dolce & Gabbana Light Blue", 25000f, 30000f, "https://i.ibb.co/8P2b254/miswag-Yf-M4c-AYMy-G4-U.jpg" },
-                    { 35, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Amber Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Bvlgari Black", 230000f, 255000f, "https://i.ibb.co/X2Jhj99/Espcuc-FNv-Rg-Mn-Zucl-JFIeyq-LZ3adeu-D6-NPq-UTr44.png" },
-                    { 36, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Citrus Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " 212", 25000f, 30000f, "https://i.ibb.co/fCbqJ6Q/sg-Ai-Uj-PU5-RORz-Cf-PAj-QVd-K9spq-QL92cj-Q4-S5-ODmo.jpg" }
+                    { 1, new DateTime(2023, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Flamix is ​​a medicine that contains celecoxib as an active ingredient, and it is considered a non-steroidal anti-infl ammatory drug", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Newflamix", 13000f, 15000f, "https://i.ibb.co/xjS4yyL/Flamix2040020mg20film20tablete203-D.jpg" },
+                    { 2, new DateTime(2023, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Moderate pain relief without the need for a prescription", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "New Profin", 6000f, 9000f, "https://i.ibb.co/yykJXSj/product-1.jpg" },
+                    { 3, new DateTime(2023, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Clomiphene is used to treat some cases of infertility in women", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newclomiphene", 13000f, 15000f, "https://i.ibb.co/kHFv6Yd/clomiphene-swiss-remedies.jpg" },
+                    { 4, new DateTime(2023, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Broad spectrum antibiotics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newthyromax", 25000f, 30000f, "https://i.ibb.co/crzLHnW/thyromaxx-50-kaps-za-normalnu-funkciju-titnja-e-bi-5fb8d11c86db5.jpg" },
+                    { 5, new DateTime(2023, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "To treat depression", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newsertraline", 30000f, 33000f, "https://i.ibb.co/Fw53mry/0ceba66d9685fed081df064b3a30469b.webp" },
+                    { 6, new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Anti-hyperglycemic", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Newmetformin", 8500f, 10000f, "https://i.ibb.co/9qMw6yK/Njm9e5-KQez-GBFw-YRja-Tkb-C-1200-80.jpg" },
+                    { 7, new DateTime(2023, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Size 33", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Spedrin", 13000f, 15000f, "https://i.ibb.co/my2mYtr/Hff44c1c4dc104fc19a29e4f1d8fe5b96p-jpg-720x720q50.webp" },
+                    { 8, new DateTime(2023, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Sportswear", 13000f, 15000f, "https://i.ibb.co/7tjQZK6/https-hypebeast-com-image-2016-06-hm-sports-performance-collection-0.jpg" },
+                    { 9, new DateTime(2023, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Sportswear", 13000f, 15000f, "https://i.ibb.co/Pr32t0X/2022-1-1.jpg" },
+                    { 10, new DateTime(2023, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Comfortable cotton", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Shorts", 50000f, 75000f, "https://i.ibb.co/F4zR55N/bdd3cef4-0e9b-4be4-b11a-1f45aaaee12d-thumbnail-770x770.png" },
+                    { 11, new DateTime(2023, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Dress", 130000f, 150000f, "https://i.ibb.co/bdghtwQ/sefamerve-gri-tesettur-elbise-bwst8238-01-3316251535974586797-1-752x1152.jpg" },
+                    { 12, new DateTime(2023, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "for sea", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Sport hat", 50000f, 75000f, "https://i.ibb.co/cyVGNs4/1.jpg" },
+                    { 13, new DateTime(2023, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Bloues", 130000f, 150000f, "https://i.ibb.co/wK9h3yd/1hoxd-AGYSt-Sp9-BCyq-XWP2vc-LRky-Pz-Bz-N5n-Ga-J5ad.jpg" },
+                    { 14, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " pants", 135000f, 155000f, "https://i.ibb.co/Gnsr6w5/w1020-q80.jpg" },
+                    { 15, new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "mam jeans", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " jeans", 135000f, 155000f, "https://i.ibb.co/xYNdXJ2/4b1d26be-d7dc-4056-bc63-39e30c160b7d.jpg" },
+                    { 16, new DateTime(2024, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Free Size", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Dress", 130000f, 150000f, "https://i.ibb.co/YdBdM5m/16226197718.jpg" },
+                    { 17, new DateTime(2024, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Size 37", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Qandara", 13000f, 15000f, "https://i.ibb.co/w7C1nJ2/31-AJD92clx-L-AC-SY780.jpg" },
+                    { 18, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Color off white", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Wedding Suit", 13000f, 15000f, "https://i.ibb.co/6X9CHQ5/wedding-mob-3-1.jpg" },
+                    { 19, new DateTime(2024, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Broasted", 200000f, 250000f, "https://i.ibb.co/HPdCsJk/image.jpg" },
+                    { 20, new DateTime(2024, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Shawrama", 175000f, 200000f, "https://i.ibb.co/RvpbMr3/8a13a1a95c8f094fe07b6e8c218fb6c2.jpg" },
+                    { 21, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Grilled Chicken", 20000f, 25000f, "https://i.ibb.co/f1k26g7/png-transparent-roast-chicken-barbecue-chicken-roasting-chicken-meat-roast-chicken-food-animals-baki.png" },
+                    { 22, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Nugget", 50000f, 75000f, "https://i.ibb.co/BgtCXnq/Nuggets.gif" },
+                    { 23, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " pizza ", 200000f, 250000f, "https://i.ibb.co/YQXBmKb/66951-7.jpg" },
+                    { 24, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Taza, hot, delicious", new DateTime(2024, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " salmey pizza", 175000f, 200000f, "https://i.ibb.co/qrfSxXs/Q2-HGj-Nd-Babm7-S2n-FA.jpg" },
+                    { 25, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2024, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Smart washing machine", 50000f, 75000f, "https://i.ibb.co/Bcg2rCQ/ae-ar-WF1702-WEU-XSG-001-Front-624-624-PNG.png" },
+                    { 26, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Camera", 130000f, 150000f, "https://i.ibb.co/W3Wvh7k/2d257668b46d3cd5be228192fd02876f-fmt-pjpeg-res-Mode-bisharp-wid-354.jpg" },
+                    { 27, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Mobile", 17500f, 20000f, "https://i.ibb.co/BVY7rPz/eg-galaxy-s24-s928-sm-s928bztcmea-thumb-539296161-344-344-PNG.png" },
+                    { 28, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " smart watch", 130000f, 150000f, "https://i.ibb.co/VqCwH1C/61tp47u-ZRl-L-AC-UF1000-1000-QL80.jpg" },
+                    { 29, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "tap", 25000f, 30000f, "https://i.ibb.co/YhFVJvr/716o8-NCsj-DL-AC-UF894-1000-QL80.jpg" },
+                    { 30, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Everything about the world of electronics", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "refrigerator", 230000f, 255000f, "https://i.ibb.co/0qv7MX7/toshiba-refrigerator-no-frost-11-feet-silver-gr-ef31-s.jpg" },
+                    { 31, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), " Floral Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Chanel No.5", 130000f, 150000f, "https://i.ibb.co/cCZZdrz/coco-mademoiselle-eau-de-parfum-intense-spray-3-4fl-oz-packshot-default-116660-9539148283934.png" },
+                    { 32, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Oriental perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Tommy Hilfiger for Men ", 17500f, 20000f, "https://i.ibb.co/QKvKKCw/91-D0-TXi2or-L.jpg" },
+                    { 33, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Woody Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Giorgio Armani", 130000f, 150000f, "https://i.ibb.co/k38SvS0/517wv-Qgc-H0-L-AC-UF1000-1000-QL80.jpg" },
+                    { 34, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Citrus Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " Dolce & Gabbana Light Blue", 25000f, 30000f, "https://i.ibb.co/8P2b254/miswag-Yf-M4c-AYMy-G4-U.jpg" },
+                    { 35, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Amber Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Bvlgari Black", 230000f, 255000f, "https://i.ibb.co/X2Jhj99/Espcuc-FNv-Rg-Mn-Zucl-JFIeyq-LZ3adeu-D6-NPq-UTr44.png" },
+                    { 36, new DateTime(2024, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Citrus Perfumes", new DateTime(2025, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, " 212", 25000f, 30000f, "https://i.ibb.co/fCbqJ6Q/sg-Ai-Uj-PU5-RORz-Cf-PAj-QVd-K9spq-QL92cj-Q4-S5-ODmo.jpg" }
                 });
 
             migrationBuilder.InsertData(
@@ -602,12 +604,12 @@ namespace MarketingSurplus.Migrations
                 columns: new[] { "Id", "Address", "CompanyTypeId", "Description", "Email", "Image", "LicenseNumber", "Name", "OnlineImage", "Password", "Phone", "TelePhone", "isAccept" },
                 values: new object[,]
                 {
-                    { 1, "From Streat", 1, "As in 1955, when Ultra Medica started its ascent in the world of pharmaceutical industry in Syria (Sednaya) founded with emphasis activities and enthusiasm for the manufacturing and developing of life science industry", "UltraMedica@test.com", null, "242523", "Ultra Medica", "https://i.ibb.co/z4vNrPc/company-1.png", "12123", "0921423432", "4232543", false },
+                    { 1, "From Streat", 1, "As in 1955, when Ultra Medica started its ascent in the world of pharmaceutical industry in Syria (Sednaya) founded with emphasis activities and enthusiasm for the manufacturing and developing of life science industry", "UltraMedica@test.com", null, "242523", "Ultra Medica", "https://i.ibb.co/z4vNrPc/company-1.png", "12123", "0921423432", "4232543", true },
                     { 2, "From Streat", 1, "Newpharma is een online apotheek, een uitbreiding van een echte apotheek, gevestigd in België. We spreken ook van internet apotheek of e-apotheek.", "newpharma@test.com", null, null, "New pharma", " https://i.ibb.co/yPnHycP/company-2.png", "12123", "0921423432", "4232543", false },
                     { 3, "From Streat", 2, "Max Fashion is an Indian fashion brand under the banner of the Landmark Group in Dubai", "MAX@test.com", null, "242523", "MAX", "https://i.ibb.co/9ptGtb1/max-fashion-india-logo.jpg", "111222", "0921423432", "223554", false },
                     { 4, "From Streat", 2, "It is an Italian luxury fashion house specializing in ready-to-wear and haute couture, headquartered in Milan, Italy. Expanded to design raincoats, windbreakers, knitwear, leather goods, shoes, perfume, and accessories", "MONCLER@test.com", null, "242523", "MONCLER", "https://i.ibb.co/0fmgNQL/download.png", "6789", "0921423432", "223554", false },
                     { 5, "From Streat", 3, "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.", "ZARA@test.com", null, "242523", "ZARA", "https://i.ibb.co/KXYZN1b/Zara-Logo-svg.png", "0909", "0921423432", "223554", false },
-                    { 6, "From Streat", 3, "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.", "ZARA@test.com", null, "242523", "LC", "https://i.ibb.co/KXYZN1b/Zara-Logo-svg.png", "0909", "0921423432", "223554", false },
+                    { 6, "From Streat", 3, "A clothing retailer, the company specializes in fast fashion, and its products include apparel, accessories, footwear, swimwear, cosmetics, and perfume. It is one of the largest clothing retailers in the world which also includes brands such as Bershka and Massimo Dutti.", "LC@test.com", null, "242523", "LC", "https://i.ibb.co/KXYZN1b/Zara-Logo-svg.png", "01010", "0921423432", "223554", false },
                     { 7, "Louisville, KentuckyFrom Streat", 4, "Kentucky Fried Chicken or KFC is a chain of fast food restaurants that specializes primarily in fried chicken.  It is the second largest chain of fast food restaurants in the world in terms of sales after McDonald's. Kentucky Fried Chicken has nearly twenty thousand branches spread over 123 countries and territories around the world.", "KFC@test.com", null, "242523", "KFC", "https://i.ibb.co/30ggCjY/download-2.png", "5252", "0921423432", "223554", false },
                     { 8, "From Streat", 4, "Pizza Hut is an American multinational restaurant chain and international franchise founded in 1958 in Wichita, Kansas by Dan and Frank Carney. They serve their signature pan pizza and other dishes including pasta, breadsticks and desserts.", "PIZZAHUT@test.com", null, "242523", "PIZZA HUT", "https://i.ibb.co/wB3sWFC/cmopany-20.png", "34345", "0921423432", "223554", false },
                     { 9, "Suwon, South Korea", 5, " Samsung Electronics is the world's largest electronics and information technology company.  Samsung Electronics is part of the Samsung Group, which is the largest conglomerate in South Korea and the global market leader with more than 60 products including semiconductors such as DRAM and flash memory, digital display devices such as liquid crystal TVs  LCD and plasma, consumer electronics such as DVD players, mobile phones, digital cameras and laser printers, household appliances such as refrigerators, microwaves and dishwashers.", "SAMSUNG@test.com", null, "242523", "SAMSUNG", "https://i.ibb.co/fNGbPdT/Samsung.png", "111222", "0921423432", "223554", false },
@@ -618,13 +620,13 @@ namespace MarketingSurplus.Migrations
 
             migrationBuilder.InsertData(
                 table: "Donations",
-                columns: new[] { "Id", "CharityId", "CreatedAt", "OrderTypeId", "PricePay" },
+                columns: new[] { "Id", "CharityId", "CreatedAt", "OrderTypeId", "Percentage", "PricePay" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 20000f },
-                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 18000f },
-                    { 3, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 11000f },
-                    { 4, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 10000f }
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, null, 20000f },
+                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, null, 18000f },
+                    { 3, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, null, 11000f },
+                    { 4, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, null, 10000f }
                 });
 
             migrationBuilder.InsertData(
@@ -739,24 +741,24 @@ namespace MarketingSurplus.Migrations
 
             migrationBuilder.InsertData(
                 table: "ProductDonations",
-                columns: new[] { "Id", "Amount", "CompanyProductId", "DonationId", "IsAccept", "IsCencal", "IsCompany", "TotalPrice" },
+                columns: new[] { "Id", "Amount", "CommintCencal", "CompanyProductId", "DonationId", "IsAccept", "IsCencal", "IsCompany", "TotalPrice" },
                 values: new object[,]
                 {
-                    { 1, 1, 1, 1, false, false, false, 60000 },
-                    { 2, 3, 2, 2, false, false, false, 70000 },
-                    { 3, 2, 7, 3, false, false, false, 70000 },
-                    { 4, 3, 5, 4, false, false, false, 70000 },
-                    { 5, 3, 11, 1, false, false, false, 90000 },
-                    { 6, 4, 15, 2, false, false, false, 70000 },
-                    { 7, 9, 17, 3, false, false, false, 679000 },
-                    { 8, 8, 20, 3, false, false, false, 98700 },
-                    { 9, 1, 29, 3, false, false, false, 7000 },
-                    { 10, 4, 33, 4, false, false, false, 70000 },
-                    { 11, 1, 31, 2, false, false, false, 101000 },
-                    { 12, 1, 34, 2, false, false, false, 70000 },
-                    { 13, 2, 22, 3, false, false, false, 97000 },
-                    { 14, 3, 26, 1, false, false, false, 120000 },
-                    { 15, 1, 19, 1, false, false, false, 70000 }
+                    { 1, 1, null, 1, 1, false, false, false, 60000 },
+                    { 2, 3, null, 2, 2, false, false, false, 70000 },
+                    { 3, 2, null, 7, 3, false, false, false, 70000 },
+                    { 4, 3, null, 5, 4, false, false, false, 70000 },
+                    { 5, 3, null, 11, 1, false, false, false, 90000 },
+                    { 6, 4, null, 15, 2, false, false, false, 70000 },
+                    { 7, 9, null, 17, 3, false, false, false, 679000 },
+                    { 8, 8, null, 20, 3, false, false, false, 98700 },
+                    { 9, 1, null, 29, 3, false, false, false, 7000 },
+                    { 10, 4, null, 33, 4, false, false, false, 70000 },
+                    { 11, 1, null, 31, 2, false, false, false, 101000 },
+                    { 12, 1, null, 34, 2, false, false, false, 70000 },
+                    { 13, 2, null, 22, 3, false, false, false, 97000 },
+                    { 14, 3, null, 26, 1, false, false, false, 120000 },
+                    { 15, 1, null, 19, 1, false, false, false, 70000 }
                 });
 
             migrationBuilder.InsertData(
@@ -827,14 +829,14 @@ namespace MarketingSurplus.Migrations
                 column: "SubscriptionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_NotificationCharities_CharityId",
+                name: "IX_NotificationCharities_ProductDonationId",
                 table: "NotificationCharities",
-                column: "CharityId");
+                column: "ProductDonationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Notifications_UserId",
+                name: "IX_Notifications_OrderProductId",
                 table: "Notifications",
-                column: "UserId");
+                column: "OrderProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderProducts_CompanyProductId",
@@ -891,12 +893,6 @@ namespace MarketingSurplus.Migrations
                 name: "Notifications");
 
             migrationBuilder.DropTable(
-                name: "ProductDonations");
-
-            migrationBuilder.DropTable(
-                name: "OrderProducts");
-
-            migrationBuilder.DropTable(
                 name: "OrderStatuses");
 
             migrationBuilder.DropTable(
@@ -907,6 +903,12 @@ namespace MarketingSurplus.Migrations
 
             migrationBuilder.DropTable(
                 name: "Subscriptions");
+
+            migrationBuilder.DropTable(
+                name: "ProductDonations");
+
+            migrationBuilder.DropTable(
+                name: "OrderProducts");
 
             migrationBuilder.DropTable(
                 name: "Donations");

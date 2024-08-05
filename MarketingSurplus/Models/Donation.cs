@@ -9,7 +9,8 @@
         public OrderType? OrderType { get; set; }
 
         public DateTime CreatedAt { get; set; }
-        public float PricePay { get; set; }
+        public float? PricePay { get; set; }
+        public float? Percentage { get; set; }
         public ICollection<ProductDonation>? ProductDonations { get; set; }
     }
 }

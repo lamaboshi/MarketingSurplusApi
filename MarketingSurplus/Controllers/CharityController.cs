@@ -21,6 +21,14 @@ namespace MarketingSurplus.Controllers
             List<Charity> data = db.GetCharities();
             return Ok(data);
         }
+        [HttpPost("{id}")]
+        [ActionName("AcceptCharity")]
+        public IActionResult AcceptCharity(int id, [FromQuery] bool accept)
+        {
+            db.AcceptCharity(id, accept);
+            return Ok();
+
+        }
         [HttpGet("{id}")]
         [ActionName("Get")]
         public IActionResult Get(int id)

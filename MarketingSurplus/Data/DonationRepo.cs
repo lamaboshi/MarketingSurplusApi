@@ -70,9 +70,9 @@ namespace MarketingSurplus.Data
             return result.Entity.Id;
         }
 
-        public void SaveProductDonation(ProductDonation productDonation)
+        public int SaveProductDonation(ProductDonation productDonation)
         {
-            _db.ProductDonations.Add(productDonation);
+          var result=  _db.ProductDonations.Add(productDonation);
             _db.SaveChanges();
 
             var updateAmount = _db.CompanyProducts.Where(t => t.Id == productDonation.CompanyProductId).Single();
@@ -87,6 +87,7 @@ namespace MarketingSurplus.Data
                 _db.CompanyProducts.Remove(updateAmount);
                 _db.SaveChanges();
             }
+            return result.Entity.Id;
        
         }
 
@@ -99,6 +100,7 @@ namespace MarketingSurplus.Data
                 item.IsAccept = updateDontation.Status;
                 item.IsCompany = updateDontation.isCompany;
                 item.IsCencal = updateDontation.isCencal;
+                item.CommintCencal = updateDontation.commint;
                 _db.SaveChanges();
 
             }

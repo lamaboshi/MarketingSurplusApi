@@ -30,6 +30,14 @@ namespace MarketingSurplus.Controllers
             // return NotFound();
             return Ok(new List<object>());
         }
+        [HttpPost("{id}")]
+        [ActionName("AcceptOrderType")]
+        public IActionResult AcceptOrderType(int id, [FromQuery] bool accept)
+        {
+            db.AcceptOrderType(id, accept);
+            return Ok();
+
+        }
         [HttpPost]
         public IActionResult AddOrderType([FromBody] OrderType orderType)
         {
