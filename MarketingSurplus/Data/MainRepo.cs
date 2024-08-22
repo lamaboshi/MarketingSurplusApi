@@ -99,19 +99,12 @@ namespace MarketingSurplus.Data
                             }
                     
 
-                        }
-
-
-                    }
-
-                }
+                        }}}
                 var product=_db.Products.Where(q=>q.Id == item.ProductId).FirstOrDefault();
                 if (product != null)
                 {
-                    item.Product = product;
-                       
+                    item.Product = product;}
 
-                }
                 CompProduct.CompanyProduct = item;
                 products.Add(CompProduct);
             }
